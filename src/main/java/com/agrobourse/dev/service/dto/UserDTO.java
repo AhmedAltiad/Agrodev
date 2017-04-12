@@ -4,6 +4,7 @@ import com.agrobourse.dev.config.Constants;
 
 import com.agrobourse.dev.domain.Authority;
 import com.agrobourse.dev.domain.User;
+import com.agrobourse.dev.domain.Profil;
 
 import org.hibernate.validator.constraints.Email;
 
@@ -51,6 +52,8 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    private Profil profil ;
+
     public UserDTO() {
         // Empty constructor needed for MapStruct.
     }
@@ -60,13 +63,13 @@ public class UserDTO {
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
-                .collect(Collectors.toSet()));
+                .collect(Collectors.toSet()),user.getProfil());
     }
 
     public UserDTO(Long id, String login, String firstName, String lastName,
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate,
-        Set<String> authorities) {
+        Set<String> authorities,Profil profil) {
 
         this.id = id;
         this.login = login;
@@ -81,6 +84,7 @@ public class UserDTO {
         this.lastModifiedBy = lastModifiedBy;
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
+        this.profil=profil;
     }
 
     public Long getId() {
@@ -145,6 +149,12 @@ public class UserDTO {
 
     public Set<String> getAuthorities() {
         return authorities;
+    }
+     public Profil getProfil() {
+        return profil;
+    }
+     public void setProfil(Profil profil) {
+        this.profil=profil;
     }
 
     @Override

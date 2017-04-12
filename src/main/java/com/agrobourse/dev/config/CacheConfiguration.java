@@ -43,6 +43,10 @@ public class CacheConfiguration {
             cm.createCache(com.agrobourse.dev.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(com.agrobourse.dev.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(com.agrobourse.dev.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(com.agrobourse.dev.domain.Profil.class.getName(), jcacheConfiguration);
+            cm.createCache(com.agrobourse.dev.domain.Profil.class.getName() + ".profilannonces", jcacheConfiguration);
+            cm.createCache(com.agrobourse.dev.domain.Annonce.class.getName(), jcacheConfiguration);
+            cm.createCache(com.agrobourse.dev.domain.Profil.class.getName() + ".annonces", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

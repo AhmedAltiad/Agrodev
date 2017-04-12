@@ -1,0 +1,27 @@
+{
+    "agroBourseApp": {
+        "annonce" : {
+            "home": {
+                "title": "Annonces",
+                "createLabel": "Create a new Annonce",
+                "createOrEditLabel": "Create or edit a Annonce",
+                "search": "Search for Annonce"
+            },
+            "created": "A new Annonce is created with identifier {{ param }}",
+            "updated": "A Annonce is updated with identifier {{ param }}",
+            "deleted": "A Annonce is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Annonce {{ id }}?"
+            },
+            "detail": {
+                "title": "Annonce"
+            },
+            "sujet": "Sujet",
+            "annoncebody": "Annoncebody",
+            "image": "Image",
+            "datedebut": "Datedebut",
+            "datefin": "Datefin",
+            "profil": "Profil"
+        }
+    }
+}

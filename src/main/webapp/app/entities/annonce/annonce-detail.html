@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="agroBourseApp.annonce.detail.title">Annonce</span> {{vm.annonce.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourseApp.annonce.sujet">Sujet</span></dt>
+        <dd>
+            <span>{{vm.annonce.sujet}}</span>
+        </dd>
+        <dt><span data-translate="agroBourseApp.annonce.annoncebody">Annoncebody</span></dt>
+        <dd>
+            <span>{{vm.annonce.annoncebody}}</span>
+        </dd>
+        <dt><span data-translate="agroBourseApp.annonce.image">Image</span></dt>
+        <dd>
+            <span>{{vm.annonce.image}}</span>
+        </dd>
+        <dt><span data-translate="agroBourseApp.annonce.datedebut">Datedebut</span></dt>
+        <dd>
+            <span>{{vm.annonce.datedebut | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourseApp.annonce.datefin">Datefin</span></dt>
+        <dd>
+            <span>{{vm.annonce.datefin | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourseApp.annonce.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.annonce.profil.id})">{{vm.annonce.profil.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="annonce-detail.edit({id:vm.annonce.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

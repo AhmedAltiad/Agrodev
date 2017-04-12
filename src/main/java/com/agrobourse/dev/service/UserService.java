@@ -2,6 +2,7 @@ package com.agrobourse.dev.service;
 
 import com.agrobourse.dev.domain.Authority;
 import com.agrobourse.dev.domain.User;
+import com.agrobourse.dev.domain.Profil;
 import com.agrobourse.dev.repository.AuthorityRepository;
 import com.agrobourse.dev.repository.PersistentTokenRepository;
 import com.agrobourse.dev.config.Constants;
@@ -95,7 +96,7 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey) {
+        String imageUrl, String langKey,Profil profil) {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
@@ -115,6 +116,7 @@ public class UserService {
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
+        newUser.setProfil(profil);
         userRepository.save(newUser);
         userSearchRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);

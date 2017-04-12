@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "annonce",
+            "otherEntityName": "annonce",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profil"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "2"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "2"
+        },
+        {
+            "fieldName": "dob",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170412100320",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "profil",
+    "pagination": "no"
+}
