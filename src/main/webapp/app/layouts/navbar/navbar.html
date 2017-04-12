@@ -1,0 +1,803 @@
+  <!-- *** TOP ***
+_________________________________________________________ -->
+            <div id="top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-8 contact">
+                            <p class="hidden-sm hidden-xs">Contactez nous sur +33751228995/+21628414879/ yassine.grissa@groupe3e.com. | +33679492200/ benoit.sommier@groupe3e.com</p>
+                            <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="social">
+                                <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                            </div>
+
+                            <div class="login">
+                                <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+                
+                <li ng-class="{active: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
+                    <a class="dropdown-toggle" uib-dropdown-toggle href="" id="account-menu">
+                        <span>
+                            <span class="glyphicon glyphicon-user"></span>
+                            
+                            <span class="hidden-sm" data-translate="global.menu.account.main">
+                                Account
+                            </span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ui-sref-active="active" ng-switch-when="true">
+                            <a href="" ng-click="vm.logout()" id="logout">
+                                <span class="glyphicon glyphicon-log-out"></span>&nbsp;
+                                <span data-translate="global.menu.account.logout">Sign out</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="false">
+                            <a href="#" ng-click="vm.login()" id="login">
+                                <i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Se connecter</span>
+                                
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="false">
+                            <a ui-sref="register" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
+                                <i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">S'inscrire</span>
+                            </a>
+                        </li>
+                    </ul>
+                
+                        
+                        <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+                    </ul>
+                </li>
+    
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- *** TOP END *** -->
+            <!-- *** NAVBAR ***
+    _________________________________________________________ -->
+
+            <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+
+                <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+
+                    <div class="container">
+                        <div class="navbar-header">
+
+                            <a class="navbar-brand home" href="index.html">
+                                <img src="img/logo.png" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <img src="img/logo-small.png" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                            </a>
+                            <div class="navbar-buttons">
+                                <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="fa fa-align-justify"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!--/.navbar-header -->
+
+                       <div style="float: left; margin-left:10vw;" class="navbar-collapse collapse" id="navigation">
+							
+                            <ul class="nav navbar-nav navbar-right">
+								
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Présentation<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <a href="qui_sommes_nous.html"><h5>Qui sommes-nous?</h5></a>
+                                                    </div>
+													<div class="col-sm-4">
+                                                        <a href="agrobourse_c_quoi.html"><h5>AgroBourse c'est quoi?</h5></a>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <a href=""><h5>Partenaires</h5></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">AGROBOURSE<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <h5>Terrains agricoles</h5>
+                                                        <ul>
+                                                            <li><a href="">Consulter offres</a>
+															</li>
+															<li><a href="">Gestion des domaines de l'état</a>
+                                                            </li>
+															<li><a href="">Déposer une annonce</a>
+															</li>
+                                                        </ul>
+                                                        <h5>Pépinières</h5>
+                                                        <ul>
+                                                            <li><a href="">Achat</a>
+                                                            </li>
+                                                            <li><a href="">Vente</a>
+                                                            </li>
+															<li><a href="">Déposer une annonce</a>
+															</li>
+                                                        </ul>
+                                                        <h5>Engrais</h5>
+                                                        <ul>
+                                                            <li><a href="">Achat</a>
+                                                            </li>
+                                                            <li><a href="">Vente</a>
+                                                            </li>
+															<li><a href="">Déposer une annonce</a>
+															</li>
+                                                        </ul>
+														<h5>Semences</h5>
+                                                        <ul>
+                                                            <li><a href="">Achat</a>
+                                                            </li>
+                                                            <li><a href="">Vente</a>
+                                                            </li>
+															<li><a href="">Déposer une annonce</a>
+															</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h5>Matériaux de traitement</h5>
+                                                        <ul>
+                                                            <li><a href="">Achat</a>
+                                                            </li>
+                                                            <li><a href="">Vente</a>
+                                                            </li>
+															<li><a href="">Déposer une annonce</a>
+															</li>
+                                                        </ul>
+														
+														 
+														<h5>Récoltes prévisionnelles</h5>
+                                                        <ul>
+                                                            <li><a href=" quantite_dispo.html">Quantités disponibles</a>
+                                                            </li>
+                                                            <li><a href="">Trading(Passer un ordre)<a>
+                                                            </li>
+                                                        </ul>
+														<h5>Centrales d'achats</h5>
+                                                        <ul>
+                                                            <li><a href="">Nos partenaires</a>
+                                                        </ul>
+                                                         <h5>Transitaires</h5>
+                                                        <ul>
+                                                            <li><a href="">Nos transitaires</a>
+                                                            </li>
+                                                            <li><a href="">Des transitaires à travers le monde</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Transporteurs</h5>
+                                                        <ul>
+                                                            <li><a href="">Nos transporteurs</a>
+                                                            </li>
+                                                            <li><a href="">Des transporteurs à travers le monde</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="col-sm-4">
+                                                        
+														<h5>Chambres frigorifiques</h5>
+                                                        <ul>
+                                                            <li><a href="">Présentation</a>
+                                                            </li>
+                                                            <li><a href="">Des chambres frigorifiques certifées</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Chambres de serre</h5>
+                                                        <ul>
+                                                            <li><a href="">Présentation</a>
+                                                            </li>
+                                                            <li><a href="">Des chambres de serre certifées</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Statistiques</h5>
+														<ul>
+														<li><a href="simulation.html" class="dropdown-toggle">Historiques</a>
+														</li>
+														<li><a href="" class="dropdown-toggle">Prévisions</a>
+														</li>
+														</ul>
+                                                        <h5>Banques</h5>
+                                                        <ul>
+                                                            <li><a href="">Nos banques</a>
+                                                            </li>
+															<li><a href="">Meilleurs taux</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Assurances</h5>
+                                                        <ul>
+                                                            <li><a href="">Nos assurances</a>
+                                                            </li>
+                                                            <li><a href="">Meilleurs prime</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.yamm-content -->
+                                        </li>
+                                    </ul>
+                                </li>
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trading<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <a href=""><h5>Négociation(Passer un ordre)</h5></a>
+                                                    </div>
+													<div class="col-sm-4">
+                                                        <a href=""><h5>Meilleurs prix</h5></a>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <a href=""><h5>Prix temps réels</h5></a>
+                                                    </div>
+													<div class="col-sm-4">
+                                                        <a href=""><h5>Suivi des transactions</h5></a>
+                                                    </div>
+													<div class="col-sm-4">
+                                                        <a href=""><h5>Reporting</h5></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Secteurs d'activités<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <img src="img/template-homepage.png" class="img-responsive hidden-xs" alt="">
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <h5>Agriculture</h5>
+                                                        <ul>
+                                                            <li><a href="">Conseils</a>
+                                                            </li>
+                                                            <li><a href="">Services</a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Finance</h5>
+                                                        <ul>
+                                                            <li><a href="">Conseils</a>
+                                                            </li>
+                                                            <li><a href="">Services</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <h5>Logistiques</h5>
+                                                        <ul>
+                                                            <li><a href="">Conseils</a>
+                                                            </li>
+                                                            <li><a href="">Services</a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Marketing</h5>
+                                                        <ul>
+                                                            <li><a href="">Conseils</a>
+                                                            </li>
+															<li><a href="">Services</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nos produits<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+
+                                                    <div class="col-sm-4">
+                                                        <h5>Produits conventionnels</h5>
+                                                        <ul><div class="col-sm-6">
+                                                            <li><a href="">	ABRICOTS</a></li>
+<li><a href="">	ALOE VERA</a></li>
+<li><a href="">	ANANAS</a></li>
+<li><a href="">	ANETH/ANIS</a></li>
+<li><a href="">	ARTICHAUTS</a></li>
+<li><a href="">	ASPERGES</a></li>
+<li><a href="">	AUBERGINES</a></li>
+<li><a href="">	AULX/AILS</a></li>
+<li><a href="">	AVOCATS</a></li>
+<li><a href="">	BABACOS</a></li>
+<li><a href="">	BAIES/PETITS FRUITS</a></li>
+<li><a href="">	BANANES</a></li>
+<li><a href="">	BARDANE</a></li>
+<li><a href="">	BETTERAVES</a></li>
+<li><a href="">	BOK CHOY/PAK-CHOÏ</a></li>
+<li><a href="">	BROCOLIS</a></li>
+														
+                                                     </div>  
+													 <div class="col-sm-6">
+                                                           <li><a href="">	BROCOLIS CHINOIS/GAI LAN/GAI LON	</a></li>
+<li><a href="">	CÉLERIS-RAVES	</a></li>
+<li><a href="">	CERFEUIL	</a></li>
+<li><a href="">	CERISES/BIGARREAUX	</a></li>
+<li><a href="">	CHAMPIGNONS	</a></li>
+<li><a href="">	CHICOREES ROUGES/ RADICCHIOS	</a></li>
+<li><a href="">	CHOUX	</a></li>
+<li><a href="">	CHOUX DE BRUXELLES	</a></li>
+<li><a href="">	CHOUX FRISES	</a></li>
+<li><a href="">	CHOUX-RAVES	</a></li>
+<li><a href="">	CHOY SUM/PAK CHOY SUM/ PAK-CHOÏ	</a></li>
+<li><a href="">	CITRONS	</a></li>
+<li><a href="">	COURGES et COURGETTES 	</a></li>
+<li><a href="">	CUCURBITACÉES/CITROUILLES/COURGES	</a></li>
+<li><a href="">	DATTES	</a></li>
+<li><a style="color: green" href="shop-category.html">	Voir toutes les familles...</a></li>
+														
+                                                     </div> 
+
+													 </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h5>Produits bio</h5>
+                                                        <ul><div class="col-sm-6">
+                                                            <li><a href="">	ABRICOTS</a></li>
+<li><a href="">	ALOE VERA</a></li>
+<li><a href="">	ANANAS</a></li>
+<li><a href="">	ANETH/ANIS</a></li>
+<li><a href="">	ARTICHAUTS</a></li>
+<li><a href="">	ASPERGES</a></li>
+<li><a href="">	AUBERGINES</a></li>
+<li><a href="">	AULX/AILS</a></li>
+<li><a href="">	AVOCATS</a></li>
+<li><a href="">	BABACOS</a></li>
+<li><a href="">	BAIES/PETITS FRUITS</a></li>
+<li><a href="">	BANANES</a></li>
+<li><a href="">	BARDANE</a></li>
+<li><a href="">	BETTERAVES</a></li>
+<li><a href="">	BOK CHOY/PAK-CHOÏ</a></li>
+<li><a href="">	BROCOLIS</a></li>
+														
+                                                     </div>  
+													 <div class="col-sm-6">
+                                                           <li><a href="">	BROCOLIS CHINOIS/GAI LAN/GAI LON	</a></li>
+<li><a href="">	CÉLERIS-RAVES	</a></li>
+<li><a href="">	CERFEUIL	</a></li>
+<li><a href="">	CERISES/BIGARREAUX	</a></li>
+<li><a href="">	CHAMPIGNONS	</a></li>
+<li><a href="">	CHICOREES ROUGES/ RADICCHIOS	</a></li>
+<li><a href="">	CHOUX	</a></li>
+<li><a href="">	CHOUX DE BRUXELLES	</a></li>
+<li><a href="">	CHOUX FRISES	</a></li>
+<li><a href="">	CHOUX-RAVES	</a></li>
+<li><a href="">	CHOY SUM/PAK CHOY SUM/ PAK-CHOÏ	</a></li>
+<li><a href="">	CITRONS	</a></li>
+<li><a href="">	COURGES et COURGETTES 	</a></li>
+<li><a href="">	CUCURBITACÉES/CITROUILLES/COURGES	</a></li>
+<li><a href="">	DATTES	</a></li>
+<li><a style="color: green" href="shop-category.html">	Voir toutes les familles...</a></li>
+														
+                                                     </div> 
+
+													 </ul>
+                                                    </div>
+													<div class="col-sm-4">
+                                                        <h5>Produits médicinaux</h5>
+                                                        <ul><div class="col-sm-6">
+                                                            <li><a href="">	ALOE VERA	</a></li>
+															
+<li><a href="">	ANETH/ANIS	</a></li>
+<li><a href="">	ASPERGES	</a></li>
+<li><a href="">	AULX/AILS	</a></li>
+<li><a href="">	AVOCATS	</a></li>
+<li><a href="">	BAIES/PETITS FRUITS	</a></li>
+<li><a href="">	BARDANE	</a></li>
+<li><a href="">	BETTERAVES	</a></li>
+<li><a href="">	BOK CHOY/PAK-CHOÏ	</a></li>
+<li><a href="">	BROCOLIS	</a></li>
+<li><a href="">	CERFEUIL	</a></li>
+<li><a href="">	CITRONS	</a></li>
+<li><a href="">	COURGES et COURGETTES 	</a></li>
+<li><a href="">	CUCURBITACÉES/CITROUILLES/COURGES	</a></li>
+<li><a href="">	RACINES DE LOTUS	</a></li>
+<li><a href="">	GOURDES/COURGE CALEBASSE	</a></li>
+
+
+                                                        </div></ul>
+														<ul><div class="col-sm-6">
+<li><a href="">	GRENADES	</a></li>
+<li><a href="">	GROSEILLES/GROSEILLES À GRAPPES	</a></li>
+<li><a href="">	HARICOTS	</a></li>
+<li><a href="">	IGNAMES/NIAMS	</a></li>
+<li><a href="">	RAISINS	</a></li>
+<li><a href="">	RAMBOUTANS/LITCHIS CHEVELUS	</a></li>
+<li><a href="">	SALADES	</a></li>
+<li><a href="">	SAPOTES	</a></li>
+<li><a href="">	SAPOTILLES/NÈFLES D'AMÉRIQUE	</a></li>
+<li><a href="">	SARRIETTE	</a></li>
+<li><a href="">	TANGERINES/MANDARINES/ CLÉMENTINES	</a></li>
+<li><a href="">	TOMATES	</a></li>
+<li><a href="">	YU CHOY	</a></li>
+<li><a style="color: green" href="shop-category.html">	Voir toutes les familles...</a></li>
+
+                                                        </div></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                              
+                                <!-- ========== FULL WIDTH MEGAMENU ================== -->
+                                
+                                <!-- ========== FULL WIDTH MEGAMENU END ================== -->
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matériels agricoles<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    
+                                                    <div class="col-sm-3">
+                                                        <h5>Tracteurs agricoles</h5>
+                                                        <ul>
+                                                            <li><a href="">Tracteurs agricoles standards </a>
+                                                            </li>
+                                                            <li><a href="">Tracteurs viticoles</a>
+                                                            </li>
+															<li><a href="">Tracteurs fruitiers </a>
+                                                            </li>
+															<li><a href="">Accessoires pour tracteurs </a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Outils tractés pour tracteurs </h5>
+                                                        <ul>
+                                                            <li><a href="">	Fraises rotatives  	</a>
+<li><a href="">	Remorques pour tracteurs agricoles  	</a>
+<li><a href="">	Herses rotatives  	</a>
+<li><a href="">	Herses non rotatives  	</a>
+<li><a href="">	Distributeurs agricoles  	</a>
+<li><a href="">	Déchaumeurs à dents  	</a>
+<li><a href="">	Déchaumeurs à disques  	</a>
+<li><a href="">	Décompacteurs  	</a>
+<li><a href="">	Semoirs  	</a>
+<li><a href="">	Accessoires pour semoirs  	</a>
+<li><a href="">	Râteaux pour tracteurs  	</a>
+<li><a href="">	Sous-soleuses  	</a>
+<li><a href="">	Pulvériseurs à disques  	</a>
+<li><a href="">	Vibreurs agricoles  	</a>
+
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <h5>Remorques agricoles </h5>
+                                                        <ul>
+                                                            <li><a href="">Remorques pour motos agricoles  	</a>
+                                                            </li>
+                                                            <li><a href="">Accessoires pour remorques agricoles  </a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Machines pour travailler la terre</h5>
+                                                        <ul>
+                                                            <li><a href="">Bineuses agricoles</a>
+                                                            </li>
+															<li><a href="">Accessoires pour bineuses agricoles</a>
+                                                            </li>
+															<li><a href="">Butteuses</a>
+                                                            </li>
+															<li><a href="">Charrues</a>
+                                                            </li>
+															<li><a href="">Cultivateurs</a>
+                                                            </li>
+															<li><a href="">Fraises agricoles</a>
+                                                            </li>
+															<li><a href="">Matériels zéro labour</a>
+                                                            </li>
+															<li><a href="">Tasseurs agricoles</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Godets agricoles</h5>
+                                                        <ul>
+                                                            <li><a href="">Godets mélangeurs</a>
+                                                            </li>
+															<li><a href="">Godets distributeurs </a>
+                                                            </li>
+															<li><a href="">Godets d'élévateurs </a>
+                                                            </li>
+															<li><a href="">Godets pour chargeurs </a>
+                                                            </li>
+                                                        </ul>
+														<h5>Matériels pour clôture agricole</h5>
+                                                        <ul>
+                                                            <li><a href="">Enrouleuses de clôture agricole</a>
+                                                            </li>
+															<li><a href="">Écorceuses agricoles</a>
+                                                            </li>
+															<li><a href="">Enfonce-pieux</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+													<div class="col-sm-3">
+                                                        <h5>Matériels d'épandage </h5>
+                                                        <ul>
+                                                            <li><a href="">Épandeurs</a>
+                                                            </li>
+                                                            <li><a href="">Commandes pour épandeurs</a>
+                                                            </li>
+															<li><a href="">Accessoires pour épandeurs</a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Débroussailleuses agricoles et accessoires </h5>
+                                                        <ul>
+                                                            <li><a href="">Débroussailleuse</a>
+                                                            </li>
+															<li><a href="">Débroussailleuses tracteurs </a>
+                                                            </li>
+															<li><a href="">Débroussailleuses radioguidées </a>
+                                                            </li>
+															<li><a href="">Têtes pour débroussailleuses  </a>
+                                                            </li>
+															<li><a href="">Fils de débroussailleuses  </a>
+                                                            </li>
+															<li><a href="">Lamiers pour débroussailleuses</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Machines de récolte </h5>
+                                                        <ul>
+                                                            <li><a href="">Arracheuses </a>
+                                                            </li>
+															<li><a href="">Cueilleuses</a>
+                                                            </li>
+															<li><a href="">Ensileuses </a>
+                                                            </li>
+															<li><a href="">Faucheuses   </a>
+                                                            </li>
+															<li><a href="">Moissonneuses </a>
+                                                            </li>
+															<li><a href="">Accessoires pour moissonneuses</a>
+                                                            </li>
+															<li><a href="">Récolteuses</a>
+                                                            </li>
+															<li><a href="">Vendangeuses  </a>
+                                                            </li>
+															<li><a href="">Filets de récolte  </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+													<div class="col-sm-3">
+                                                        <h5>Machines pour travailler pailles et foins</h5>
+                                                        <ul>
+                                                            <li><a href="">Pailleuses</a>
+                                                            </li>
+                                                            <li><a href="">Désileuses </a>
+                                                            </li>
+															<li><a href="">Chargeurs agricoles </a>
+                                                            </li>
+															<li><a href="">Mélangeuses agricoles </a>
+                                                            </li>
+															<li><a href="">Dérouleuses agricoles</a>
+                                                            </li>
+															<li><a href="">Andaineurs</a>
+                                                            </li>
+															<li><a href="">Retourneurs d'andain</a>
+                                                            </li>
+															<li><a href="">Séchoirs à foin</a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Machines agricoles diverses</h5>
+                                                        <ul>
+                                                            <li><a href="">Broyeurs agricoles</a>
+                                                            </li>
+															<li><a href="">Effeuilleuses agricoles</a>
+                                                            </li>
+															<li><a href="">Planteuses</a>
+                                                            </li>
+															<li><a href="">Equipements pour planteuse</a>
+                                                            </li>
+															<li><a href="">Pulvérisateurs agricoles</a>
+                                                            </li>
+															<li><a href="">Accessoires pour pulvérisateurs agricoles </a>
+                                                            </li>
+															<li><a href="">Ramasseuses agricoles</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Matériels de drainage agricole</h5>
+                                                        <ul>
+                                                            <li><a href="">Cureuses agricoles</a>
+                                                            </li>
+															<li><a href="">Nettoyeurs de drains</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Matériels d'élagage</h5>
+                                                        <ul>
+                                                            <li><a href="">Rogneuses agricoles</a>
+                                                            </li>
+															<li><a href="">Épareuses agricoles</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+								
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">événement<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <h5>Métiers</h5>
+                                                        <ul>
+                                                            <li><a href="">Visites d'exploiations agricoles</a>
+                                                            </li>
+                                                            <li><a href="">Perspectives métiers</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+													<div class="col-sm-4">
+                                                        <h5>Foire</h5>
+                                                        <ul>
+                                                            <li><a href="">Inscription</a>
+                                                            </li>
+                                                            <li><a href="">Calendrier</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h5>Formations</h5>
+                                                        <ul>
+                                                            <li><a href="">Inscription</a>
+                                                            </li>
+                                                            <li><a href="">Calendrier</a>
+                                                            </li>
+															<li><a href="">Informations pratiques</a>
+                                                            </li>
+															<li><a href="">Nos offres</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+								<li class="dropdown use-yamm yamm-fw">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Emplois<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="yamm-content">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <h5>Actus/Agenda</h5>
+                                                        <ul>
+                                                            <li><a href="emplois/actualites.html">Actualités</a>
+															<li><a href="emplois/agenda.html">Agenda</a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5>Emplois</h5>
+                                                        <ul>
+                                                            <li><a href="emplois/emp_bourse_emplois.html">Bourse de l'emplois</a>
+                                                            </li>
+                                                            <li><a href="emplois/emp_bourse_chiffres_de_emp.html">Chiffres de l'emplois</a>
+                                                            </li>
+															<li><a href="#">Déposer une annonce</a>
+                                                            </li>
+															<li><a href="#">Accéder à mon profils</a>
+                                                            </li>
+															<li><a href="emplois/emp_bourse_contact.html">Contacts</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h5>Saisonniers</h5>
+                                                        <ul>
+                                                            <li><a href="emplois/saisonnier_presentation.html">Présentation</a>
+                                                            </li>
+                                                            <li><a href="emplois/saisonnier_contact.html">Les contacts en région</a>
+                                                            </li>
+															<li><a href="emplois/saisonnier_chiffres_cles.html">Chiffres clés</a>
+                                                            </li>
+															<li><a href="emplois/saisonnier_offres.html">Offres d'emplois</a>
+                                                            </li>
+                                                        </ul>
+														<h5>Métiers</h5>
+                                                        <ul>
+                                                            <li><a href="emplois/tous_metiers.html">Tous les métiers</a></li>
+															<li><a href="emplois/metiers_plus_d_infos.html">+ D'informations</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+													<div class="col-sm-4">
+													<h5>Formations</h5>
+                                                        <ul>
+                                                            <li><a href="#">Les formations continues</a>
+                                                            </li>
+                                                            <li><a href="#">Jeune en orientation</a>
+                                                            </li>
+															<li><a href="#">Salariés + de 49 ans</a>
+                                                            </li>
+															<li><a href="#">Reconversion professionnelle</a>
+                                                            </li>
+															<li><a href="#">Chiffres clés</a>
+                                                            </li>
+                                                        </ul>
+                                                        <h5><a href="" style="color: black">Vos questions</a></h5>
+														<h5><a href="" style="color: black">AGB EMPLOIS en région</a></h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+								<li class="dropdown">
+                                    <a href="quantite_dispo.html" class="dropdown-toggle">Récoltes prévisionnelles</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="contact3.html" class="dropdown-toggle">Contact</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--/.nav-collapse -->
+
+
+
+                        <div class="collapse clearfix" id="search">
+
+                            <form class="navbar-form" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn">
+
+                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+                </span>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!--/.nav-collapse -->
+
+                    </div>
+
+
+                </div>
+                <!-- /#navbar -->
+
+            </div>
+
+            <!-- *** NAVBAR END *** -->
