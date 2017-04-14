@@ -5,15 +5,16 @@
         .module('agroBourseApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state','Annonce'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController ($scope, Principal, LoginService, $state,Annonce) {
         var vm = this;
 
         vm.account = null;
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
         vm.register = register;
+        vm.annonces=Annonce.query();
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });

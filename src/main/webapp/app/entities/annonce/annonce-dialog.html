@@ -11,12 +11,12 @@
         <div class="form-group" ng-show="vm.annonce.id">
             <label for="id" data-translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.annonce.id" readonly />
+                    ng-model="vm.annonce.annonce.id" readonly />
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="agroBourseApp.annonce.sujet" for="field_sujet">Sujet</label>
             <input type="text" class="form-control" name="sujet" id="field_sujet"
-                    ng-model="vm.annonce.sujet"
+                    ng-model="vm.annonce.annonce.sujet"
                     required ng-minlength="2"/>
             <div ng-show="editForm.sujet.$invalid">
                 <p class="help-block"
@@ -32,19 +32,41 @@
         <div class="form-group">
             <label class="control-label" data-translate="agroBourseApp.annonce.annoncebody" for="field_annoncebody">Annoncebody</label>
             <input type="text" class="form-control" name="annoncebody" id="field_annoncebody"
-                    ng-model="vm.annonce.annoncebody"
+                    ng-model="vm.annonce.annonce.annoncebody"
                     />
         </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="agroBourseApp.annonce.image" for="field_image">Image</label>
-            <input type="text" class="form-control" name="image" id="field_image"
-                    ng-model="vm.annonce.image"
-                    />
-        </div>
+        <div class="row">
+               <div class="col-sm-3">
+                   <div class="form-group" ngf-drop ngf-change="vm.setFile($file, vm.annonce)">
+
+                       <label class="control-label" for="field_file">Photo</label>
+                       <div>
+                           <div ng-if="vm.annonce.file" class="help-block clearfix">
+                               <a class="pull-left" ng-click="vm.openFile(vm.annonce.type,vm.annonce.file)">Afficher</a><br>
+                               <span class="pull-left">{{vm.byteSize(vm.annonce.file)}}</span>
+                               <button type="button" ng-click="vm.annonce.file=null; vm.annonce.type=null;" class="btn btn-danger btn-xs pull-right">
+                      <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                           </div>
+                           <button type="button" ngf-select class="btn btn-primary btn-lg" ngf-change="vm.setFile($file, vm.annonce)">
+                  Choisir une Image
+              </button>
+                       </div>
+                       <input type="hidden" class="form-control" name="file" id="field_file" ng-model="vm.annonce.file" />
+                       <input type="hidden" class="form-control" name="type" id="field_type" ng-model="vm.annonce.type" />
+                       <input type="hidden" class="form-control" name="name" id="name" ng-model="vm.annonce.nom" />
+                   </div>
+               </div>
+           </div>
+
+
+
+
+
         <div class="form-group">
             <label class="control-label" data-translate="agroBourseApp.annonce.datedebut" for="field_datedebut">Datedebut</label>
                 <div class="input-group">
-                    <input id="field_datedebut" type="text" class="form-control" name="datedebut" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.datedebut" is-open="vm.datePickerOpenStatus.datedebut"
+                    <input id="field_datedebut" type="text" class="form-control" name="datedebut" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.annonce.datedebut" is-open="vm.datePickerOpenStatus.datedebut"
                     />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datedebut')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -54,7 +76,7 @@
         <div class="form-group">
             <label class="control-label" data-translate="agroBourseApp.annonce.datefin" for="field_datefin">Datefin</label>
                 <div class="input-group">
-                    <input id="field_datefin" type="text" class="form-control" name="datefin" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.datefin" is-open="vm.datePickerOpenStatus.datefin"
+                    <input id="field_datefin" type="text" class="form-control" name="datefin" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.annonce.datefin" is-open="vm.datePickerOpenStatus.datefin"
                     />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datefin')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -64,7 +86,7 @@
 
         <div class="form-group">
             <label data-translate="agroBourseApp.annonce.profil" for="field_profil">Profil</label>
-            <select class="form-control" id="field_profil" name="profil" ng-model="vm.annonce.profil" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+            <select class="form-control" id="field_profil" name="profil" ng-model="vm.annonce.annonce.profil" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
                 <option value=""></option>
             </select>
         </div>

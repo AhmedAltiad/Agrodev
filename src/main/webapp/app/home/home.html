@@ -166,109 +166,32 @@
                         </div>
 
                         <p class="lead">Nous avons travaillé avec beaucoup de clients et nous aimons toujours entendre leurs avis à propos de cette coopération. 
-						Jetez un oeil sur les témoignages de nos clients.</p>
-
-
-                        <!-- *** TESTIMONIALS CAROUSEL ***
- _________________________________________________________ -->
-
-                  
-
-
-                        <ul class="owl-carousel testimonials same-height-row">
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Témoignage 1</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-1.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>CA Paris, Sales</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Témoignage 2</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-2.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Témoignage 3</p>
-                                    </div>
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-3.png">
-                                            <h5>John McIntyre</h5>
-                                            <p>CEO, TransTech</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Témoignage 4</p>
-                                    </div>
-
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-4.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>AXA, Directeur</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="item">
-                                <div class="testimonial same-height-always">
-                                    <div class="text">
-                                        <p>Témoignage 5</p>
-                                    </div>
-
-                                    <div class="bottom">
-                                        <div class="icon"><i class="fa fa-quote-left"></i>
-                                        </div>
-                                        <div class="name-picture">
-                                            <img class="" alt="" src="img/person-4.jpg">
-                                            <h5>John McIntyre</h5>
-                                            <p>Agriculteur</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <!-- /.owl-carousel -->
-
-                        <!-- *** TESTIMONIALS CAROUSEL END *** -->
-                    </div>
-
-                </div>
-            </div>
+						Jetez un oeil sur les témoignages de nos clients.</p>            
+                 </div>
+             </div>
+         </div>
         </section>
-        <!-- /.bar -->
-
+    <div class="container" style="background: url(../img/texture-bw.png) center center repeat;">
+         <ul class="row" >
+                     <div class="inline" ng-repeat="annonce in vm.annonces "  >
+                             <div class="testimonial same-height-always">
+                                        <p>{{annonce.id}}</p>
+                                        <div class="name-picture">
+                                            <img ng-if="annonce.image != null" class="thumbnail" alt="" ng-src="{{annonce.image}}">
+                                             <img class="thumbnail" ng-if="annonce.image == null" src="img/person-1.jpg">
+                                            <h5>{{annonce.sujet}}</h5>
+                                            <p>{{annonce.annoncebody}}</p>
+                                             <p>{{annonce.datedebut}}</p>
+                                        </div>
+                        </div>
+</div>       
+         </ul>
+    </div>
+    </section>
+ <!-- Annoces!End -->
+                        <!-- /.owl-carousel -->
+                        <!-- *** TESTIMONIALS CAROUSEL END ***              
+      <!-/.bar -->
         <section class="bar background-white no-mb">
             <div class="container">
 
@@ -426,26 +349,19 @@ _________________________________________________________ -->
                 </div>
             </div>
         </section>
-
-
-                 </div>
-                 
-                
-
-
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+
     <script src="js/jquery.cookie.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
-    
     <script src="js/front.js"></script>
-
+    <script src="js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
     
 
     <!-- owl carousel -->
     <script src="js/owl.carousel.min.js"></script>
+

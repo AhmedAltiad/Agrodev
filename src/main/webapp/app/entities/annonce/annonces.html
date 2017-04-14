@@ -50,7 +50,12 @@
                     <td><a ui-sref="annonce-detail({id:annonce.id})">{{annonce.id}}</a></td>
                     <td>{{annonce.sujet}}</td>
                     <td>{{annonce.annoncebody}}</td>
-                    <td>{{annonce.image}}</td>
+                    <td>
+                        
+                        <img ng-if="annonce.image == null" src="img/person-1.jpg" style="width:50px;height: 50px;">
+                        <img ng-if="annonce.image != null" ng-src="{{annonce.image}}" style="width:50px;height: 50px;">
+                        
+                        </td>
                         <td>{{annonce.datedebut | date:'mediumDate'}}</td>
                         <td>{{annonce.datefin | date:'mediumDate'}}</td>
                     <td>

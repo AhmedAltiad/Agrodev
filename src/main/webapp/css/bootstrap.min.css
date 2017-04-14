@@ -62,7 +62,7 @@ dfn {
 }
 h1 {
     margin: .67em 0;
-    font-size: 2em
+    
 }
 mark {
     color: #000;
@@ -107,7 +107,7 @@ kbd,
 pre,
 samp {
     font-family: monospace, monospace;
-    font-size: 1em
+   
 }
 button,
 input,

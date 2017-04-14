@@ -5,9 +5,9 @@
         .module('agroBourseApp')
         .controller('AnnonceDialogController', AnnonceDialogController);
 
-    AnnonceDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Annonce', 'Profil'];
+    AnnonceDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Annonce','DataUtils', 'Profil'];
 
-    function AnnonceDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Annonce, Profil) {
+    function AnnonceDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Annonce,DataUtils, Profil) {
         var vm = this;
 
         vm.annonce = entity;
@@ -16,6 +16,23 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.profils = Profil.query();
+        vm.byteSize = DataUtils.byteSize;
+              vm.openFile = DataUtils.openFile;
+
+vm.setFile = function ($file, annonce) {
+           if ($file) {
+               DataUtils.toBase64($file, function(base64Data) {
+                   $scope.$apply(function() {
+                       annonce.file = base64Data;
+                       annonce.type = $file.type;
+                       annonce.nom= $file.name;
+                   });
+               });
+           }
+           console.log(vm.annonce)
+       };
+
+
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

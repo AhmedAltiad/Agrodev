@@ -2654,7 +2654,7 @@ fieldset[disabled] .btn-template-primary.active {
   letter-spacing: 0.08em;
 }
 /* nav */
-.nav > li > a {
+/*.nav > li > a {
   padding: 10px 15px;
 }
 .nav > li > a:hover,
@@ -2799,9 +2799,9 @@ fieldset[disabled] .btn-template-primary.active {
   padding: 15px;
   border: solid 1px #ddd;
   border-top: none;
-}
+}*/
 /* navbar */
-.navbar {
+/*.navbar {
   position: relative;
   min-height: 62px;
   margin-bottom: 0;
@@ -3146,11 +3146,10 @@ fieldset[disabled] .navbar-default .btn-link:hover,
 .navbar-default .btn-link[disabled]:focus,
 fieldset[disabled] .navbar-default .btn-link:focus {
   color: #cccccc;
-}
+}*/
 /* scaffolding */
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 0.6vw;
   line-height: 1.42857143;
   color: #555555;
 }

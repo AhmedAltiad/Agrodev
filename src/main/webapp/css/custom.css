@@ -1,0 +1,78 @@
+
+.inline
+{
+  display: inline-block;
+  list-style-type: none;
+  padding-right: 20px;
+  padding-left: 25px;
+  width:25%;
+  min-height: 150px;
+}   
+
+.thumbnail {
+  width: 50%;
+  border-radius: 50%;
+}
+#wrapper2 {
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border-radius: 100px;
+				width: 800px;
+				height: 127px;
+				padding: 10px;
+				margin: -75px 0 0 -410px;
+				position: absolute;
+				left: 50%;
+			}
+			.caroufredsel_wrapper2 {
+				border-radius: 90px;
+			}
+#carousel2 img {
+				width: 201px;
+				height: 127px;
+				margin: 0 5px;
+				float: left;
+			}
+      #prev, #next {
+				background: transparent url( img/carousel_control.png ) no-repeat 0 0;
+				text-indent: -999px;
+				display: block;
+				overflow: hidden;
+				width: 15px;
+				height: 21px;
+				position: absolute;
+				top: 65px;
+			}
+			#prev {
+				background-position: 0 0;
+				left: 30px;
+			}
+			#prev:hover {
+				left: 29px;
+			}			
+			#next {
+				background-position: -18px 0;
+				right: 30px;
+			}
+			#next:hover {
+				right: 29px;
+			}				
+			#pager {
+				text-align: center;
+				margin: 0 auto;
+				padding-top: 20px;
+			}
+			#pager a {
+				background: transparent url(img/carousel_control.png) no-repeat -2px -32px;
+				text-decoration: none;
+				text-indent: -999px;
+				display: inline-block;
+				overflow: hidden;
+				width: 8px;
+				height: 8px;
+				margin: 0 5px 0 0;
+			}
+			#pager a.selected {
+				background: transparent url(img/carousel_control.png) no-repeat -12px -32px;
+				text-decoration: underline;				
+			}
