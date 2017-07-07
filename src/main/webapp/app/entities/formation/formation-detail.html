@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.formation.detail.title">Formation</span> {{vm.formation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.formation.name">Name</span></dt>
+        <dd>
+            <span>{{vm.formation.name}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.formation.certificat">Certificat</span></dt>
+        <dd>
+            <span>{{vm.formation.certificat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.formation.duration">Duration</span></dt>
+        <dd>
+            <span>{{vm.formation.duration | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.formation.empCV">Emp CV</span></dt>
+        <dd>
+            <a ui-sref="emp-cv-detail({id:vm.formation.empCV.id})">{{vm.formation.empCV.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="formation-detail.edit({id:vm.formation.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

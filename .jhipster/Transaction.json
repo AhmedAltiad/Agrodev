@@ -1,0 +1,88 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "userTransaction",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "validePar",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "validePaiment",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "refuserPar",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "refusePaiment",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "eCommande",
+            "otherEntityName": "eCommande",
+            "otherEntityRelationshipName": "transaction"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numtransaction",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "cmdspayees",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateValidation",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateValidationPaiment",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateRefuse",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateRefuspaiment",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170629085128",
+    "entityTableName": "transaction",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

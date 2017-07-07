@@ -1,6 +1,6 @@
 package com.agrobourse.dev.web.rest;
 
-import com.agrobourse.dev.AgroBourseApp;
+import com.agrobourse.dev.AgroBourse360SiApp;
 
 import com.agrobourse.dev.domain.Annonce;
 import com.agrobourse.dev.repository.AnnonceRepository;
@@ -23,9 +23,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.ZoneOffset;
 import java.time.ZoneId;
 import java.util.List;
 
+import static com.agrobourse.dev.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -37,23 +41,38 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AnnonceResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AgroBourseApp.class)
+@SpringBootTest(classes = AgroBourse360SiApp.class)
 public class AnnonceResourceIntTest {
 
-    private static final String DEFAULT_SUJET = "AAAAAAAAAA";
-    private static final String UPDATED_SUJET = "BBBBBBBBBB";
+    private static final Long DEFAULT_NUMANN = 1L;
+    private static final Long UPDATED_NUMANN = 2L;
 
-    private static final String DEFAULT_ANNONCEBODY = "AAAAAAAAAA";
-    private static final String UPDATED_ANNONCEBODY = "BBBBBBBBBB";
+    private static final Integer DEFAULT_ETAT = 1;
+    private static final Integer UPDATED_ETAT = 2;
+
+    private static final ZonedDateTime DEFAULT_CREATEDDATE = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_CREATEDDATE = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final ZonedDateTime DEFAULT_LASTMODIFIEDDATE = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_LASTMODIFIEDDATE = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final LocalDate DEFAULT_DATE_ACTIVATION = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE_ACTIVATION = LocalDate.now(ZoneId.systemDefault());
+
+    private static final LocalDate DEFAULT_DATE_EXPIRATION = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE_EXPIRATION = LocalDate.now(ZoneId.systemDefault());
+
+    private static final Double DEFAULT_PRIX = 1D;
+    private static final Double UPDATED_PRIX = 2D;
+
+    private static final Integer DEFAULT_QUANTITE = 1;
+    private static final Integer UPDATED_QUANTITE = 2;
 
     private static final String DEFAULT_IMAGE = "AAAAAAAAAA";
     private static final String UPDATED_IMAGE = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_DATEDEBUT = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DATEDEBUT = LocalDate.now(ZoneId.systemDefault());
-
-    private static final LocalDate DEFAULT_DATEFIN = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DATEFIN = LocalDate.now(ZoneId.systemDefault());
+    private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
     private AnnonceRepository annonceRepository;
@@ -95,11 +114,16 @@ public class AnnonceResourceIntTest {
      */
     public static Annonce createEntity(EntityManager em) {
         Annonce annonce = new Annonce()
-            .sujet(DEFAULT_SUJET)
-            .annoncebody(DEFAULT_ANNONCEBODY)
+            .numann(DEFAULT_NUMANN)
+            .etat(DEFAULT_ETAT)
+            .createddate(DEFAULT_CREATEDDATE)
+            .lastmodifieddate(DEFAULT_LASTMODIFIEDDATE)
+            .dateActivation(DEFAULT_DATE_ACTIVATION)
+            .dateExpiration(DEFAULT_DATE_EXPIRATION)
+            .prix(DEFAULT_PRIX)
+            .quantite(DEFAULT_QUANTITE)
             .image(DEFAULT_IMAGE)
-            .datedebut(DEFAULT_DATEDEBUT)
-            .datefin(DEFAULT_DATEFIN);
+            .description(DEFAULT_DESCRIPTION);
         return annonce;
     }
 
@@ -124,11 +148,16 @@ public class AnnonceResourceIntTest {
         List<Annonce> annonceList = annonceRepository.findAll();
         assertThat(annonceList).hasSize(databaseSizeBeforeCreate + 1);
         Annonce testAnnonce = annonceList.get(annonceList.size() - 1);
-        assertThat(testAnnonce.getSujet()).isEqualTo(DEFAULT_SUJET);
-        assertThat(testAnnonce.getAnnoncebody()).isEqualTo(DEFAULT_ANNONCEBODY);
+        assertThat(testAnnonce.getNumann()).isEqualTo(DEFAULT_NUMANN);
+        assertThat(testAnnonce.getEtat()).isEqualTo(DEFAULT_ETAT);
+        assertThat(testAnnonce.getCreateddate()).isEqualTo(DEFAULT_CREATEDDATE);
+        assertThat(testAnnonce.getLastmodifieddate()).isEqualTo(DEFAULT_LASTMODIFIEDDATE);
+        assertThat(testAnnonce.getDateActivation()).isEqualTo(DEFAULT_DATE_ACTIVATION);
+        assertThat(testAnnonce.getDateExpiration()).isEqualTo(DEFAULT_DATE_EXPIRATION);
+        assertThat(testAnnonce.getPrix()).isEqualTo(DEFAULT_PRIX);
+        assertThat(testAnnonce.getQuantite()).isEqualTo(DEFAULT_QUANTITE);
         assertThat(testAnnonce.getImage()).isEqualTo(DEFAULT_IMAGE);
-        assertThat(testAnnonce.getDatedebut()).isEqualTo(DEFAULT_DATEDEBUT);
-        assertThat(testAnnonce.getDatefin()).isEqualTo(DEFAULT_DATEFIN);
+        assertThat(testAnnonce.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
 
         // Validate the Annonce in Elasticsearch
         Annonce annonceEs = annonceSearchRepository.findOne(testAnnonce.getId());
@@ -156,24 +185,6 @@ public class AnnonceResourceIntTest {
 
     @Test
     @Transactional
-    public void checkSujetIsRequired() throws Exception {
-        int databaseSizeBeforeTest = annonceRepository.findAll().size();
-        // set the field null
-        annonce.setSujet(null);
-
-        // Create the Annonce, which fails.
-
-        restAnnonceMockMvc.perform(post("/api/annonces")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(annonce)))
-            .andExpect(status().isBadRequest());
-
-        List<Annonce> annonceList = annonceRepository.findAll();
-        assertThat(annonceList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllAnnonces() throws Exception {
         // Initialize the database
         annonceRepository.saveAndFlush(annonce);
@@ -183,11 +194,16 @@ public class AnnonceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(annonce.getId().intValue())))
-            .andExpect(jsonPath("$.[*].sujet").value(hasItem(DEFAULT_SUJET.toString())))
-            .andExpect(jsonPath("$.[*].annoncebody").value(hasItem(DEFAULT_ANNONCEBODY.toString())))
+            .andExpect(jsonPath("$.[*].numann").value(hasItem(DEFAULT_NUMANN.intValue())))
+            .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT)))
+            .andExpect(jsonPath("$.[*].createddate").value(hasItem(sameInstant(DEFAULT_CREATEDDATE))))
+            .andExpect(jsonPath("$.[*].lastmodifieddate").value(hasItem(sameInstant(DEFAULT_LASTMODIFIEDDATE))))
+            .andExpect(jsonPath("$.[*].dateActivation").value(hasItem(DEFAULT_DATE_ACTIVATION.toString())))
+            .andExpect(jsonPath("$.[*].dateExpiration").value(hasItem(DEFAULT_DATE_EXPIRATION.toString())))
+            .andExpect(jsonPath("$.[*].prix").value(hasItem(DEFAULT_PRIX.doubleValue())))
+            .andExpect(jsonPath("$.[*].quantite").value(hasItem(DEFAULT_QUANTITE)))
             .andExpect(jsonPath("$.[*].image").value(hasItem(DEFAULT_IMAGE.toString())))
-            .andExpect(jsonPath("$.[*].datedebut").value(hasItem(DEFAULT_DATEDEBUT.toString())))
-            .andExpect(jsonPath("$.[*].datefin").value(hasItem(DEFAULT_DATEFIN.toString())));
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
 
     @Test
@@ -201,11 +217,16 @@ public class AnnonceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(annonce.getId().intValue()))
-            .andExpect(jsonPath("$.sujet").value(DEFAULT_SUJET.toString()))
-            .andExpect(jsonPath("$.annoncebody").value(DEFAULT_ANNONCEBODY.toString()))
+            .andExpect(jsonPath("$.numann").value(DEFAULT_NUMANN.intValue()))
+            .andExpect(jsonPath("$.etat").value(DEFAULT_ETAT))
+            .andExpect(jsonPath("$.createddate").value(sameInstant(DEFAULT_CREATEDDATE)))
+            .andExpect(jsonPath("$.lastmodifieddate").value(sameInstant(DEFAULT_LASTMODIFIEDDATE)))
+            .andExpect(jsonPath("$.dateActivation").value(DEFAULT_DATE_ACTIVATION.toString()))
+            .andExpect(jsonPath("$.dateExpiration").value(DEFAULT_DATE_EXPIRATION.toString()))
+            .andExpect(jsonPath("$.prix").value(DEFAULT_PRIX.doubleValue()))
+            .andExpect(jsonPath("$.quantite").value(DEFAULT_QUANTITE))
             .andExpect(jsonPath("$.image").value(DEFAULT_IMAGE.toString()))
-            .andExpect(jsonPath("$.datedebut").value(DEFAULT_DATEDEBUT.toString()))
-            .andExpect(jsonPath("$.datefin").value(DEFAULT_DATEFIN.toString()));
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
     }
 
     @Test
@@ -227,11 +248,16 @@ public class AnnonceResourceIntTest {
         // Update the annonce
         Annonce updatedAnnonce = annonceRepository.findOne(annonce.getId());
         updatedAnnonce
-            .sujet(UPDATED_SUJET)
-            .annoncebody(UPDATED_ANNONCEBODY)
+            .numann(UPDATED_NUMANN)
+            .etat(UPDATED_ETAT)
+            .createddate(UPDATED_CREATEDDATE)
+            .lastmodifieddate(UPDATED_LASTMODIFIEDDATE)
+            .dateActivation(UPDATED_DATE_ACTIVATION)
+            .dateExpiration(UPDATED_DATE_EXPIRATION)
+            .prix(UPDATED_PRIX)
+            .quantite(UPDATED_QUANTITE)
             .image(UPDATED_IMAGE)
-            .datedebut(UPDATED_DATEDEBUT)
-            .datefin(UPDATED_DATEFIN);
+            .description(UPDATED_DESCRIPTION);
 
         restAnnonceMockMvc.perform(put("/api/annonces")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -242,11 +268,16 @@ public class AnnonceResourceIntTest {
         List<Annonce> annonceList = annonceRepository.findAll();
         assertThat(annonceList).hasSize(databaseSizeBeforeUpdate);
         Annonce testAnnonce = annonceList.get(annonceList.size() - 1);
-        assertThat(testAnnonce.getSujet()).isEqualTo(UPDATED_SUJET);
-        assertThat(testAnnonce.getAnnoncebody()).isEqualTo(UPDATED_ANNONCEBODY);
+        assertThat(testAnnonce.getNumann()).isEqualTo(UPDATED_NUMANN);
+        assertThat(testAnnonce.getEtat()).isEqualTo(UPDATED_ETAT);
+        assertThat(testAnnonce.getCreateddate()).isEqualTo(UPDATED_CREATEDDATE);
+        assertThat(testAnnonce.getLastmodifieddate()).isEqualTo(UPDATED_LASTMODIFIEDDATE);
+        assertThat(testAnnonce.getDateActivation()).isEqualTo(UPDATED_DATE_ACTIVATION);
+        assertThat(testAnnonce.getDateExpiration()).isEqualTo(UPDATED_DATE_EXPIRATION);
+        assertThat(testAnnonce.getPrix()).isEqualTo(UPDATED_PRIX);
+        assertThat(testAnnonce.getQuantite()).isEqualTo(UPDATED_QUANTITE);
         assertThat(testAnnonce.getImage()).isEqualTo(UPDATED_IMAGE);
-        assertThat(testAnnonce.getDatedebut()).isEqualTo(UPDATED_DATEDEBUT);
-        assertThat(testAnnonce.getDatefin()).isEqualTo(UPDATED_DATEFIN);
+        assertThat(testAnnonce.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
 
         // Validate the Annonce in Elasticsearch
         Annonce annonceEs = annonceSearchRepository.findOne(testAnnonce.getId());
@@ -305,11 +336,16 @@ public class AnnonceResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(annonce.getId().intValue())))
-            .andExpect(jsonPath("$.[*].sujet").value(hasItem(DEFAULT_SUJET.toString())))
-            .andExpect(jsonPath("$.[*].annoncebody").value(hasItem(DEFAULT_ANNONCEBODY.toString())))
+            .andExpect(jsonPath("$.[*].numann").value(hasItem(DEFAULT_NUMANN.intValue())))
+            .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT)))
+            .andExpect(jsonPath("$.[*].createddate").value(hasItem(sameInstant(DEFAULT_CREATEDDATE))))
+            .andExpect(jsonPath("$.[*].lastmodifieddate").value(hasItem(sameInstant(DEFAULT_LASTMODIFIEDDATE))))
+            .andExpect(jsonPath("$.[*].dateActivation").value(hasItem(DEFAULT_DATE_ACTIVATION.toString())))
+            .andExpect(jsonPath("$.[*].dateExpiration").value(hasItem(DEFAULT_DATE_EXPIRATION.toString())))
+            .andExpect(jsonPath("$.[*].prix").value(hasItem(DEFAULT_PRIX.doubleValue())))
+            .andExpect(jsonPath("$.[*].quantite").value(hasItem(DEFAULT_QUANTITE)))
             .andExpect(jsonPath("$.[*].image").value(hasItem(DEFAULT_IMAGE.toString())))
-            .andExpect(jsonPath("$.[*].datedebut").value(hasItem(DEFAULT_DATEDEBUT.toString())))
-            .andExpect(jsonPath("$.[*].datefin").value(hasItem(DEFAULT_DATEFIN.toString())));
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
 
     @Test

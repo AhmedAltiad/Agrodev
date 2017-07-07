@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "empActualite",
+            "relationshipName": "localite",
+            "otherEntityName": "localite",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "initDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "periode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "secteur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shortDisc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longDisc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "empacttype",
+            "fieldType": "Empactualitetype",
+            "fieldValues": "FETES,FOIRE,NEWS,ARTICLE,MARCHE,FORMATION,PORTE_OUVERTE,SALON,AUTRE"
+        }
+    ],
+    "changelogDate": "20170629085122",
+    "entityTableName": "emp_actualite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

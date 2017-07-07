@@ -1,0 +1,65 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.empAnnonce.detail.title">Emp Annonce</span> {{vm.empAnnonce.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.initDate">Init Date</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.initDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.finDate">Fin Date</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.finDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.title">Title</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.title}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.typeContrat">Type Contrat</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.typeContrat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.shortDescription">Short Description</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.shortDescription}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.longDescription">Long Description</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.longDescription}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.validation">Validation</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.validation}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.adresse}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.nbredepostes">Nbredepostes</span></dt>
+        <dd>
+            <span>{{vm.empAnnonce.nbredepostes}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.employer">Employer</span></dt>
+        <dd>
+            <a ui-sref="employer-detail({id:vm.empAnnonce.employer.id})">{{vm.empAnnonce.employer.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empAnnonce.postuls">Postuls</span></dt>
+        <dd>
+            <span ng-repeat="postuls in vm.empAnnonce.postuls">
+                <a ui-sref="employee-detail({id: postuls.id})">{{postuls.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="emp-annonce-detail.edit({id:vm.empAnnonce.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

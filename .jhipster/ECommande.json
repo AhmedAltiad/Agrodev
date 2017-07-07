@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "annonce",
+            "otherEntityName": "annonce",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "commandBy",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transaction",
+            "otherEntityName": "transaction",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numcommande",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170629085126",
+    "entityTableName": "e_commande",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "agriculteur",
+            "otherEntityName": "agriculteur",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085102",
+    "entityTableName": "activite_agricole",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

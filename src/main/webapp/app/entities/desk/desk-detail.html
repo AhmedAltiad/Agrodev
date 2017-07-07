@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.desk.detail.title">Desk</span> {{vm.desk.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.desk.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{vm.desk.adresse}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.desk.gouvernorat">Gouvernorat</span></dt>
+        <dd>
+            <a ui-sref="gouvernorat-detail({id:vm.desk.gouvernorat.id})">{{vm.desk.gouvernorat.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="desk-detail.edit({id:vm.desk.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

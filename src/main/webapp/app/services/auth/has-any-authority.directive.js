@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .directive('hasAnyAuthority', hasAnyAuthority);
 
     hasAnyAuthority.$inject = ['Principal'];

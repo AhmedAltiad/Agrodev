@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .controller('ActivationController', ActivationController);
 
     ActivationController.$inject = ['$stateParams', 'Auth', 'LoginService'];

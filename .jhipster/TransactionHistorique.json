@@ -1,0 +1,58 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "eCommandeHistorique",
+            "otherEntityName": "eCommandeHistorique",
+            "otherEntityRelationshipName": "transactionHistorique"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numtransaction",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "cmdspayees",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateValidation",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateValidationPaiment",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateRefuse",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateRefuspaiment",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170629085129",
+    "entityTableName": "transaction_historique",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,94 +1,128 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myAnnonceLabel" data-translate="agroBourseApp.annonce.home.createOrEditLabel">Create or edit a Annonce</h4>
+        <h4 class="modal-title" id="myAnnonceLabel" data-translate="agroBourse360SiApp.annonce.home.createOrEditLabel">Create or edit a Annonce</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
         <div class="form-group" ng-show="vm.annonce.id">
             <label for="id" data-translate="global.field.id">ID</label>
             <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.annonce.annonce.id" readonly />
+                    ng-model="vm.annonce.id" readonly />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="agroBourseApp.annonce.sujet" for="field_sujet">Sujet</label>
-            <input type="text" class="form-control" name="sujet" id="field_sujet"
-                    ng-model="vm.annonce.annonce.sujet"
-                    required ng-minlength="2"/>
-            <div ng-show="editForm.sujet.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.sujet.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.sujet.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="2">
-                    This field is required to be at least 2 characters.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="agroBourseApp.annonce.annoncebody" for="field_annoncebody">Annoncebody</label>
-            <input type="text" class="form-control" name="annoncebody" id="field_annoncebody"
-                    ng-model="vm.annonce.annonce.annoncebody"
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.numann" for="field_numann">Numann</label>
+            <input type="number" class="form-control" name="numann" id="field_numann"
+                    ng-model="vm.annonce.numann"
                     />
         </div>
-        <div class="row">
-               <div class="col-sm-3">
-                   <div class="form-group" ngf-drop ngf-change="vm.setFile($file, vm.annonce)">
-
-                       <label class="control-label" for="field_file">Photo</label>
-                       <div>
-                           <div ng-if="vm.annonce.file" class="help-block clearfix">
-                               <a class="pull-left" ng-click="vm.openFile(vm.annonce.type,vm.annonce.file)">Afficher</a><br>
-                               <span class="pull-left">{{vm.byteSize(vm.annonce.file)}}</span>
-                               <button type="button" ng-click="vm.annonce.file=null; vm.annonce.type=null;" class="btn btn-danger btn-xs pull-right">
-                      <span class="glyphicon glyphicon-remove"></span>
-                  </button>
-                           </div>
-                           <button type="button" ngf-select class="btn btn-primary btn-lg" ngf-change="vm.setFile($file, vm.annonce)">
-                  Choisir une Image
-              </button>
-                       </div>
-                       <input type="hidden" class="form-control" name="file" id="field_file" ng-model="vm.annonce.file" />
-                       <input type="hidden" class="form-control" name="type" id="field_type" ng-model="vm.annonce.type" />
-                       <input type="hidden" class="form-control" name="name" id="name" ng-model="vm.annonce.nom" />
-                   </div>
-               </div>
-           </div>
-
-
-
-
-
         <div class="form-group">
-            <label class="control-label" data-translate="agroBourseApp.annonce.datedebut" for="field_datedebut">Datedebut</label>
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.etat" for="field_etat">Etat</label>
+            <input type="number" class="form-control" name="etat" id="field_etat"
+                    ng-model="vm.annonce.etat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.createddate" for="field_createddate">Createddate</label>
                 <div class="input-group">
-                    <input id="field_datedebut" type="text" class="form-control" name="datedebut" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.annonce.datedebut" is-open="vm.datePickerOpenStatus.datedebut"
+                    <input id="field_createddate" type="text" class="form-control" name="createddate" datetime-picker="{{dateformat}}" ng-model="vm.annonce.createddate" is-open="vm.datePickerOpenStatus.createddate"
                     />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datedebut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createddate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="agroBourseApp.annonce.datefin" for="field_datefin">Datefin</label>
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.lastmodifieddate" for="field_lastmodifieddate">Lastmodifieddate</label>
                 <div class="input-group">
-                    <input id="field_datefin" type="text" class="form-control" name="datefin" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.annonce.datefin" is-open="vm.datePickerOpenStatus.datefin"
+                    <input id="field_lastmodifieddate" type="text" class="form-control" name="lastmodifieddate" datetime-picker="{{dateformat}}" ng-model="vm.annonce.lastmodifieddate" is-open="vm.datePickerOpenStatus.lastmodifieddate"
                     />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datefin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifieddate')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.dateActivation" for="field_dateActivation">Date Activation</label>
+                <div class="input-group">
+                    <input id="field_dateActivation" type="text" class="form-control" name="dateActivation" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.dateActivation" is-open="vm.datePickerOpenStatus.dateActivation"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateActivation')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.dateExpiration" for="field_dateExpiration">Date Expiration</label>
+                <div class="input-group">
+                    <input id="field_dateExpiration" type="text" class="form-control" name="dateExpiration" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonce.dateExpiration" is-open="vm.datePickerOpenStatus.dateExpiration"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateExpiration')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.prix" for="field_prix">Prix</label>
+            <input type="number" class="form-control" name="prix" id="field_prix"
+                    ng-model="vm.annonce.prix"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.quantite" for="field_quantite">Quantite</label>
+            <input type="number" class="form-control" name="quantite" id="field_quantite"
+                    ng-model="vm.annonce.quantite"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="vm.annonce.image"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonce.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.annonce.description"
+                    />
+        </div>
 
         <div class="form-group">
-            <label data-translate="agroBourseApp.annonce.profil" for="field_profil">Profil</label>
-            <select class="form-control" id="field_profil" name="profil" ng-model="vm.annonce.annonce.profil" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+            <label data-translate="agroBourse360SiApp.annonce.variete" for="field_variete">Variete</label>
+            <select class="form-control" id="field_variete" name="variete" ng-model="vm.annonce.variete" ng-options="variete as variete.id for variete in vm.varietes track by variete.id">
                 <option value=""></option>
             </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonce.lastModifiedBy" for="field_lastModifiedBy">Last Modified By</label>
+            <select class="form-control" id="field_lastModifiedBy" name="lastModifiedBy" ng-model="vm.annonce.lastModifiedBy" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonce.localite" for="field_localite">Localite</label>
+            <select class="form-control" id="field_localite" name="localite" ng-model="vm.annonce.localite" ng-options="localite as localite.id for localite in vm.localites track by localite.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonce.annonceur" for="field_annonceur">Annonceur</label>
+            <select class="form-control" id="field_annonceur" name="annonceur" ng-model="vm.annonce.annonceur" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonce.palier" for="field_palier">Palier</label>
+            <select class="form-control" id="field_palier" name="palier" ng-model="vm.annonce.palier" ng-options="palier as palier.id for palier in vm.paliers track by palier.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonce.likedBy" for="field_likedBy">Liked By</label>
+            <select class="form-control" id="field_likedBy" multiple name="likedBy" ng-model="vm.annonce.likedBies" ng-options="profil as profil.id for profil in vm.profils track by profil.id"></select>
         </div>
     </div>
     <div class="modal-footer">

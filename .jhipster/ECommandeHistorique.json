@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "annonceHistorique",
+            "otherEntityName": "annonceHistorique",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "userCommandHistorique",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transactionHistorique",
+            "otherEntityName": "transactionHistorique",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numcommande",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170629085127",
+    "entityTableName": "e_commande_historique",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

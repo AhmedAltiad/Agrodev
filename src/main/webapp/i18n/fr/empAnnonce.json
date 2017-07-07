@@ -1,0 +1,32 @@
+{
+    "agroBourse360SiApp": {
+        "empAnnonce" : {
+            "home": {
+                "title": "EmpAnnonces",
+                "createLabel": "Créer un nouveau Emp Annonce",
+                "createOrEditLabel": "Créer ou éditer un Emp Annonce",
+                "search": "Recherche pour Emp Annonce"
+            },
+            "created": "Un nouveau Emp Annonce a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Emp Annonce avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Emp Annonce avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Emp Annonce {{ id }} ?"
+            },
+            "detail": {
+                "title": "Emp Annonce"
+            },
+            "initDate": "Init Date",
+            "finDate": "Fin Date",
+            "title": "Title",
+            "typeContrat": "Type Contrat",
+            "shortDescription": "Short Description",
+            "longDescription": "Long Description",
+            "validation": "Validation",
+            "adresse": "Adresse",
+            "nbredepostes": "Nbredepostes",
+            "employer": "Employer",
+            "postuls": "Postuls"
+        }
+    }
+}

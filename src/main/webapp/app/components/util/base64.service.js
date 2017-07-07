@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('Base64', Base64);
 
     function Base64 () {

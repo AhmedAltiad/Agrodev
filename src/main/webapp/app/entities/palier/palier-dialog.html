@@ -1,0 +1,58 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPalierLabel" data-translate="agroBourse360SiApp.palier.home.createOrEditLabel">Create or edit a Palier</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.palier.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.palier.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.palier.datedebut" for="field_datedebut">Datedebut</label>
+                <div class="input-group">
+                    <input id="field_datedebut" type="text" class="form-control" name="datedebut" uib-datepicker-popup="{{dateformat}}" ng-model="vm.palier.datedebut" is-open="vm.datePickerOpenStatus.datedebut"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datedebut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.palier.datefin" for="field_datefin">Datefin</label>
+                <div class="input-group">
+                    <input id="field_datefin" type="text" class="form-control" name="datefin" uib-datepicker-popup="{{dateformat}}" ng-model="vm.palier.datefin" is-open="vm.datePickerOpenStatus.datefin"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datefin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.palier.nombrecons" for="field_nombrecons">Nombrecons</label>
+            <input type="number" class="form-control" name="nombrecons" id="field_nombrecons"
+                    ng-model="vm.palier.nombrecons"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.palier.promotion" for="field_promotion">Promotion</label>
+            <input type="number" class="form-control" name="promotion" id="field_promotion"
+                    ng-model="vm.palier.promotion"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

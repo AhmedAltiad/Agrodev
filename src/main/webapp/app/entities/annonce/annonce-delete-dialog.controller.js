@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .controller('AnnonceDeleteController',AnnonceDeleteController);
 
     AnnonceDeleteController.$inject = ['$uibModalInstance', 'entity', 'Annonce'];

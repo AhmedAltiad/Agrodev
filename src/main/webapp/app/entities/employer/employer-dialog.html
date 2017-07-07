@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmployerLabel" data-translate="agroBourse360SiApp.employer.home.createOrEditLabel">Create or edit a Employer</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.employer.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.employer.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.employer.companyName" for="field_companyName">Company Name</label>
+            <input type="text" class="form-control" name="companyName" id="field_companyName"
+                    ng-model="vm.employer.companyName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.employer.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.employer.type"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.employer.companyDescription" for="field_companyDescription">Company Description</label>
+            <input type="text" class="form-control" name="companyDescription" id="field_companyDescription"
+                    ng-model="vm.employer.companyDescription"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.employer.adresseSiege" for="field_adresseSiege">Adresse Siege</label>
+            <input type="text" class="form-control" name="adresseSiege" id="field_adresseSiege"
+                    ng-model="vm.employer.adresseSiege"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.employer.telephone" for="field_telephone">Telephone</label>
+            <input type="text" class="form-control" name="telephone" id="field_telephone"
+                    ng-model="vm.employer.telephone"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.employer.nbreEmployeePermanant" for="field_nbreEmployeePermanant">Nbre Employee Permanant</label>
+            <input type="number" class="form-control" name="nbreEmployeePermanant" id="field_nbreEmployeePermanant"
+                    ng-model="vm.employer.nbreEmployeePermanant"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.employer.profil" for="field_profil">Profil</label>
+            <select class="form-control" id="field_profil" name="profil" ng-model="vm.employer.profil" ng-options="profil as profil.id for profil in vm.profils | orderBy:'id' track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.employer.localite" for="field_localite">Localite</label>
+            <select class="form-control" id="field_localite" name="localite" ng-model="vm.employer.localite" ng-options="localite as localite.id for localite in vm.localites track by localite.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

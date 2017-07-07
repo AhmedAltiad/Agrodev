@@ -1,0 +1,27 @@
+{
+    "agroBourse360SiApp": {
+        "palier" : {
+            "home": {
+                "title": "Paliers",
+                "createLabel": "Create a new Palier",
+                "createOrEditLabel": "Create or edit a Palier",
+                "search": "Search for Palier"
+            },
+            "created": "A new Palier is created with identifier {{ param }}",
+            "updated": "A Palier is updated with identifier {{ param }}",
+            "deleted": "A Palier is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Palier {{ id }}?"
+            },
+            "detail": {
+                "title": "Palier"
+            },
+            "datedebut": "Datedebut",
+            "datefin": "Datefin",
+            "nombrecons": "Nombrecons",
+            "promotion": "Promotion",
+            "produit": "Produit",
+            "annonce": "Annonce"
+        }
+    }
+}

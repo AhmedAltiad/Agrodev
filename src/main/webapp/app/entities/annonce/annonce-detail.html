@@ -1,32 +1,74 @@
 
 <div>
-    <h2><span data-translate="agroBourseApp.annonce.detail.title">Annonce</span> {{vm.annonce.id}}</h2>
+    <h2><span data-translate="agroBourse360SiApp.annonce.detail.title">Annonce</span> {{vm.annonce.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="agroBourseApp.annonce.sujet">Sujet</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.annonce.numann">Numann</span></dt>
         <dd>
-            <span>{{vm.annonce.sujet}}</span>
+            <span>{{vm.annonce.numann}}</span>
         </dd>
-        <dt><span data-translate="agroBourseApp.annonce.annoncebody">Annoncebody</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.annonce.etat">Etat</span></dt>
         <dd>
-            <span>{{vm.annonce.annoncebody}}</span>
+            <span>{{vm.annonce.etat}}</span>
         </dd>
-        <dt><span data-translate="agroBourseApp.annonce.image">Image</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.annonce.createddate">Createddate</span></dt>
+        <dd>
+            <span>{{vm.annonce.createddate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.lastmodifieddate">Lastmodifieddate</span></dt>
+        <dd>
+            <span>{{vm.annonce.lastmodifieddate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.dateActivation">Date Activation</span></dt>
+        <dd>
+            <span>{{vm.annonce.dateActivation | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.dateExpiration">Date Expiration</span></dt>
+        <dd>
+            <span>{{vm.annonce.dateExpiration | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.prix">Prix</span></dt>
+        <dd>
+            <span>{{vm.annonce.prix}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{vm.annonce.quantite}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.image">Image</span></dt>
         <dd>
             <span>{{vm.annonce.image}}</span>
         </dd>
-        <dt><span data-translate="agroBourseApp.annonce.datedebut">Datedebut</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.annonce.description">Description</span></dt>
         <dd>
-            <span>{{vm.annonce.datedebut | date:'mediumDate'}}</span>
+            <span>{{vm.annonce.description}}</span>
         </dd>
-        <dt><span data-translate="agroBourseApp.annonce.datefin">Datefin</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.annonce.variete">Variete</span></dt>
         <dd>
-            <span>{{vm.annonce.datefin | date:'mediumDate'}}</span>
+            <a ui-sref="variete-detail({id:vm.annonce.variete.id})">{{vm.annonce.variete.id}}</a>
         </dd>
-        <dt><span data-translate="agroBourseApp.annonce.profil">Profil</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.annonce.lastModifiedBy">Last Modified By</span></dt>
         <dd>
-            <a ui-sref="profil-detail({id:vm.annonce.profil.id})">{{vm.annonce.profil.id}}</a>
+            <a ui-sref="profil-detail({id:vm.annonce.lastModifiedBy.id})">{{vm.annonce.lastModifiedBy.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.localite">Localite</span></dt>
+        <dd>
+            <a ui-sref="localite-detail({id:vm.annonce.localite.id})">{{vm.annonce.localite.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.annonceur">Annonceur</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.annonce.annonceur.id})">{{vm.annonce.annonceur.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.palier">Palier</span></dt>
+        <dd>
+            <a ui-sref="palier-detail({id:vm.annonce.palier.id})">{{vm.annonce.palier.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonce.likedBy">Liked By</span></dt>
+        <dd>
+            <span ng-repeat="likedBy in vm.annonce.likedBies">
+                <a ui-sref="profil-detail({id: likedBy.id})">{{likedBy.id}}</a>{{$last ? '' : ', '}}
+            </span>
         </dd>
     </dl>
 

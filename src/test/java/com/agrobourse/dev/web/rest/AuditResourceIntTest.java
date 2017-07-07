@@ -1,6 +1,6 @@
 package com.agrobourse.dev.web.rest;
 
-import com.agrobourse.dev.AgroBourseApp;
+import com.agrobourse.dev.AgroBourse360SiApp;
 import com.agrobourse.dev.config.audit.AuditEventConverter;
 import com.agrobourse.dev.domain.PersistentAuditEvent;
 import com.agrobourse.dev.repository.PersistenceAuditEventRepository;
@@ -33,7 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see AuditResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AgroBourseApp.class)
+@SpringBootTest(classes = AgroBourse360SiApp.class)
 @Transactional
 public class AuditResourceIntTest {
 

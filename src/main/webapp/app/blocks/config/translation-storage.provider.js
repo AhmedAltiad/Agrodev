@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('translationStorageProvider', translationStorageProvider);
 
     translationStorageProvider.$inject = ['$cookies', '$log', 'LANGUAGES'];
@@ -15,8 +15,8 @@
 
         function get(name) {
             if (LANGUAGES.indexOf($cookies.getObject(name)) === -1) {
-                $log.info('Resetting invalid cookie language "' + $cookies.getObject(name) + '" to preferred language "en"');
-                $cookies.putObject(name, 'en');
+                $log.info('Resetting invalid cookie language "' + $cookies.getObject(name) + '" to preferred language "fr"');
+                $cookies.putObject(name, 'fr');
             }
             return $cookies.getObject(name);
         }

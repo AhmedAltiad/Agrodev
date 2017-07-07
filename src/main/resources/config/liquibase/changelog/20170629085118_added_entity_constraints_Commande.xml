@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Commande.
+    -->
+    <changeSet id="20170629085118-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="currency_id"
+                                 baseTableName="commande"
+                                 constraintName="fk_commande_currency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="currency"/>
+
+        <addForeignKeyConstraint baseColumnNames="traderagb_id"
+                                 baseTableName="commande"
+                                 constraintName="fk_commande_traderagb_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trader_agb"/>
+
+        <addForeignKeyConstraint baseColumnNames="agriculteur_id"
+                                 baseTableName="commande"
+                                 constraintName="fk_commande_agriculteur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agriculteur"/>
+
+    </changeSet>
+</databaseChangeLog>

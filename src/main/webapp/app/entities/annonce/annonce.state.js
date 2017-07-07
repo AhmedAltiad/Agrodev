@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/annonce',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'agroBourseApp.annonce.home.title'
+                pageTitle: 'agroBourse360SiApp.annonce.home.title'
             },
             views: {
                 'content@': {
@@ -36,7 +36,7 @@
             url: '/annonce/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'agroBourseApp.annonce.detail.title'
+                pageTitle: 'agroBourse360SiApp.annonce.detail.title'
             },
             views: {
                 'content@': {
@@ -104,11 +104,16 @@
                     resolve: {
                         entity: function () {
                             return {
-                                sujet: null,
-                                annoncebody: null,
+                                numann: null,
+                                etat: null,
+                                createddate: null,
+                                lastmodifieddate: null,
+                                dateActivation: null,
+                                dateExpiration: null,
+                                prix: null,
+                                quantite: null,
                                 image: null,
-                                datedebut: null,
-                                datefin: null,
+                                description: null,
                                 id: null
                             };
                         }

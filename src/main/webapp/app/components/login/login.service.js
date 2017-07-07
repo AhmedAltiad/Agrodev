@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('LoginService', LoginService);
 
     LoginService.$inject = ['$uibModal'];

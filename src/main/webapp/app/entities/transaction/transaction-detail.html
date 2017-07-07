@@ -1,0 +1,79 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.transaction.detail.title">Transaction</span> {{vm.transaction.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.transaction.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.transaction.etat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.prix">Prix</span></dt>
+        <dd>
+            <span>{{vm.transaction.prix}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.date">Date</span></dt>
+        <dd>
+            <span>{{vm.transaction.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.numtransaction">Numtransaction</span></dt>
+        <dd>
+            <span>{{vm.transaction.numtransaction}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.cmdspayees">Cmdspayees</span></dt>
+        <dd>
+            <span>{{vm.transaction.cmdspayees}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.image">Image</span></dt>
+        <dd>
+            <span>{{vm.transaction.image}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.dateValidation">Date Validation</span></dt>
+        <dd>
+            <span>{{vm.transaction.dateValidation | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.dateValidationPaiment">Date Validation Paiment</span></dt>
+        <dd>
+            <span>{{vm.transaction.dateValidationPaiment | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.dateRefuse">Date Refuse</span></dt>
+        <dd>
+            <span>{{vm.transaction.dateRefuse | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.dateRefuspaiment">Date Refuspaiment</span></dt>
+        <dd>
+            <span>{{vm.transaction.dateRefuspaiment | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.userTransaction">User Transaction</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.transaction.userTransaction.id})">{{vm.transaction.userTransaction.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.validePar">Valide Par</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.transaction.validePar.id})">{{vm.transaction.validePar.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.validePaiment">Valide Paiment</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.transaction.validePaiment.id})">{{vm.transaction.validePaiment.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.refuserPar">Refuser Par</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.transaction.refuserPar.id})">{{vm.transaction.refuserPar.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transaction.refusePaiment">Refuse Paiment</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.transaction.refusePaiment.id})">{{vm.transaction.refusePaiment.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="transaction-detail.edit({id:vm.transaction.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Portefolio.
+    -->
+    <changeSet id="20170629085137-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="traderagb_id"
+                                 baseTableName="portefolio"
+                                 constraintName="fk_portefolio_traderagb_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trader_agb"/>
+
+        <addForeignKeyConstraint baseColumnNames="portefolios_id"
+                                 baseTableName="portefolio_variete"
+                                 constraintName="fk_portefolio_variete_portefolios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="portefolio"/>
+        <addForeignKeyConstraint baseColumnNames="varietes_id"
+                                 baseTableName="portefolio_variete"
+                                 constraintName="fk_portefolio_variete_varietes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variete"/>
+        
+    </changeSet>
+</databaseChangeLog>

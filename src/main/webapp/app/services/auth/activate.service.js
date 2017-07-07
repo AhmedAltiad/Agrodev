@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('Activate', Activate);
 
     Activate.$inject = ['$resource'];

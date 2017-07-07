@@ -16,14 +16,14 @@
 
 spring:
     application:
-        name: AgroBourse
+        name: AgroBourse360SI
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
         type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:AgroBourse;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:AgroBourse360SI;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -86,7 +86,7 @@ jhipster:
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: 4b9e353f4d6d049f6cf542a6bbf4c5532afbee42
+            key: 7db9e7482c2dfd61640a7d23ad3d8d74e981b99b
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
 

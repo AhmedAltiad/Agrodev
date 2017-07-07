@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commande",
+            "otherEntityName": "commande",
+            "otherEntityRelationshipName": "currency"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "trade",
+            "otherEntityName": "trade",
+            "otherEntityRelationshipName": "currency"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085125",
+    "entityTableName": "currency",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.eCommandeHistorique.detail.title">E Commande Historique</span> {{vm.eCommandeHistorique.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.eCommandeHistorique.etat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.prix">Prix</span></dt>
+        <dd>
+            <span>{{vm.eCommandeHistorique.prix}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{vm.eCommandeHistorique.quantite}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.date">Date</span></dt>
+        <dd>
+            <span>{{vm.eCommandeHistorique.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.numcommande">Numcommande</span></dt>
+        <dd>
+            <span>{{vm.eCommandeHistorique.numcommande}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.annonceHistorique">Annonce Historique</span></dt>
+        <dd>
+            <a ui-sref="annonce-historique-detail({id:vm.eCommandeHistorique.annonceHistorique.id})">{{vm.eCommandeHistorique.annonceHistorique.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.userCommandHistorique">User Command Historique</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.eCommandeHistorique.userCommandHistorique.id})">{{vm.eCommandeHistorique.userCommandHistorique.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommandeHistorique.transactionHistorique">Transaction Historique</span></dt>
+        <dd>
+            <a ui-sref="transaction-historique-detail({id:vm.eCommandeHistorique.transactionHistorique.id})">{{vm.eCommandeHistorique.transactionHistorique.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="e-commande-historique-detail.edit({id:vm.eCommandeHistorique.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

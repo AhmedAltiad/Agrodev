@@ -1,0 +1,228 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myGPOLabel" data-translate="agroBourse360SiApp.gPO.home.createOrEditLabel">Create or edit a GPO</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.gPO.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.gPO.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.societepostale" for="field_societepostale">Societepostale</label>
+            <input type="text" class="form-control" name="societepostale" id="field_societepostale"
+                    ng-model="vm.gPO.societepostale"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.societelegale" for="field_societelegale">Societelegale</label>
+            <input type="text" class="form-control" name="societelegale" id="field_societelegale"
+                    ng-model="vm.gPO.societelegale"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.qualite" for="field_qualite">Qualite</label>
+            <input type="text" class="form-control" name="qualite" id="field_qualite"
+                    ng-model="vm.gPO.qualite"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.prenom" for="field_prenom">Prenom</label>
+            <input type="text" class="form-control" name="prenom" id="field_prenom"
+                    ng-model="vm.gPO.prenom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.nom" for="field_nom">Nom</label>
+            <input type="text" class="form-control" name="nom" id="field_nom"
+                    ng-model="vm.gPO.nom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.addadresse1" for="field_addadresse1">Addadresse 1</label>
+            <input type="text" class="form-control" name="addadresse1" id="field_addadresse1"
+                    ng-model="vm.gPO.addadresse1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.addadresse2" for="field_addadresse2">Addadresse 2</label>
+            <input type="text" class="form-control" name="addadresse2" id="field_addadresse2"
+                    ng-model="vm.gPO.addadresse2"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.boitepostale" for="field_boitepostale">Boitepostale</label>
+            <input type="text" class="form-control" name="boitepostale" id="field_boitepostale"
+                    ng-model="vm.gPO.boitepostale"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.addcodepostal" for="field_addcodepostal">Addcodepostal</label>
+            <input type="number" class="form-control" name="addcodepostal" id="field_addcodepostal"
+                    ng-model="vm.gPO.addcodepostal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.addville" for="field_addville">Addville</label>
+            <input type="text" class="form-control" name="addville" id="field_addville"
+                    ng-model="vm.gPO.addville"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.telephoneunique" for="field_telephoneunique">Telephoneunique</label>
+            <input type="text" class="form-control" name="telephoneunique" id="field_telephoneunique"
+                    ng-model="vm.gPO.telephoneunique"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.telephone" for="field_telephone">Telephone</label>
+            <input type="text" class="form-control" name="telephone" id="field_telephone"
+                    ng-model="vm.gPO.telephone"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.telephoneNumInternational" for="field_telephoneNumInternational">Telephone Num International</label>
+            <input type="text" class="form-control" name="telephoneNumInternational" id="field_telephoneNumInternational"
+                    ng-model="vm.gPO.telephoneNumInternational"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.messagerie" for="field_messagerie">Messagerie</label>
+            <input type="text" class="form-control" name="messagerie" id="field_messagerie"
+                    ng-model="vm.gPO.messagerie"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.messagerieunique" for="field_messagerieunique">Messagerieunique</label>
+            <input type="text" class="form-control" name="messagerieunique" id="field_messagerieunique"
+                    ng-model="vm.gPO.messagerieunique"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.region" for="field_region">Region</label>
+            <input type="text" class="form-control" name="region" id="field_region"
+                    ng-model="vm.gPO.region"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.departement" for="field_departement">Departement</label>
+            <input type="text" class="form-control" name="departement" id="field_departement"
+                    ng-model="vm.gPO.departement"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.numdepartement" for="field_numdepartement">Numdepartement</label>
+            <input type="number" class="form-control" name="numdepartement" id="field_numdepartement"
+                    ng-model="vm.gPO.numdepartement"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.categorie" for="field_categorie">Categorie</label>
+            <input type="text" class="form-control" name="categorie" id="field_categorie"
+                    ng-model="vm.gPO.categorie"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.codeNafImport" for="field_codeNafImport">Code Naf Import</label>
+            <input type="text" class="form-control" name="codeNafImport" id="field_codeNafImport"
+                    ng-model="vm.gPO.codeNafImport"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.sivet" for="field_sivet">Sivet</label>
+            <input type="text" class="form-control" name="sivet" id="field_sivet"
+                    ng-model="vm.gPO.sivet"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.web" for="field_web">Web</label>
+            <input type="text" class="form-control" name="web" id="field_web"
+                    ng-model="vm.gPO.web"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.populationtotale" for="field_populationtotale">Populationtotale</label>
+            <input type="number" class="form-control" name="populationtotale" id="field_populationtotale"
+                    ng-model="vm.gPO.populationtotale"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.reseau" for="field_reseau">Reseau</label>
+            <input type="text" class="form-control" name="reseau" id="field_reseau"
+                    ng-model="vm.gPO.reseau"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.enseigne" for="field_enseigne">Enseigne</label>
+            <input type="text" class="form-control" name="enseigne" id="field_enseigne"
+                    ng-model="vm.gPO.enseigne"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.statutEtablissement" for="field_statutEtablissement">Statut Etablissement</label>
+            <input type="text" class="form-control" name="statutEtablissement" id="field_statutEtablissement"
+                    ng-model="vm.gPO.statutEtablissement"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.statutJudiciaire" for="field_statutJudiciaire">Statut Judiciaire</label>
+            <input type="text" class="form-control" name="statutJudiciaire" id="field_statutJudiciaire"
+                    ng-model="vm.gPO.statutJudiciaire"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.ca" for="field_ca">Ca</label>
+            <input type="text" class="form-control" name="ca" id="field_ca"
+                    ng-model="vm.gPO.ca"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.capitalSocial" for="field_capitalSocial">Capital Social</label>
+            <input type="text" class="form-control" name="capitalSocial" id="field_capitalSocial"
+                    ng-model="vm.gPO.capitalSocial"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.dateCreationEntreprise" for="field_dateCreationEntreprise">Date Creation Entreprise</label>
+                <div class="input-group">
+                    <input id="field_dateCreationEntreprise" type="text" class="form-control" name="dateCreationEntreprise" uib-datepicker-popup="{{dateformat}}" ng-model="vm.gPO.dateCreationEntreprise" is-open="vm.datePickerOpenStatus.dateCreationEntreprise"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateCreationEntreprise')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.effectifs" for="field_effectifs">Effectifs</label>
+            <input type="text" class="form-control" name="effectifs" id="field_effectifs"
+                    ng-model="vm.gPO.effectifs"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.fax" for="field_fax">Fax</label>
+            <input type="text" class="form-control" name="fax" id="field_fax"
+                    ng-model="vm.gPO.fax"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.gPO.faxfaxinginternational" for="field_faxfaxinginternational">Faxfaxinginternational</label>
+            <input type="text" class="form-control" name="faxfaxinginternational" id="field_faxfaxinginternational"
+                    ng-model="vm.gPO.faxfaxinginternational"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

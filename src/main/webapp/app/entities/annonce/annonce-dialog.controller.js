@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .controller('AnnonceDialogController', AnnonceDialogController);
 
-    AnnonceDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Annonce','DataUtils', 'Profil'];
+    AnnonceDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Annonce', 'Variete', 'Profil', 'Localite', 'Palier', 'ECommande'];
 
-    function AnnonceDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Annonce,DataUtils, Profil) {
+    function AnnonceDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Annonce, Variete, Profil, Localite, Palier, ECommande) {
         var vm = this;
 
         vm.annonce = entity;
@@ -15,24 +15,11 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
+        vm.varietes = Variete.query();
         vm.profils = Profil.query();
-        vm.byteSize = DataUtils.byteSize;
-              vm.openFile = DataUtils.openFile;
-
-vm.setFile = function ($file, annonce) {
-           if ($file) {
-               DataUtils.toBase64($file, function(base64Data) {
-                   $scope.$apply(function() {
-                       annonce.file = base64Data;
-                       annonce.type = $file.type;
-                       annonce.nom= $file.name;
-                   });
-               });
-           }
-           console.log(vm.annonce)
-       };
-
-
+        vm.localites = Localite.query();
+        vm.paliers = Palier.query();
+        vm.ecommandes = ECommande.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -52,7 +39,7 @@ vm.setFile = function ($file, annonce) {
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('agroBourseApp:annonceUpdate', result);
+            $scope.$emit('agroBourse360SiApp:annonceUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }
@@ -61,8 +48,10 @@ vm.setFile = function ($file, annonce) {
             vm.isSaving = false;
         }
 
-        vm.datePickerOpenStatus.datedebut = false;
-        vm.datePickerOpenStatus.datefin = false;
+        vm.datePickerOpenStatus.createddate = false;
+        vm.datePickerOpenStatus.lastmodifieddate = false;
+        vm.datePickerOpenStatus.dateActivation = false;
+        vm.datePickerOpenStatus.dateExpiration = false;
 
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;

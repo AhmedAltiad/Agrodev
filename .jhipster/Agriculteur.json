@@ -1,0 +1,102 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "agriculteur"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "activiteAgricoles",
+            "otherEntityName": "activiteAgricole",
+            "otherEntityRelationshipName": "agriculteur"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "specialitesAgricole",
+            "otherEntityName": "specialiteAgricole",
+            "otherEntityRelationshipName": "agriculteur"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commandeDetails",
+            "otherEntityName": "commandeDetails",
+            "otherEntityRelationshipName": "agriculteur"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commandes",
+            "otherEntityName": "commande",
+            "otherEntityRelationshipName": "agriculteur"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "production",
+            "otherEntityName": "production",
+            "otherEntityRelationshipName": "agriculteur"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "typeSociete",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "raisonSociale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseLivraison",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeAgricole",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "superficie",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "superficieIrriguee",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "bio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nbreEmployeePermanant",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "specialiteProduction",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085101",
+    "entityTableName": "agriculteur",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

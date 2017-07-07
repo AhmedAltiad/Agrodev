@@ -1,6 +1,6 @@
 package com.agrobourse.dev.repository;
 
-import com.agrobourse.dev.AgroBourseApp;
+import com.agrobourse.dev.AgroBourse360SiApp;
 import com.agrobourse.dev.domain.SocialUserConnection;
 
 import org.junit.Before;
@@ -30,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AgroBourseApp.class)
+@SpringBootTest(classes = AgroBourse360SiApp.class)
 @Transactional
 public class CustomSocialUsersConnectionRepositoryIntTest {
 

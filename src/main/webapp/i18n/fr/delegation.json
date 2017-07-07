@@ -1,0 +1,24 @@
+{
+    "agroBourse360SiApp": {
+        "delegation" : {
+            "home": {
+                "title": "Delegations",
+                "createLabel": "Créer un nouveau Delegation",
+                "createOrEditLabel": "Créer ou éditer un Delegation",
+                "search": "Recherche pour Delegation"
+            },
+            "created": "Un nouveau Delegation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Delegation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Delegation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Delegation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Delegation"
+            },
+            "name": "Name",
+            "gouvernorat": "Gouvernorat",
+            "localite": "Localite"
+        }
+    }
+}

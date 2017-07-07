@@ -15,6 +15,6 @@
     };
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .component('jhiItemCount', jhiItemCount);
 })();

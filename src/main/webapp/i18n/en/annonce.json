@@ -1,5 +1,5 @@
 {
-    "agroBourseApp": {
+    "agroBourse360SiApp": {
         "annonce" : {
             "home": {
                 "title": "Annonces",
@@ -16,12 +16,23 @@
             "detail": {
                 "title": "Annonce"
             },
-            "sujet": "Sujet",
-            "annoncebody": "Annoncebody",
+            "numann": "Numann",
+            "etat": "Etat",
+            "createddate": "Createddate",
+            "lastmodifieddate": "Lastmodifieddate",
+            "dateActivation": "Date Activation",
+            "dateExpiration": "Date Expiration",
+            "prix": "Prix",
+            "quantite": "Quantite",
             "image": "Image",
-            "datedebut": "Datedebut",
-            "datefin": "Datefin",
-            "profil": "Profil"
+            "description": "Description",
+            "variete": "Variete",
+            "lastModifiedBy": "Last Modified By",
+            "localite": "Localite",
+            "annonceur": "Annonceur",
+            "palier": "Palier",
+            "likedBy": "Liked By",
+            "eCommande": "E Commande"
         }
     }
 }

@@ -1,0 +1,25 @@
+{
+    "agroBourse360SiApp": {
+        "commandeDetails" : {
+            "home": {
+                "title": "Commande Details",
+                "createLabel": "Create a new Commande Details",
+                "createOrEditLabel": "Create or edit a Commande Details",
+                "search": "Search for Commande Details"
+            },
+            "created": "A new Commande Details is created with identifier {{ param }}",
+            "updated": "A Commande Details is updated with identifier {{ param }}",
+            "deleted": "A Commande Details is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Commande Details {{ id }}?"
+            },
+            "detail": {
+                "title": "Commande Details"
+            },
+            "price": "Price",
+            "variete": "Variete",
+            "agriculteur": "Agriculteur",
+            "commande": "Commande"
+        }
+    }
+}

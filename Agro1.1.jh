@@ -1,0 +1,349 @@
+
+
+
+entity Profil{
+firstName String,
+lastName String,
+email String,
+login String,
+image String
+}
+entity Agriculteur{
+typeSociete String,
+raisonSociale String,
+firstName String,
+lastName String,
+adresse String,
+adresseLivraison String,
+telephone String,
+typeAgricole String,
+superficie Double,
+superficieIrriguee Double,
+bio Integer,
+nbreEmployeePermanant Integer,
+specialiteProduction String
+}
+entity ActiviteAgricole{
+name String
+}
+entity SpecialiteAgricole{
+name String
+}
+entity Employee{
+type String
+civilite String,
+companyName String,
+statut String,
+telephone String,
+adresse String,
+secteuractivite String
+}
+entity Employer{
+companyName String,
+type String,
+companyDescription String,
+adresseSiege String,
+telephone String,
+nbreEmployeePermanant Integer
+}
+entity Localite{
+name String,
+codepostal String
+}
+entity Delegation{
+name String,
+}
+entity Region{
+name String
+}
+entity Gouvernorat{
+name String
+}
+entity Pays{
+name String
+}
+entity Annonce{
+num_ann Long,
+etat Integer,
+createddate ZonedDateTime,
+lastmodifieddate ZonedDateTime,
+dateActivation LocalDate,
+dateExpiration LocalDate,
+prix Double,
+quantite Integer,
+image String,
+description String
+}
+entity Variete{
+name String,
+description String,
+image String
+}
+entity Produit{
+name String
+}
+entity Souscategorie{
+name String
+}
+entity Categorie{
+name String
+}
+entity AnnonceChangement{
+name String,
+changement Integer,
+createddate ZonedDateTime
+}
+entity AnnonceHistorique{
+num_Annonce Long,
+etat Integer,
+createddate ZonedDateTime,
+lastmodifieddate ZonedDateTime,
+dateactivation LocalDate,
+dateexpiration LocalDate,
+prix Double,
+quantite Long,
+image String,
+description String,
+}
+entity Commande{
+dateOfOrder LocalDate,
+dateOfDelivery LocalDate,
+quantity Double,
+price Double,
+status Integer
+}
+entity CommandeDetails{
+price Double
+}
+entity EmpCV{
+title String,
+anne_experience String,
+permis Integer,
+niveau_Scolaire Integer,
+diplome String
+}
+entity EmpAnnonce{
+initDate LocalDate,
+finDate LocalDate,
+title String,
+typeContrat String,
+short_Description String,
+long_Description String,
+validation Long,
+adresse String,
+nbre_de_postes Integer
+}
+entity EmpActualite{
+init_Date LocalDate,
+periode String,
+secteur String,
+title String,	
+shortDisc String,	
+longDisc String,
+image String,
+adresse String,
+emp_act_type Empactualitetype
+}
+enum Empactualitetype{
+FETES, FOIRE, NEWS, ARTICLE, MARCHE, FORMATION, PORTE_OUVERTE, SALON, AUTRE
+}
+entity GPO{
+societe_postale String,
+societe_legale String,
+qualite String,
+prenom String,
+nom String,
+add_adresse_1 String,
+add_adresse_2 String,
+boite_postale String,
+add_code_postal Integer,
+add_ville String,
+telephone_unique String,
+telephone String,
+telephoneNumInternational String,
+messagerie String,
+messagerie_unique String,
+region String,
+departement String,
+num_departement Integer,
+categorie String,
+codeNafImport String,
+sivet String,
+web String,
+population_totale Integer,
+reseau String,
+enseigne String,
+statutEtablissement String,
+statutJudiciaire String,
+ca String,
+capitalSocial String,
+dateCreationEntreprise LocalDate,
+effectifs String,
+fax String,
+fax_faxing_international String
+}
+entity Palier{
+date_debut LocalDate,
+date_fin LocalDate,
+nombre_cons Integer,
+promotion Double
+}
+entity Currency{
+name String
+}
+entity ECommande{
+etat Integer,
+prix Double,
+quantite Long,
+date ZonedDateTime,
+numcommande Long
+}
+entity ECommandeHistorique{
+etat Integer,
+prix Double,
+quantite Long,
+date ZonedDateTime,
+numcommande Long
+}
+entity Trade{
+dateOfOrder LocalDate,
+dateOfDelivery LocalDate,
+prixUnitaire Double,
+position String,
+quantity Double,
+montant Double,
+status Integer
+}
+
+entity Transaction{
+etat Integer,
+prix Double,
+date ZonedDateTime,
+numtransaction  Long,
+cmdspayees Integer,
+image String,
+dateValidation ZonedDateTime,
+dateValidationPaiment ZonedDateTime,
+dateRefuse ZonedDateTime,
+dateRefuspaiment ZonedDateTime
+}
+entity TransactionHistorique{
+etat Integer,
+prix Double,
+date ZonedDateTime,
+numtransaction Long,
+cmdspayees Integer,
+image String,
+dateValidation ZonedDateTime,
+dateValidationPaiment ZonedDateTime,
+dateRefuse ZonedDateTime,
+dateRefuspaiment ZonedDateTime
+}
+entity Production{
+date_of_production LocalDate,
+quantity Double
+}
+entity View{
+consoleType String,
+duration LocalDate
+}
+entity CvSpecialities{
+name String
+}
+entity Formation{
+name String,
+certificat String,
+duration LocalDate
+}
+entity TraderAGB{
+firstName String,
+lastName String,
+adresse String
+}
+entity TraderCA{
+firstName String,
+lastName String,
+adresse String
+}
+entity Desk{
+adresse String
+}
+entity Portefolio{
+nbre_realisation Integer,
+nbre_encours Integer,
+specialite String
+}
+relationship OneToOne{
+ Employee{Profil} to Profil{Employee},
+ Employer{Profil} to Profil{Employer} ,
+ Agriculteur{Profil} to Profil{Agriculteur}  ,
+ TraderAGB{Profil} to Profil{TraderAGB} ,
+ TraderCA{Profil} to Profil{TraderCA} 
+}
+relationship ManyToOne{
+Employer{Localite} to Localite{Employer},
+Gouvernorat{Region} to Region{Gouvernorat} ,
+Delegation{Gouvernorat} to Gouvernorat{Delegation},
+Region{Pays} to Pays{Region},
+Annonce {Variete} to Variete {Annonce} ,
+Annonce {LastModifiedBy} to Profil{AnnonceModif},
+Annonce{Localite} to Localite{Annonce},
+Produit {Localite} to Localite {Produit},
+Produit {Palier} to Palier{Produit},
+Categorie {Souscategorie} to Souscategorie {Categorie},
+Annonce{Annonceur} to Profil {Annonce},
+Annonce{Palier} to Palier{Annonce},
+Localite {Delegation} to Delegation{Localite},
+AnnonceHistorique {Profil} to Profil{AnnonceHistorique} ,
+View {Profil} to Profil{View},
+AnnonceChangement{Profil} to Profil{AnnonceChangement},
+CommandeDetails{Variete} to Variete{CommandeDetails},
+CommandeDetails{Agriculteur} to Agriculteur{CommandeDetails},
+EmpCV{Employee} to Employee{Employee},
+EmpAnnonce{Employer} to Employer{EmpAnnonce},
+Commande{Currency} to Currency{Commande},
+Commande{TraderAGB} to TraderAGB{TradedBy} ,
+Commande{Agriculteur} to Agriculteur{Commandes},
+Trade{Currency} to Currency{Trade},
+Trade{Variete} to Variete{Variete},
+Trade {TraderAGB} to TraderAGB{Trade} ,
+Trade {TraderCA} to TraderCA{Trade},
+Desk{Gouvernorat} to Gouvernorat{Desk},
+Portefolio {TraderAGB} to TraderAGB{Portefolio} ,
+ECommande{Annonce} to Annonce{ECommande},
+ECommande{CommandBy} to Profil{ECommande},
+ECommande {Transaction} to Transaction{ECommande},
+ECommandeHistorique{AnnonceHistorique} to AnnonceHistorique{ECommandeHistorique} ,
+ECommandeHistorique{UserCommandHistorique} to Profil{ECommandeHistorique},
+ECommandeHistorique{TransactionHistorique} to TransactionHistorique{ECommandeHistorique},
+Transaction{userTransaction} to Profil{Transaction},
+Transaction{ValidePar} to Profil{TransactionValide},
+Transaction{ValidePaiment} to Profil{TransactionValidePaiment},
+Transaction{RefuserPar} to Profil{TransactionRefused},
+Transaction{RefusePaiment} to Profil{TransactionRefusedPaiment},
+Production{Agriculteur} to Agriculteur{Production},
+Production{Variete} to Variete{Production}
+}
+relationship ManyToMany{
+Annonce{LikedBy}  to Profil {AnnoncesFavoris},
+EmpCV{CvSpecialities} to CvSpecialities{EmpCV},
+EmpAnnonce{Postuls} to Employee{EmpAnnonce},
+EmpActualite{Localite} to Localite{EmpActualite},
+Portefolio{Variete} to Variete{Portefolio}
+}
+relationship OneToMany{
+Produit{Varietes} to Variete{Produit},
+Souscategorie{Produit} to Produit{Souscategorie},
+AnnonceHistorique{AnnonceChangement} to AnnonceChangement{AnnonceHistorique},
+AnnonceHistorique{View} to View{AnnonceHistorique},
+Commande{CommandeDetails} to CommandeDetails{Commande},
+EmpCV{Formation} to Formation{EmpCV},
+Desk{TraderCA} to TraderCA{Desk},
+Desk{TraderAGB} to TraderAGB{Desk},
+Agriculteur{ActiviteAgricoles} to ActiviteAgricole{Agriculteur},
+Agriculteur{SpecialitesAgricole} to SpecialiteAgricole{Agriculteur}
+}
+
+
+
+

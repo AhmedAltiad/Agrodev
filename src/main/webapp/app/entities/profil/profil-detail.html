@@ -1,20 +1,28 @@
 
 <div>
-    <h2><span data-translate="agroBourseApp.profil.detail.title">Profil</span> {{vm.profil.id}}</h2>
+    <h2><span data-translate="agroBourse360SiApp.profil.detail.title">Profil</span> {{vm.profil.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="agroBourseApp.profil.nom">Nom</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.profil.firstName">First Name</span></dt>
         <dd>
-            <span>{{vm.profil.nom}}</span>
+            <span>{{vm.profil.firstName}}</span>
         </dd>
-        <dt><span data-translate="agroBourseApp.profil.prenom">Prenom</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.profil.lastName">Last Name</span></dt>
         <dd>
-            <span>{{vm.profil.prenom}}</span>
+            <span>{{vm.profil.lastName}}</span>
         </dd>
-        <dt><span data-translate="agroBourseApp.profil.dob">Dob</span></dt>
+        <dt><span data-translate="agroBourse360SiApp.profil.email">Email</span></dt>
         <dd>
-            <span>{{vm.profil.dob | date:'mediumDate'}}</span>
+            <span>{{vm.profil.email}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.profil.login">Login</span></dt>
+        <dd>
+            <span>{{vm.profil.login}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.profil.image">Image</span></dt>
+        <dd>
+            <span>{{vm.profil.image}}</span>
         </dd>
     </dl>
 

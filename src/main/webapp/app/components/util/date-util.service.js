@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('DateUtils', DateUtils);
 
     DateUtils.$inject = ['$filter'];

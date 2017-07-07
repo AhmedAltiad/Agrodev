@@ -2,7 +2,7 @@ package com.agrobourse.dev.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.agrobourse.dev.domain.Annonce;
-import com.agrobourse.dev.domain.AnnonceImage;
+
 import com.agrobourse.dev.repository.AnnonceRepository;
 import com.agrobourse.dev.repository.search.AnnonceSearchRepository;
 import com.agrobourse.dev.web.rest.util.HeaderUtil;
@@ -11,32 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.io.File;
-import java.io.FileOutputStream;  
-import javax.servlet.*;
-import javax.servlet.http.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.inject.Inject;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
-
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -73,44 +48,13 @@ public class AnnonceResource {
      * @return the ResponseEntity with status 201 (Created) and with body the new annonce, or with status 400 (Bad Request) if the annonce has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-
-    @Autowired
-   private HttpServletRequest request;
     @PostMapping("/annonces")
     @Timed
-    public ResponseEntity<Annonce> createAnnonce(@Valid @RequestBody AnnonceImage annonceImage) throws URISyntaxException {
-        log.debug("REST request to save Annonce : {}", annonceImage);
-        Annonce annonce = new Annonce();
-        if (annonceImage.getFile() == null) {
-          System.out.println("choisir une image");
-        }else{
-
-System.out.println("1111111111111111111111111");
-        String uploadsDir = "/images/";
-                String realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
-          System.out.println("22222222222222222222");      
-                   if(! new File(realPathtoUploads).exists()){
-                       new File(realPathtoUploads).mkdir();
-                   }
-    String orgName = Math.round(Math.random() * 100000)+""+new SimpleDateFormat("yyyyMMddHHmmssSSSSSS").format(new Date())
-     +annonceImage.getType().replace('/','.');
-                   String filePath = realPathtoUploads + "/" + orgName;
-                   File dest = new File(filePath);
-                   annonce.setImage("/images/"+orgName);
-                   try{
-                   new FileOutputStream(dest).write(annonceImage.getFile());
-                   }
-                   catch (Exception e){System.out.println(e);
-                   }
-           }
-                Annonce annoncewithoutimage= annonceImage.getAnnonce();
-                 annonce.setId(null);
-                 annonce.setAnnoncebody(annoncewithoutimage.getAnnoncebody());
-                 annonce.setDatedebut(annoncewithoutimage.getDatedebut()) ;
-                 annonce.setDatefin(annoncewithoutimage.getDatefin());
-                 annonce.setSujet(annoncewithoutimage.getSujet());
-
-        
+    public ResponseEntity<Annonce> createAnnonce(@RequestBody Annonce annonce) throws URISyntaxException {
+        log.debug("REST request to save Annonce : {}", annonce);
+        if (annonce.getId() != null) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new annonce cannot already have an ID")).body(null);
+        }
         Annonce result = annonceRepository.save(annonce);
         annonceSearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/annonces/" + result.getId()))
@@ -129,12 +73,10 @@ System.out.println("1111111111111111111111111");
      */
     @PutMapping("/annonces")
     @Timed
-    public ResponseEntity<Annonce> updateAnnonce(@Valid @RequestBody Annonce annonce) throws URISyntaxException {
+    public ResponseEntity<Annonce> updateAnnonce(@RequestBody Annonce annonce) throws URISyntaxException {
         log.debug("REST request to update Annonce : {}", annonce);
         if (annonce.getId() == null) {
-            AnnonceImage annonceImage=new AnnonceImage();
-        
-            return createAnnonce(annonceImage);
+            return createAnnonce(annonce);
         }
         Annonce result = annonceRepository.save(annonce);
         annonceSearchRepository.save(result);
@@ -152,7 +94,7 @@ System.out.println("1111111111111111111111111");
     @Timed
     public List<Annonce> getAllAnnonces() {
         log.debug("REST request to get all Annonces");
-        List<Annonce> annonces = annonceRepository.findAll();
+        List<Annonce> annonces = annonceRepository.findAllWithEagerRelationships();
         return annonces;
     }
 
@@ -166,7 +108,7 @@ System.out.println("1111111111111111111111111");
     @Timed
     public ResponseEntity<Annonce> getAnnonce(@PathVariable Long id) {
         log.debug("REST request to get Annonce : {}", id);
-        Annonce annonce = annonceRepository.findOne(id);
+        Annonce annonce = annonceRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(annonce));
     }
 

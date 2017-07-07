@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empCV",
+            "otherEntityName": "empCV",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170629085133",
+    "entityTableName": "formation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

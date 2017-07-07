@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCommandeLabel" data-translate="agroBourse360SiApp.commande.home.createOrEditLabel">Create or edit a Commande</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.commande.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.commande.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.commande.dateOfOrder" for="field_dateOfOrder">Date Of Order</label>
+                <div class="input-group">
+                    <input id="field_dateOfOrder" type="text" class="form-control" name="dateOfOrder" uib-datepicker-popup="{{dateformat}}" ng-model="vm.commande.dateOfOrder" is-open="vm.datePickerOpenStatus.dateOfOrder"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfOrder')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.commande.dateOfDelivery" for="field_dateOfDelivery">Date Of Delivery</label>
+                <div class="input-group">
+                    <input id="field_dateOfDelivery" type="text" class="form-control" name="dateOfDelivery" uib-datepicker-popup="{{dateformat}}" ng-model="vm.commande.dateOfDelivery" is-open="vm.datePickerOpenStatus.dateOfDelivery"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateOfDelivery')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.commande.quantity" for="field_quantity">Quantity</label>
+            <input type="number" class="form-control" name="quantity" id="field_quantity"
+                    ng-model="vm.commande.quantity"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.commande.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.commande.price"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.commande.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                    ng-model="vm.commande.status"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.commande.currency" for="field_currency">Currency</label>
+            <select class="form-control" id="field_currency" name="currency" ng-model="vm.commande.currency" ng-options="currency as currency.id for currency in vm.currencies track by currency.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.commande.traderAGB" for="field_traderAGB">Trader AGB</label>
+            <select class="form-control" id="field_traderAGB" name="traderAGB" ng-model="vm.commande.traderAGB" ng-options="traderAGB as traderAGB.id for traderAGB in vm.traderagbs track by traderAGB.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.commande.agriculteur" for="field_agriculteur">Agriculteur</label>
+            <select class="form-control" id="field_agriculteur" name="agriculteur" ng-model="vm.commande.agriculteur" ng-options="agriculteur as agriculteur.id for agriculteur in vm.agriculteurs track by agriculteur.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

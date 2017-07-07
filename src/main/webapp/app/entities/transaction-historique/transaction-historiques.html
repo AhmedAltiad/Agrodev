@@ -1,0 +1,91 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.transactionHistorique.home.title">Transaction Historiques</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="transaction-historique.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.transactionHistorique.home.createLabel">
+                        Create new Transaction Historique
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.transactionHistorique.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.etat">Etat</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.prix">Prix</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.date">Date</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.numtransaction">Numtransaction</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.cmdspayees">Cmdspayees</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.image">Image</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.dateValidation">Date Validation</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.dateValidationPaiment">Date Validation Paiment</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.dateRefuse">Date Refuse</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transactionHistorique.dateRefuspaiment">Date Refuspaiment</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="transactionHistorique in vm.transactionHistoriques track by transactionHistorique.id">
+                    <td><a ui-sref="transaction-historique-detail({id:transactionHistorique.id})">{{transactionHistorique.id}}</a></td>
+                    <td>{{transactionHistorique.etat}}</td>
+                    <td>{{transactionHistorique.prix}}</td>
+                    <td>{{transactionHistorique.date | date:'medium'}}</td>
+                    <td>{{transactionHistorique.numtransaction}}</td>
+                    <td>{{transactionHistorique.cmdspayees}}</td>
+                    <td>{{transactionHistorique.image}}</td>
+                    <td>{{transactionHistorique.dateValidation | date:'medium'}}</td>
+                    <td>{{transactionHistorique.dateValidationPaiment | date:'medium'}}</td>
+                    <td>{{transactionHistorique.dateRefuse | date:'medium'}}</td>
+                    <td>{{transactionHistorique.dateRefuspaiment | date:'medium'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="transaction-historique-detail({id:transactionHistorique.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transaction-historique.edit({id:transactionHistorique.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transaction-historique.delete({id:transactionHistorique.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('Annonce', Annonce);
 
     Annonce.$inject = ['$resource', 'DateUtils'];
@@ -16,8 +16,10 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
-                        data.datedebut = DateUtils.convertLocalDateFromServer(data.datedebut);
-                        data.datefin = DateUtils.convertLocalDateFromServer(data.datefin);
+                        data.createddate = DateUtils.convertDateTimeFromServer(data.createddate);
+                        data.lastmodifieddate = DateUtils.convertDateTimeFromServer(data.lastmodifieddate);
+                        data.dateActivation = DateUtils.convertLocalDateFromServer(data.dateActivation);
+                        data.dateExpiration = DateUtils.convertLocalDateFromServer(data.dateExpiration);
                     }
                     return data;
                 }
@@ -26,8 +28,8 @@
                 method: 'PUT',
                 transformRequest: function (data) {
                     var copy = angular.copy(data);
-                    copy.datedebut = DateUtils.convertLocalDateToServer(copy.datedebut);
-                    copy.datefin = DateUtils.convertLocalDateToServer(copy.datefin);
+                    copy.dateActivation = DateUtils.convertLocalDateToServer(copy.dateActivation);
+                    copy.dateExpiration = DateUtils.convertLocalDateToServer(copy.dateExpiration);
                     return angular.toJson(copy);
                 }
             },
@@ -35,8 +37,8 @@
                 method: 'POST',
                 transformRequest: function (data) {
                     var copy = angular.copy(data);
-                    copy.datedebut = DateUtils.convertLocalDateToServer(copy.datedebut);
-                    copy.datefin = DateUtils.convertLocalDateToServer(copy.datefin);
+                    copy.dateActivation = DateUtils.convertLocalDateToServer(copy.dateActivation);
+                    copy.dateExpiration = DateUtils.convertLocalDateToServer(copy.dateExpiration);
                     return angular.toJson(copy);
                 }
             }

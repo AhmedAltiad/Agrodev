@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "gouvernorat",
+            "otherEntityName": "gouvernorat",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "localite",
+            "otherEntityName": "localite",
+            "otherEntityRelationshipName": "delegation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085107",
+    "entityTableName": "delegation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -2,17 +2,17 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.agrobourse.dev",
-      "nativeLanguage": "en"
+      "nativeLanguage": "fr"
     },
     "jhipsterVersion": "4.2.0",
-    "baseName": "AgroBourse",
+    "baseName": "AgroBourse360SI",
     "packageName": "com.agrobourse.dev",
     "packageFolder": "com/agrobourse/dev",
     "serverPort": "8080",
     "authenticationType": "session",
-    "hibernateCache": "ehcache",
-    "clusteredHttpSession": false,
-    "websocket": false,
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": "hazelcast",
+    "websocket": "spring-websocket",
     "databaseType": "sql",
     "devDatabaseType": "postgresql",
     "prodDatabaseType": "postgresql",
@@ -21,16 +21,19 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSocialSignIn": true,
-    "rememberMeKey": "4b9e353f4d6d049f6cf542a6bbf4c5532afbee42",
+    "rememberMeKey": "7db9e7482c2dfd61640a7d23ad3d8d74e981b99b",
     "clientFramework": "angular1",
-    "useSass": false,
+    "useSass": true,
     "clientPackageManager": "npm",
     "applicationType": "monolith",
-    "testFrameworks": [],
+    "testFrameworks": [
+      "protractor"
+    ],
     "jhiPrefix": "jhi",
     "enableTranslation": true,
-    "nativeLanguage": "en",
+    "nativeLanguage": "fr",
     "languages": [
+      "fr",
       "en"
     ]
   }

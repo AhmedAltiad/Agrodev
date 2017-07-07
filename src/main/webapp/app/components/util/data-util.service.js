@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('DataUtils', DataUtils);
 
     DataUtils.$inject = ['$window'];

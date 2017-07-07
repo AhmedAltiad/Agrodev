@@ -1,0 +1,25 @@
+{
+    "agroBourse360SiApp": {
+        "production" : {
+            "home": {
+                "title": "Productions",
+                "createLabel": "Créer un nouveau Production",
+                "createOrEditLabel": "Créer ou éditer un Production",
+                "search": "Recherche pour Production"
+            },
+            "created": "Un nouveau Production a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Production avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Production avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Production {{ id }} ?"
+            },
+            "detail": {
+                "title": "Production"
+            },
+            "dateofproduction": "Dateofproduction",
+            "quantity": "Quantity",
+            "agriculteur": "Agriculteur",
+            "variete": "Variete"
+        }
+    }
+}

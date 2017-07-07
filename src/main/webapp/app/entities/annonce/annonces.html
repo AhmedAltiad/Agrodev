@@ -1,12 +1,12 @@
 <div>
-    <h2 data-translate="agroBourseApp.annonce.home.title">Annonces</h2>
+    <h2 data-translate="agroBourse360SiApp.annonce.home.title">Annonces</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="annonce.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down"  data-translate="agroBourseApp.annonce.home.createLabel">
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.annonce.home.createLabel">
                         Create new Annonce
                     </span>
                 </button>
@@ -14,7 +14,7 @@
             <div class="col-xs-8 no-padding-right">
                 <form name="searchForm" class="form-inline">
                     <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourseApp.annonce.home.search' | translate }}">
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.annonce.home.search' | translate }}">
                         <span  class="input-group-btn width-min" >
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="glyphicon glyphicon-search"></span>
@@ -36,30 +36,57 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="agroBourseApp.annonce.sujet">Sujet</span></th>
-                    <th><span data-translate="agroBourseApp.annonce.annoncebody">Annoncebody</span></th>
-                    <th><span data-translate="agroBourseApp.annonce.image">Image</span></th>
-                    <th><span data-translate="agroBourseApp.annonce.datedebut">Datedebut</span></th>
-                    <th><span data-translate="agroBourseApp.annonce.datefin">Datefin</span></th>
-                    <th><span data-translate="agroBourseApp.annonce.profil">Profil</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.numann">Numann</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.etat">Etat</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.createddate">Createddate</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.lastmodifieddate">Lastmodifieddate</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.dateActivation">Date Activation</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.dateExpiration">Date Expiration</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.prix">Prix</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.quantite">Quantite</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.image">Image</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.description">Description</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.variete">Variete</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.lastModifiedBy">Last Modified By</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.localite">Localite</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.annonceur">Annonceur</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.palier">Palier</span></th>
+                    <th><span data-translate="agroBourse360SiApp.annonce.likedBy">Liked By</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="annonce in vm.annonces track by annonce.id">
                     <td><a ui-sref="annonce-detail({id:annonce.id})">{{annonce.id}}</a></td>
-                    <td>{{annonce.sujet}}</td>
-                    <td>{{annonce.annoncebody}}</td>
+                    <td>{{annonce.numann}}</td>
+                    <td>{{annonce.etat}}</td>
+                    <td>{{annonce.createddate | date:'medium'}}</td>
+                    <td>{{annonce.lastmodifieddate | date:'medium'}}</td>
+                        <td>{{annonce.dateActivation | date:'mediumDate'}}</td>
+                        <td>{{annonce.dateExpiration | date:'mediumDate'}}</td>
+                    <td>{{annonce.prix}}</td>
+                    <td>{{annonce.quantite}}</td>
+                    <td>{{annonce.image}}</td>
+                    <td>{{annonce.description}}</td>
                     <td>
-                        
-                        <img ng-if="annonce.image == null" src="img/person-1.jpg" style="width:50px;height: 50px;">
-                        <img ng-if="annonce.image != null" ng-src="{{annonce.image}}" style="width:50px;height: 50px;">
-                        
-                        </td>
-                        <td>{{annonce.datedebut | date:'mediumDate'}}</td>
-                        <td>{{annonce.datefin | date:'mediumDate'}}</td>
+                        <a ui-sref="variete-detail({id:annonce.variete.id})">{{annonce.variete.id}}</a>
+                    </td>
                     <td>
-                        <a ui-sref="profil-detail({id:annonce.profil.id})">{{annonce.profil.id}}</a>
+                        <a ui-sref="profil-detail({id:annonce.lastModifiedBy.id})">{{annonce.lastModifiedBy.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="localite-detail({id:annonce.localite.id})">{{annonce.localite.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="profil-detail({id:annonce.annonceur.id})">{{annonce.annonceur.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="palier-detail({id:annonce.palier.id})">{{annonce.palier.id}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="likedBy in annonce.likedBies">
+                            <a class="form-control-static" ui-sref="profil-detail({id: likedBy.id})">{{likedBy.id}}</a>{{$last ? '' : ', '}}
+                        </span>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

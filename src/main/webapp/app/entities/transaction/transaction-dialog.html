@@ -1,0 +1,136 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTransactionLabel" data-translate="agroBourse360SiApp.transaction.home.createOrEditLabel">Create or edit a Transaction</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.transaction.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.transaction.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.etat" for="field_etat">Etat</label>
+            <input type="number" class="form-control" name="etat" id="field_etat"
+                    ng-model="vm.transaction.etat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.prix" for="field_prix">Prix</label>
+            <input type="number" class="form-control" name="prix" id="field_prix"
+                    ng-model="vm.transaction.prix"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.transaction.date" is-open="vm.datePickerOpenStatus.date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.numtransaction" for="field_numtransaction">Numtransaction</label>
+            <input type="number" class="form-control" name="numtransaction" id="field_numtransaction"
+                    ng-model="vm.transaction.numtransaction"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.cmdspayees" for="field_cmdspayees">Cmdspayees</label>
+            <input type="number" class="form-control" name="cmdspayees" id="field_cmdspayees"
+                    ng-model="vm.transaction.cmdspayees"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="vm.transaction.image"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.dateValidation" for="field_dateValidation">Date Validation</label>
+                <div class="input-group">
+                    <input id="field_dateValidation" type="text" class="form-control" name="dateValidation" datetime-picker="{{dateformat}}" ng-model="vm.transaction.dateValidation" is-open="vm.datePickerOpenStatus.dateValidation"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateValidation')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.dateValidationPaiment" for="field_dateValidationPaiment">Date Validation Paiment</label>
+                <div class="input-group">
+                    <input id="field_dateValidationPaiment" type="text" class="form-control" name="dateValidationPaiment" datetime-picker="{{dateformat}}" ng-model="vm.transaction.dateValidationPaiment" is-open="vm.datePickerOpenStatus.dateValidationPaiment"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateValidationPaiment')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.dateRefuse" for="field_dateRefuse">Date Refuse</label>
+                <div class="input-group">
+                    <input id="field_dateRefuse" type="text" class="form-control" name="dateRefuse" datetime-picker="{{dateformat}}" ng-model="vm.transaction.dateRefuse" is-open="vm.datePickerOpenStatus.dateRefuse"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateRefuse')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.transaction.dateRefuspaiment" for="field_dateRefuspaiment">Date Refuspaiment</label>
+                <div class="input-group">
+                    <input id="field_dateRefuspaiment" type="text" class="form-control" name="dateRefuspaiment" datetime-picker="{{dateformat}}" ng-model="vm.transaction.dateRefuspaiment" is-open="vm.datePickerOpenStatus.dateRefuspaiment"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateRefuspaiment')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.transaction.userTransaction" for="field_userTransaction">User Transaction</label>
+            <select class="form-control" id="field_userTransaction" name="userTransaction" ng-model="vm.transaction.userTransaction" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.transaction.validePar" for="field_validePar">Valide Par</label>
+            <select class="form-control" id="field_validePar" name="validePar" ng-model="vm.transaction.validePar" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.transaction.validePaiment" for="field_validePaiment">Valide Paiment</label>
+            <select class="form-control" id="field_validePaiment" name="validePaiment" ng-model="vm.transaction.validePaiment" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.transaction.refuserPar" for="field_refuserPar">Refuser Par</label>
+            <select class="form-control" id="field_refuserPar" name="refuserPar" ng-model="vm.transaction.refuserPar" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.transaction.refusePaiment" for="field_refusePaiment">Refuse Paiment</label>
+            <select class="form-control" id="field_refusePaiment" name="refusePaiment" ng-model="vm.transaction.refusePaiment" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

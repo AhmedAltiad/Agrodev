@@ -1,7 +1,8 @@
 package com.agrobourse.dev.web.rest;
 
-import com.agrobourse.dev.AgroBourseApp;
+import com.agrobourse.dev.AgroBourse360SiApp;
 import com.agrobourse.dev.domain.User;
+import com.agrobourse.dev.domain.Profil;
 import com.agrobourse.dev.repository.UserRepository;
 import com.agrobourse.dev.repository.search.UserSearchRepository;
 import com.agrobourse.dev.service.MailService;
@@ -41,7 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see UserResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AgroBourseApp.class)
+@SpringBootTest(classes = AgroBourse360SiApp.class)
 public class UserResourceIntTest {
 
     private static final String DEFAULT_LOGIN = "johndoe";
@@ -136,6 +137,7 @@ public class UserResourceIntTest {
         // Create the User
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
+        Profil profil = new Profil();
         ManagedUserVM managedUserVM = new ManagedUserVM(
             null,
             DEFAULT_LOGIN,
@@ -150,7 +152,8 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,
+            profil);
 
         restUserMockMvc.perform(post("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -176,8 +179,9 @@ public class UserResourceIntTest {
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
+        Profil profil = new Profil();
         ManagedUserVM managedUserVM = new ManagedUserVM(
-            1L,
+             1L,
             DEFAULT_LOGIN,
             DEFAULT_PASSWORD,
             DEFAULT_FIRSTNAME,
@@ -190,7 +194,8 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,
+            profil);
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restUserMockMvc.perform(post("/api/users")
@@ -213,6 +218,7 @@ public class UserResourceIntTest {
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
+         Profil profil = new Profil();
         ManagedUserVM managedUserVM = new ManagedUserVM(
             null,
             DEFAULT_LOGIN, // this login should already be used
@@ -227,7 +233,7 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,profil);
 
         // Create the User
         restUserMockMvc.perform(post("/api/users")
@@ -250,6 +256,7 @@ public class UserResourceIntTest {
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
+        Profil profil = new Profil();
         ManagedUserVM managedUserVM = new ManagedUserVM(
             null,
             "anotherlogin",
@@ -264,7 +271,7 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,profil);
 
         // Create the User
         restUserMockMvc.perform(post("/api/users")
@@ -335,6 +342,7 @@ public class UserResourceIntTest {
         User updatedUser = userRepository.findOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
+        Profil profil = new Profil();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
@@ -350,7 +358,7 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,profil);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -380,6 +388,7 @@ public class UserResourceIntTest {
         User updatedUser = userRepository.findOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
+        Profil profil = new Profil();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
@@ -395,7 +404,7 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,profil);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -437,6 +446,7 @@ public class UserResourceIntTest {
         User updatedUser = userRepository.findOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
+        Profil profil = new Profil();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
@@ -452,7 +462,7 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,profil);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -483,6 +493,7 @@ public class UserResourceIntTest {
         User updatedUser = userRepository.findOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
+        Profil profil = new Profil();
         authorities.add("ROLE_USER");
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
@@ -498,7 +509,7 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,profil);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)

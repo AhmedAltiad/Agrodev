@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ActiviteAgricole.
+    -->
+    <changeSet id="20170629085102-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agriculteur_id"
+                                 baseTableName="activite_agricole"
+                                 constraintName="fk_activite_agricole_agriculteur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agriculteur"/>
+
+    </changeSet>
+</databaseChangeLog>

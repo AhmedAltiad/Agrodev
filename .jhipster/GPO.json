@@ -1,0 +1,143 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "societepostale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "societelegale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addadresse1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addadresse2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "boitepostale",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addcodepostal",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "addville",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephoneunique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephoneNumInternational",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "messagerie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "messagerieunique",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "departement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numdepartement",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "categorie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeNafImport",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sivet",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "web",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "populationtotale",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "reseau",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "enseigne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statutEtablissement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statutJudiciaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ca",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "capitalSocial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateCreationEntreprise",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "effectifs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fax",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "faxfaxinginternational",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085123",
+    "entityTableName": "gpo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

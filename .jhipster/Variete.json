@@ -1,0 +1,61 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "annonce",
+            "otherEntityName": "annonce",
+            "otherEntityRelationshipName": "variete"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commandeDetails",
+            "otherEntityName": "commandeDetails",
+            "otherEntityRelationshipName": "variete"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "variete",
+            "otherEntityName": "trade",
+            "otherEntityRelationshipName": "variete"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "production",
+            "otherEntityName": "production",
+            "otherEntityRelationshipName": "variete"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "portefolio",
+            "otherEntityName": "portefolio",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "variete"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085112",
+    "entityTableName": "variete",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

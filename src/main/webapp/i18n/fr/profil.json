@@ -1,0 +1,44 @@
+{
+    "agroBourse360SiApp": {
+        "profil" : {
+            "home": {
+                "title": "Profils",
+                "createLabel": "Créer un nouveau Profil",
+                "createOrEditLabel": "Créer ou éditer un Profil",
+                "search": "Recherche pour Profil"
+            },
+            "created": "Un nouveau Profil a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Profil avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Profil avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Profil {{ id }} ?"
+            },
+            "detail": {
+                "title": "Profil"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "login": "Login",
+            "image": "Image",
+            "employee": "Employee",
+            "employer": "Employer",
+            "agriculteur": "Agriculteur",
+            "traderAGB": "Trader AGB",
+            "traderCA": "Trader CA",
+            "annonceModif": "Annonce Modif",
+            "annonce": "Annonce",
+            "annonceHistorique": "Annonce Historique",
+            "view": "View",
+            "annonceChangement": "Annonce Changement",
+            "eCommande": "E Commande",
+            "eCommandeHistorique": "E Commande Historique",
+            "transaction": "Transaction",
+            "transactionValide": "Transaction Valide",
+            "transactionValidePaiment": "Transaction Valide Paiment",
+            "transactionRefused": "Transaction Refused",
+            "transactionRefusedPaiment": "Transaction Refused Paiment",
+            "annoncesFavoris": "Annonces Favoris"
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "traderAGB",
+            "otherEntityName": "traderAGB",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "portefolio",
+            "relationshipName": "variete",
+            "otherEntityName": "variete",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nbrerealisation",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nbreencours",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "specialite",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085137",
+    "entityTableName": "portefolio",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

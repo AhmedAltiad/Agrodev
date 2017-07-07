@@ -1,0 +1,137 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.gPO.home.title">GPOS</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="gpo.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.gPO.home.createLabel">
+                        Create new GPO
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.gPO.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.societepostale">Societepostale</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.societelegale">Societelegale</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.qualite">Qualite</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.prenom">Prenom</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.nom">Nom</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.addadresse1">Addadresse 1</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.addadresse2">Addadresse 2</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.boitepostale">Boitepostale</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.addcodepostal">Addcodepostal</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.addville">Addville</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.telephoneunique">Telephoneunique</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.telephone">Telephone</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.telephoneNumInternational">Telephone Num International</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.messagerie">Messagerie</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.messagerieunique">Messagerieunique</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.region">Region</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.departement">Departement</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.numdepartement">Numdepartement</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.categorie">Categorie</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.codeNafImport">Code Naf Import</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.sivet">Sivet</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.web">Web</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.populationtotale">Populationtotale</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.reseau">Reseau</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.enseigne">Enseigne</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.statutEtablissement">Statut Etablissement</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.statutJudiciaire">Statut Judiciaire</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.ca">Ca</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.capitalSocial">Capital Social</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.dateCreationEntreprise">Date Creation Entreprise</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.effectifs">Effectifs</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.fax">Fax</span></th>
+                    <th><span data-translate="agroBourse360SiApp.gPO.faxfaxinginternational">Faxfaxinginternational</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="gPO in vm.gPOS track by gPO.id">
+                    <td><a ui-sref="gpo-detail({id:gPO.id})">{{gPO.id}}</a></td>
+                    <td>{{gPO.societepostale}}</td>
+                    <td>{{gPO.societelegale}}</td>
+                    <td>{{gPO.qualite}}</td>
+                    <td>{{gPO.prenom}}</td>
+                    <td>{{gPO.nom}}</td>
+                    <td>{{gPO.addadresse1}}</td>
+                    <td>{{gPO.addadresse2}}</td>
+                    <td>{{gPO.boitepostale}}</td>
+                    <td>{{gPO.addcodepostal}}</td>
+                    <td>{{gPO.addville}}</td>
+                    <td>{{gPO.telephoneunique}}</td>
+                    <td>{{gPO.telephone}}</td>
+                    <td>{{gPO.telephoneNumInternational}}</td>
+                    <td>{{gPO.messagerie}}</td>
+                    <td>{{gPO.messagerieunique}}</td>
+                    <td>{{gPO.region}}</td>
+                    <td>{{gPO.departement}}</td>
+                    <td>{{gPO.numdepartement}}</td>
+                    <td>{{gPO.categorie}}</td>
+                    <td>{{gPO.codeNafImport}}</td>
+                    <td>{{gPO.sivet}}</td>
+                    <td>{{gPO.web}}</td>
+                    <td>{{gPO.populationtotale}}</td>
+                    <td>{{gPO.reseau}}</td>
+                    <td>{{gPO.enseigne}}</td>
+                    <td>{{gPO.statutEtablissement}}</td>
+                    <td>{{gPO.statutJudiciaire}}</td>
+                    <td>{{gPO.ca}}</td>
+                    <td>{{gPO.capitalSocial}}</td>
+                        <td>{{gPO.dateCreationEntreprise | date:'mediumDate'}}</td>
+                    <td>{{gPO.effectifs}}</td>
+                    <td>{{gPO.fax}}</td>
+                    <td>{{gPO.faxfaxinginternational}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="gpo-detail({id:gPO.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="gpo.edit({id:gPO.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="gpo.delete({id:gPO.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

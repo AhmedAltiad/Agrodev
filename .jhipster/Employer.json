@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employer"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "localite",
+            "otherEntityName": "localite",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "empAnnonce",
+            "otherEntityName": "empAnnonce",
+            "otherEntityRelationshipName": "employer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseSiege",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nbreEmployeePermanant",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170629085105",
+    "entityTableName": "employer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

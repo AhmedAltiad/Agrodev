@@ -1,0 +1,29 @@
+{
+    "agroBourse360SiApp": {
+        "eCommande" : {
+            "home": {
+                "title": "E Commandes",
+                "createLabel": "Create a new E Commande",
+                "createOrEditLabel": "Create or edit a E Commande",
+                "search": "Search for E Commande"
+            },
+            "created": "A new E Commande is created with identifier {{ param }}",
+            "updated": "A E Commande is updated with identifier {{ param }}",
+            "deleted": "A E Commande is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete E Commande {{ id }}?"
+            },
+            "detail": {
+                "title": "E Commande"
+            },
+            "etat": "Etat",
+            "prix": "Prix",
+            "quantite": "Quantite",
+            "date": "Date",
+            "numcommande": "Numcommande",
+            "annonce": "Annonce",
+            "commandBy": "Command By",
+            "transaction": "Transaction"
+        }
+    }
+}

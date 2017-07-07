@@ -1,0 +1,54 @@
+{
+    "agroBourse360SiApp": {
+        "gPO" : {
+            "home": {
+                "title": "GPOS",
+                "createLabel": "Create a new GPO",
+                "createOrEditLabel": "Create or edit a GPO",
+                "search": "Search for GPO"
+            },
+            "created": "A new GPO is created with identifier {{ param }}",
+            "updated": "A GPO is updated with identifier {{ param }}",
+            "deleted": "A GPO is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete GPO {{ id }}?"
+            },
+            "detail": {
+                "title": "GPO"
+            },
+            "societepostale": "Societepostale",
+            "societelegale": "Societelegale",
+            "qualite": "Qualite",
+            "prenom": "Prenom",
+            "nom": "Nom",
+            "addadresse1": "Addadresse 1",
+            "addadresse2": "Addadresse 2",
+            "boitepostale": "Boitepostale",
+            "addcodepostal": "Addcodepostal",
+            "addville": "Addville",
+            "telephoneunique": "Telephoneunique",
+            "telephone": "Telephone",
+            "telephoneNumInternational": "Telephone Num International",
+            "messagerie": "Messagerie",
+            "messagerieunique": "Messagerieunique",
+            "region": "Region",
+            "departement": "Departement",
+            "numdepartement": "Numdepartement",
+            "categorie": "Categorie",
+            "codeNafImport": "Code Naf Import",
+            "sivet": "Sivet",
+            "web": "Web",
+            "populationtotale": "Populationtotale",
+            "reseau": "Reseau",
+            "enseigne": "Enseigne",
+            "statutEtablissement": "Statut Etablissement",
+            "statutJudiciaire": "Statut Judiciaire",
+            "ca": "Ca",
+            "capitalSocial": "Capital Social",
+            "dateCreationEntreprise": "Date Creation Entreprise",
+            "effectifs": "Effectifs",
+            "fax": "Fax",
+            "faxfaxinginternational": "Faxfaxinginternational"
+        }
+    }
+}

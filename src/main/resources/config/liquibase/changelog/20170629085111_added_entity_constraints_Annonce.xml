@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Annonce.
+    -->
+    <changeSet id="20170629085111-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="variete_id"
+                                 baseTableName="annonce"
+                                 constraintName="fk_annonce_variete_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variete"/>
+
+        <addForeignKeyConstraint baseColumnNames="last_modified_by_id"
+                                 baseTableName="annonce"
+                                 constraintName="fk_annonce_last_modified_by_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="localite_id"
+                                 baseTableName="annonce"
+                                 constraintName="fk_annonce_localite_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="localite"/>
+
+        <addForeignKeyConstraint baseColumnNames="annonceur_id"
+                                 baseTableName="annonce"
+                                 constraintName="fk_annonce_annonceur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="palier_id"
+                                 baseTableName="annonce"
+                                 constraintName="fk_annonce_palier_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="palier"/>
+
+        <addForeignKeyConstraint baseColumnNames="annonces_id"
+                                 baseTableName="annonce_liked_by"
+                                 constraintName="fk_annonce_liked_by_annonces_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="annonce"/>
+        <addForeignKeyConstraint baseColumnNames="liked_bies_id"
+                                 baseTableName="annonce_liked_by"
+                                 constraintName="fk_annonce_liked_by_liked_bies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+        
+    </changeSet>
+</databaseChangeLog>

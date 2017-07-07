@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity EmpAnnonce.
+    -->
+    <changeSet id="20170629085121-1" author="jhipster">
+        <createTable tableName="emp_annonce">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="init_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fin_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="type_contrat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="short_description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jhi_validation" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adresse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nbredepostes" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="employer_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="emp_annonce_postuls">
+            <column name="postuls_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="emp_annonces_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="emp_annonces_id, postuls_id" tableName="emp_annonce_postuls"/>
+        
+    </changeSet>
+</databaseChangeLog>

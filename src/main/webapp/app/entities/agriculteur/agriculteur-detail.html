@@ -1,0 +1,75 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.agriculteur.detail.title">Agriculteur</span> {{vm.agriculteur.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.typeSociete">Type Societe</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.typeSociete}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.raisonSociale">Raison Sociale</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.raisonSociale}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.firstName}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.lastName}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.adresse}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.adresseLivraison">Adresse Livraison</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.adresseLivraison}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.telephone">Telephone</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.telephone}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.typeAgricole">Type Agricole</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.typeAgricole}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.superficie">Superficie</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.superficie}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.superficieIrriguee">Superficie Irriguee</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.superficieIrriguee}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.bio">Bio</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.bio}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.nbreEmployeePermanant">Nbre Employee Permanant</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.nbreEmployeePermanant}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.specialiteProduction">Specialite Production</span></dt>
+        <dd>
+            <span>{{vm.agriculteur.specialiteProduction}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.agriculteur.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.agriculteur.profil.id})">{{vm.agriculteur.profil.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="agriculteur-detail.edit({id:vm.agriculteur.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

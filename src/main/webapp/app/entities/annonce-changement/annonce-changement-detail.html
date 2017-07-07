@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.annonceChangement.detail.title">Annonce Changement</span> {{vm.annonceChangement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.annonceChangement.name">Name</span></dt>
+        <dd>
+            <span>{{vm.annonceChangement.name}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceChangement.changement">Changement</span></dt>
+        <dd>
+            <span>{{vm.annonceChangement.changement}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceChangement.createddate">Createddate</span></dt>
+        <dd>
+            <span>{{vm.annonceChangement.createddate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceChangement.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.annonceChangement.profil.id})">{{vm.annonceChangement.profil.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceChangement.annonceHistorique">Annonce Historique</span></dt>
+        <dd>
+            <a ui-sref="annonce-historique-detail({id:vm.annonceChangement.annonceHistorique.id})">{{vm.annonceChangement.annonceHistorique.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="annonce-changement-detail.edit({id:vm.annonceChangement.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

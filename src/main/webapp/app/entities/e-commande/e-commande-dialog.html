@@ -1,0 +1,78 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myECommandeLabel" data-translate="agroBourse360SiApp.eCommande.home.createOrEditLabel">Create or edit a E Commande</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.eCommande.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.eCommande.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.eCommande.etat" for="field_etat">Etat</label>
+            <input type="number" class="form-control" name="etat" id="field_etat"
+                    ng-model="vm.eCommande.etat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.eCommande.prix" for="field_prix">Prix</label>
+            <input type="number" class="form-control" name="prix" id="field_prix"
+                    ng-model="vm.eCommande.prix"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.eCommande.quantite" for="field_quantite">Quantite</label>
+            <input type="number" class="form-control" name="quantite" id="field_quantite"
+                    ng-model="vm.eCommande.quantite"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.eCommande.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.eCommande.date" is-open="vm.datePickerOpenStatus.date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.eCommande.numcommande" for="field_numcommande">Numcommande</label>
+            <input type="number" class="form-control" name="numcommande" id="field_numcommande"
+                    ng-model="vm.eCommande.numcommande"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.eCommande.annonce" for="field_annonce">Annonce</label>
+            <select class="form-control" id="field_annonce" name="annonce" ng-model="vm.eCommande.annonce" ng-options="annonce as annonce.id for annonce in vm.annonces track by annonce.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.eCommande.commandBy" for="field_commandBy">Command By</label>
+            <select class="form-control" id="field_commandBy" name="commandBy" ng-model="vm.eCommande.commandBy" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.eCommande.transaction" for="field_transaction">Transaction</label>
+            <select class="form-control" id="field_transaction" name="transaction" ng-model="vm.eCommande.transaction" ng-options="transaction as transaction.id for transaction in vm.transactions track by transaction.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

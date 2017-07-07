@@ -1,0 +1,85 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.commandeDetails.home.title">Commande Details</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="commande-details.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.commandeDetails.home.createLabel">
+                        Create new Commande Details
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.commandeDetails.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.commandeDetails.price">Price</span></th>
+                    <th><span data-translate="agroBourse360SiApp.commandeDetails.variete">Variete</span></th>
+                    <th><span data-translate="agroBourse360SiApp.commandeDetails.agriculteur">Agriculteur</span></th>
+                    <th><span data-translate="agroBourse360SiApp.commandeDetails.commande">Commande</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="commandeDetails in vm.commandeDetails track by commandeDetails.id">
+                    <td><a ui-sref="commande-details-detail({id:commandeDetails.id})">{{commandeDetails.id}}</a></td>
+                    <td>{{commandeDetails.price}}</td>
+                    <td>
+                        <a ui-sref="variete-detail({id:commandeDetails.variete.id})">{{commandeDetails.variete.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="agriculteur-detail({id:commandeDetails.agriculteur.id})">{{commandeDetails.agriculteur.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="commande-detail({id:commandeDetails.commande.id})">{{commandeDetails.commande.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="commande-details-detail({id:commandeDetails.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="commande-details.edit({id:commandeDetails.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="commande-details.delete({id:commandeDetails.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

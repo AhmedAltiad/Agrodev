@@ -1,7 +1,11 @@
-// Generated on 2017-04-12 using generator-jhipster 4.2.0
+// Generated on 2017-06-29 using generator-jhipster 4.2.0
 'use strict';
 
 var gulp = require('gulp'),
+    expect = require('gulp-expect-file'),
+    es = require('event-stream'),
+    flatten = require('gulp-flatten'),
+    sass = require('gulp-sass'),
     rev = require('gulp-rev'),
     templateCache = require('gulp-angular-templatecache'),
     htmlmin = require('gulp-htmlmin'),
@@ -9,6 +13,9 @@ var gulp = require('gulp'),
     ngConstant = require('gulp-ng-constant'),
     rename = require('gulp-rename'),
     eslint = require('gulp-eslint'),
+    argv = require('yargs').argv,
+    gutil = require('gulp-util'),
+    protractor = require('gulp-protractor').protractor,
     del = require('del'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync'),
@@ -59,8 +66,22 @@ gulp.task('images', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('sass', function () {
+    return es.merge(
+        gulp.src(config.sassSrc)
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(expect(config.sassSrc))
+        .pipe(sass({includePaths:config.bower}).on('error', sass.logError))
+        .pipe(gulp.dest(config.cssDir)),
+        gulp.src(config.bower + '**/fonts/**/*.{woff,woff2,svg,ttf,eot,otf}')
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(changed(config.app + 'content/fonts'))
+        .pipe(flatten())
+        .pipe(gulp.dest(config.app + 'content/fonts'))
+    );
+});
 
-gulp.task('styles', [], function () {
+gulp.task('styles', ['sass'], function () {
     return gulp.src(config.app + 'content/css')
         .pipe(browserSync.reload({stream: true}));
 });
@@ -85,7 +106,7 @@ gulp.task('html', function () {
     return gulp.src(config.app + 'app/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(templateCache({
-            module: 'agroBourseApp',
+            module: 'agroBourse360SiApp',
             root: 'app/',
             moduleSystem: 'IIFE'
         }))
@@ -94,7 +115,7 @@ gulp.task('html', function () {
 
 gulp.task('ngconstant:dev', function () {
     return ngConstant({
-        name: 'agroBourseApp',
+        name: 'agroBourse360SiApp',
         constants: {
             VERSION: util.parseVersion(),
             DEBUG_INFO_ENABLED: true
@@ -108,7 +129,7 @@ gulp.task('ngconstant:dev', function () {
 
 gulp.task('ngconstant:prod', function () {
     return ngConstant({
-        name: 'agroBourseApp',
+        name: 'agroBourse360SiApp',
         constants: {
             VERSION: util.parseVersion(),
             DEBUG_INFO_ENABLED: false
@@ -147,18 +168,36 @@ gulp.task('test', ['inject:test', 'ngconstant:dev'], function (done) {
     }, done).start();
 });
 
+/* to run individual suites pass `gulp itest --suite suiteName` */
+gulp.task('protractor', function () {
+    var configObj = {
+        configFile: config.test + 'protractor.conf.js'
+    };
+    if (argv.suite) {
+        configObj['args'] = ['--suite', argv.suite];
+    }
+    return gulp.src([])
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(protractor(configObj))
+        .on('error', function () {
+            gutil.log('E2E Tests failed');
+            process.exit(1);
+        });
+});
+
+gulp.task('itest', ['protractor']);
 
 gulp.task('watch', function () {
     gulp.watch('bower.json', ['install']);
     gulp.watch(['gulpfile.js', 'pom.xml'], ['ngconstant:dev']);
-    gulp.watch(config.app + 'content/css/**/*.css', ['styles']);
+    gulp.watch(config.sassSrc, ['styles']);
     gulp.watch(config.app + 'content/images/**', ['images']);
     gulp.watch(config.app + 'app/**/*.js', ['inject:app']);
     gulp.watch([config.app + '*.html', config.app + 'app/**', config.app + 'i18n/**']).on('change', browserSync.reload);
 });
 
 gulp.task('install', function () {
-    runSequence(['inject:dep', 'ngconstant:dev'], 'copy:languages', 'inject:app', 'inject:troubleshoot');
+    runSequence(['inject:dep', 'ngconstant:dev'], 'sass', 'copy:languages', 'inject:app', 'inject:troubleshoot');
 });
 
 gulp.task('serve', ['install'], serve);

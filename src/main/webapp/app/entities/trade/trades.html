@@ -1,0 +1,101 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.trade.home.title">Trades</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="trade.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.trade.home.createLabel">
+                        Create new Trade
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.trade.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.dateOfOrder">Date Of Order</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.dateOfDelivery">Date Of Delivery</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.prixUnitaire">Prix Unitaire</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.position">Position</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.quantity">Quantity</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.montant">Montant</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.status">Status</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.currency">Currency</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.variete">Variete</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.traderAGB">Trader AGB</span></th>
+                    <th><span data-translate="agroBourse360SiApp.trade.traderCA">Trader CA</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="trade in vm.trades track by trade.id">
+                    <td><a ui-sref="trade-detail({id:trade.id})">{{trade.id}}</a></td>
+                        <td>{{trade.dateOfOrder | date:'mediumDate'}}</td>
+                        <td>{{trade.dateOfDelivery | date:'mediumDate'}}</td>
+                    <td>{{trade.prixUnitaire}}</td>
+                    <td>{{trade.position}}</td>
+                    <td>{{trade.quantity}}</td>
+                    <td>{{trade.montant}}</td>
+                    <td>{{trade.status}}</td>
+                    <td>
+                        <a ui-sref="currency-detail({id:trade.currency.id})">{{trade.currency.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="variete-detail({id:trade.variete.id})">{{trade.variete.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="trader-agb-detail({id:trade.traderAGB.id})">{{trade.traderAGB.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="trader-ca-detail({id:trade.traderCA.id})">{{trade.traderCA.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="trade-detail({id:trade.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="trade.edit({id:trade.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="trade.delete({id:trade.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

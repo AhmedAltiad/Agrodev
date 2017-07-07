@@ -1,0 +1,54 @@
+{
+    "agroBourse360SiApp": {
+        "gPO" : {
+            "home": {
+                "title": "GPOS",
+                "createLabel": "Créer un nouveau GPO",
+                "createOrEditLabel": "Créer ou éditer un GPO",
+                "search": "Recherche pour GPO"
+            },
+            "created": "Un nouveau GPO a été créé avec l'identifiant {{ param }}",
+            "updated": "Le GPO avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le GPO avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le GPO {{ id }} ?"
+            },
+            "detail": {
+                "title": "GPO"
+            },
+            "societepostale": "Societepostale",
+            "societelegale": "Societelegale",
+            "qualite": "Qualite",
+            "prenom": "Prenom",
+            "nom": "Nom",
+            "addadresse1": "Addadresse 1",
+            "addadresse2": "Addadresse 2",
+            "boitepostale": "Boitepostale",
+            "addcodepostal": "Addcodepostal",
+            "addville": "Addville",
+            "telephoneunique": "Telephoneunique",
+            "telephone": "Telephone",
+            "telephoneNumInternational": "Telephone Num International",
+            "messagerie": "Messagerie",
+            "messagerieunique": "Messagerieunique",
+            "region": "Region",
+            "departement": "Departement",
+            "numdepartement": "Numdepartement",
+            "categorie": "Categorie",
+            "codeNafImport": "Code Naf Import",
+            "sivet": "Sivet",
+            "web": "Web",
+            "populationtotale": "Populationtotale",
+            "reseau": "Reseau",
+            "enseigne": "Enseigne",
+            "statutEtablissement": "Statut Etablissement",
+            "statutJudiciaire": "Statut Judiciaire",
+            "ca": "Ca",
+            "capitalSocial": "Capital Social",
+            "dateCreationEntreprise": "Date Creation Entreprise",
+            "effectifs": "Effectifs",
+            "fax": "Fax",
+            "faxfaxinginternational": "Faxfaxinginternational"
+        }
+    }
+}

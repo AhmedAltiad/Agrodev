@@ -1,12 +1,12 @@
 (function() {
     'use strict';
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('Profil', Profil);
 
-    Profil.$inject = ['$resource', 'DateUtils'];
+    Profil.$inject = ['$resource'];
 
-    function Profil ($resource, DateUtils) {
+    function Profil ($resource) {
         var resourceUrl =  'api/profils/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,27 +16,11 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
-                        data.dob = DateUtils.convertLocalDateFromServer(data.dob);
                     }
                     return data;
                 }
             },
-            'update': {
-                method: 'PUT',
-                transformRequest: function (data) {
-                    var copy = angular.copy(data);
-                    copy.dob = DateUtils.convertLocalDateToServer(copy.dob);
-                    return angular.toJson(copy);
-                }
-            },
-            'save': {
-                method: 'POST',
-                transformRequest: function (data) {
-                    var copy = angular.copy(data);
-                    copy.dob = DateUtils.convertLocalDateToServer(copy.dob);
-                    return angular.toJson(copy);
-                }
-            }
+            'update': { method:'PUT' }
         });
     }
 })();

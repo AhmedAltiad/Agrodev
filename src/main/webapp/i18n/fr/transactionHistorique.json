@@ -1,0 +1,32 @@
+{
+    "agroBourse360SiApp": {
+        "transactionHistorique" : {
+            "home": {
+                "title": "TransactionHistoriques",
+                "createLabel": "Créer un nouveau Transaction Historique",
+                "createOrEditLabel": "Créer ou éditer un Transaction Historique",
+                "search": "Recherche pour Transaction Historique"
+            },
+            "created": "Un nouveau Transaction Historique a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Transaction Historique avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Transaction Historique avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Transaction Historique {{ id }} ?"
+            },
+            "detail": {
+                "title": "Transaction Historique"
+            },
+            "etat": "Etat",
+            "prix": "Prix",
+            "date": "Date",
+            "numtransaction": "Numtransaction",
+            "cmdspayees": "Cmdspayees",
+            "image": "Image",
+            "dateValidation": "Date Validation",
+            "dateValidationPaiment": "Date Validation Paiment",
+            "dateRefuse": "Date Refuse",
+            "dateRefuspaiment": "Date Refuspaiment",
+            "eCommandeHistorique": "E Commande Historique"
+        }
+    }
+}

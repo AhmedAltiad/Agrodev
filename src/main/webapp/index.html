@@ -1,151 +1,124 @@
 <!doctype html>
 <html class="no-js">
+
 <head>
+    <style>
+        .no-js #loader {
+            display: none;
+        }
+        
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+        
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(Preloader_8.gif) center no-repeat #fff;
+        }
+    </style>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>agrobourse</title>
+    <title>AgroBourse360SI</title>
     <meta name="description" content="">
     <meta name="google" value="notranslate">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css content/css/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
-    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
-    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
-
     <!-- endinject -->
+    <link rel="stylesheet" href="content/css/vendor.css">
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
-    <!-- Css -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- Bootstrap and Font Awesome css -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!-- Css animations  -->
-    <link href="css/animate.css" rel="stylesheet">
-
-    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
-    <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
-
-    <!-- Custom stylesheet - for your changes -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/style.css">
     <!-- endbuild -->
-     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
-    <!-- owl carousel css -->
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
-    
-
 </head>
-<body ng-app="agroBourseApp" ng-strict-di>
+
+<body ng-app="agroBourse360SiApp" ng-strict-di>
+    <div class="se-pre-con" ng-if="false">
+        <center>
+            <img src="img/AgroBourse360.png" style="width:150px;height: 150px;">
+            <P>LOADING AGB 360SI®</P>
+        </center>
+    </div>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
-    <div>
-     <div ui-view="content">
+    <div class="container">
+        <div class="well" ui-view="content">
             <!-- Angular views -->
-     </div>
+        </div>
 
         <div class="footer" ng-cloak>
-            <!-- *** FOOTER ***
-_________________________________________________________ -->
-
-        <footer id="footer">
             <div class="container">
-                <div class="col-md-6 col-sm-12">
-                    <h4>A propos</h4>
-
-                    <p>Breve desciption d'Altiad Tunisie</p>
-
-                    <hr>
-
-                    <h4>Joignez-vous à notre newsletter mensuelle</h4>
-
-                    <form>
-                        <div class="input-group">
-
-                            <input type="text" class="form-control">
-
-                            <span class="input-group-btn">
-
-                        <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
-
-                    </span>
-
-                        </div>
-                        <!-- /input-group -->
-                    </form>
-
-                    <hr class="hidden-md hidden-lg hidden-sm">
-
+                <div class="col-md-3 grid_3">
+                    <h4>Menu</h4>
+                    <ul class="f_list f_list1">
+                        <li><a href="#0">Accueil</a></li>
+                        <li><a href="#0">Se connecter</a></li>
+                        <li><a href="#0">S'inscrire</a></li>
+                        <li><a href="#0">A propos</a></li>
+                    </ul>
+                    <ul class="f_list">
+                        <li><a href="#">Nos offres</a></li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="contact.html">Nos contacts</a></li>
+                        <li><a href="#0">Postulez</a></li>
+                    </ul>
+                    <div class="clearfix"> </div>
                 </div>
-                <!-- /.col-md-3 -->
-
-                
-                <!-- /.col-md-3 -->
-
-                <div class="col-md-2 col-sm-12">
-
-                    <h4>Contact</h4>
-
-                    <p><strong>Altiad Tunisie</strong>
-                        <br>Zone d’activité Khereddine lot 1/2/6
-                        <br>1053
-                        <br>Le Kram
-                        <br>
-                        <strong>Tunisie</strong>
+                <div class="col-md-3 grid_3">
+                    <h4>Nous contacter</h4>
+                    <div class="footer-list">
+                        <ul>
+                            <li><i class="fa fa-envelope tw1"> </i>
+                                <p><span class="yellow"><a href="mailto:yassine.grissa@groue3e.com"> Yassine Grissa</a></span> Directeur associé</p>
+                            </li>
+                            <li><i class="fa fa-envelope tw1"> </i>
+                                <p><span class="yellow"><a href="mailto:lynda.layeb@groupe3e.com"> Lynda Layeb</a></span> Assistante</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 grid_3">
+                    <h4>Altiad Tunisie</h4>
+                    <p>
+                        Altiad Tunisie propose à ses clients une offre complète au service de leurs projets en s’appuyant sur l’expertise et l’engagement méthodologique de ses équipes. Toute l’équipe d’Altiad Tunisie incarne au quotidien la devise du cabinet : Management & Expert
+                        ahead !
                     </p>
-
-                    <a href="contact3.html" class="btn btn-small btn-template-main">Page de contact</a>
-
-                    <hr class="hidden-md hidden-lg hidden-sm">
-
                 </div>
-                <!-- /.col-md-3 -->
-
-
-
-                
-                <!-- /.col-md-3 -->
+                <div class="col-md-3 grid_3">
+                    <h4>Inscrivez-vous à notre newsletter</h4>
+                    <p>Chaque semaine, l'équipe d'AgroBourse Emplois publie des articles et annonces. En vous inscrivons à notre newsletter vous receverez des notifications par mail.</p>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Votre email">
+                        <button type="button" class="btn red">S'inscrire!</button>
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
             </div>
-            <!-- /.container -->
-        </footer>
-        <!-- /#footer -->
-
-        <!-- *** FOOTER END *** -->
-
-        <!-- *** COPYRIGHT ***
-_________________________________________________________ -->
-
-        <div id="copyright">
-            <div class="container">
-                <div class="col-md-12">
-                    <p class="pull-left">&copy; 2016. Altiad Tunisie / Groupe3e</p>
+            <div class="footer_bottom">
+                <div class="container">
+                    <div class="clearfix"> </div>
+                    <div class="copy">
+                        <p>Copyright © 2017 AgroBourse Emlpois . Tous les droits sont réservés . réalisé par <a href="http://altiad.com/" target="_blank">Altiad Tunisie</a> </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /#copyright -->
-
-        <!-- *** COPYRIGHT END *** -->
         </div>
     </div>
-    
-    
-    
 
     <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
     <script>
@@ -162,6 +135,8 @@ _________________________________________________________ -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/messageformat/messageformat.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/sockjs-client/dist/sockjs.js"></script>
+    <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -206,6 +181,76 @@ _________________________________________________________ -->
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/view/view-dialog.controller.js"></script>
+    <script src="app/entities/view/view-detail.controller.js"></script>
+    <script src="app/entities/view/view-delete-dialog.controller.js"></script>
+    <script src="app/entities/view/view.state.js"></script>
+    <script src="app/entities/view/view.service.js"></script>
+    <script src="app/entities/view/view.search.service.js"></script>
+    <script src="app/entities/view/view.controller.js"></script>
+    <script src="app/entities/variete/variete-dialog.controller.js"></script>
+    <script src="app/entities/variete/variete-detail.controller.js"></script>
+    <script src="app/entities/variete/variete-delete-dialog.controller.js"></script>
+    <script src="app/entities/variete/variete.state.js"></script>
+    <script src="app/entities/variete/variete.service.js"></script>
+    <script src="app/entities/variete/variete.search.service.js"></script>
+    <script src="app/entities/variete/variete.controller.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique-dialog.controller.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique-detail.controller.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique-delete-dialog.controller.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique.state.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique.service.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique.search.service.js"></script>
+    <script src="app/entities/transaction-historique/transaction-historique.controller.js"></script>
+    <script src="app/entities/transaction/transaction-dialog.controller.js"></script>
+    <script src="app/entities/transaction/transaction-detail.controller.js"></script>
+    <script src="app/entities/transaction/transaction-delete-dialog.controller.js"></script>
+    <script src="app/entities/transaction/transaction.state.js"></script>
+    <script src="app/entities/transaction/transaction.service.js"></script>
+    <script src="app/entities/transaction/transaction.search.service.js"></script>
+    <script src="app/entities/transaction/transaction.controller.js"></script>
+    <script src="app/entities/trader-ca/trader-ca-dialog.controller.js"></script>
+    <script src="app/entities/trader-ca/trader-ca-detail.controller.js"></script>
+    <script src="app/entities/trader-ca/trader-ca-delete-dialog.controller.js"></script>
+    <script src="app/entities/trader-ca/trader-ca.state.js"></script>
+    <script src="app/entities/trader-ca/trader-ca.service.js"></script>
+    <script src="app/entities/trader-ca/trader-ca.search.service.js"></script>
+    <script src="app/entities/trader-ca/trader-ca.controller.js"></script>
+    <script src="app/entities/trader-agb/trader-agb-dialog.controller.js"></script>
+    <script src="app/entities/trader-agb/trader-agb-detail.controller.js"></script>
+    <script src="app/entities/trader-agb/trader-agb-delete-dialog.controller.js"></script>
+    <script src="app/entities/trader-agb/trader-agb.state.js"></script>
+    <script src="app/entities/trader-agb/trader-agb.service.js"></script>
+    <script src="app/entities/trader-agb/trader-agb.search.service.js"></script>
+    <script src="app/entities/trader-agb/trader-agb.controller.js"></script>
+    <script src="app/entities/trade/trade-dialog.controller.js"></script>
+    <script src="app/entities/trade/trade-detail.controller.js"></script>
+    <script src="app/entities/trade/trade-delete-dialog.controller.js"></script>
+    <script src="app/entities/trade/trade.state.js"></script>
+    <script src="app/entities/trade/trade.service.js"></script>
+    <script src="app/entities/trade/trade.search.service.js"></script>
+    <script src="app/entities/trade/trade.controller.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole-dialog.controller.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole-detail.controller.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole-delete-dialog.controller.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole.state.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole.service.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole.search.service.js"></script>
+    <script src="app/entities/specialite-agricole/specialite-agricole.controller.js"></script>
+    <script src="app/entities/souscategorie/souscategorie-dialog.controller.js"></script>
+    <script src="app/entities/souscategorie/souscategorie-detail.controller.js"></script>
+    <script src="app/entities/souscategorie/souscategorie-delete-dialog.controller.js"></script>
+    <script src="app/entities/souscategorie/souscategorie.state.js"></script>
+    <script src="app/entities/souscategorie/souscategorie.service.js"></script>
+    <script src="app/entities/souscategorie/souscategorie.search.service.js"></script>
+    <script src="app/entities/souscategorie/souscategorie.controller.js"></script>
+    <script src="app/entities/region/region-dialog.controller.js"></script>
+    <script src="app/entities/region/region-detail.controller.js"></script>
+    <script src="app/entities/region/region-delete-dialog.controller.js"></script>
+    <script src="app/entities/region/region.state.js"></script>
+    <script src="app/entities/region/region.service.js"></script>
+    <script src="app/entities/region/region.search.service.js"></script>
+    <script src="app/entities/region/region.controller.js"></script>
     <script src="app/entities/profil/profil-dialog.controller.js"></script>
     <script src="app/entities/profil/profil-detail.controller.js"></script>
     <script src="app/entities/profil/profil-delete-dialog.controller.js"></script>
@@ -213,7 +258,182 @@ _________________________________________________________ -->
     <script src="app/entities/profil/profil.service.js"></script>
     <script src="app/entities/profil/profil.search.service.js"></script>
     <script src="app/entities/profil/profil.controller.js"></script>
+    <script src="app/entities/produit/produit-dialog.controller.js"></script>
+    <script src="app/entities/produit/produit-detail.controller.js"></script>
+    <script src="app/entities/produit/produit-delete-dialog.controller.js"></script>
+    <script src="app/entities/produit/produit.state.js"></script>
+    <script src="app/entities/produit/produit.service.js"></script>
+    <script src="app/entities/produit/produit.search.service.js"></script>
+    <script src="app/entities/produit/produit.controller.js"></script>
+    <script src="app/entities/production/production-dialog.controller.js"></script>
+    <script src="app/entities/production/production-detail.controller.js"></script>
+    <script src="app/entities/production/production-delete-dialog.controller.js"></script>
+    <script src="app/entities/production/production.state.js"></script>
+    <script src="app/entities/production/production.service.js"></script>
+    <script src="app/entities/production/production.search.service.js"></script>
+    <script src="app/entities/production/production.controller.js"></script>
+    <script src="app/entities/portefolio/portefolio-dialog.controller.js"></script>
+    <script src="app/entities/portefolio/portefolio-detail.controller.js"></script>
+    <script src="app/entities/portefolio/portefolio-delete-dialog.controller.js"></script>
+    <script src="app/entities/portefolio/portefolio.state.js"></script>
+    <script src="app/entities/portefolio/portefolio.service.js"></script>
+    <script src="app/entities/portefolio/portefolio.search.service.js"></script>
+    <script src="app/entities/portefolio/portefolio.controller.js"></script>
+    <script src="app/entities/pays/pays-dialog.controller.js"></script>
+    <script src="app/entities/pays/pays-detail.controller.js"></script>
+    <script src="app/entities/pays/pays-delete-dialog.controller.js"></script>
+    <script src="app/entities/pays/pays.state.js"></script>
+    <script src="app/entities/pays/pays.service.js"></script>
+    <script src="app/entities/pays/pays.search.service.js"></script>
+    <script src="app/entities/pays/pays.controller.js"></script>
+    <script src="app/entities/palier/palier-dialog.controller.js"></script>
+    <script src="app/entities/palier/palier-detail.controller.js"></script>
+    <script src="app/entities/palier/palier-delete-dialog.controller.js"></script>
+    <script src="app/entities/palier/palier.state.js"></script>
+    <script src="app/entities/palier/palier.service.js"></script>
+    <script src="app/entities/palier/palier.search.service.js"></script>
+    <script src="app/entities/palier/palier.controller.js"></script>
+    <script src="app/entities/localite/localite-dialog.controller.js"></script>
+    <script src="app/entities/localite/localite-detail.controller.js"></script>
+    <script src="app/entities/localite/localite-delete-dialog.controller.js"></script>
+    <script src="app/entities/localite/localite.state.js"></script>
+    <script src="app/entities/localite/localite.service.js"></script>
+    <script src="app/entities/localite/localite.search.service.js"></script>
+    <script src="app/entities/localite/localite.controller.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat-dialog.controller.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat-detail.controller.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat-delete-dialog.controller.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat.state.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat.service.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat.search.service.js"></script>
+    <script src="app/entities/gouvernorat/gouvernorat.controller.js"></script>
+    <script src="app/entities/g-po/gpo-dialog.controller.js"></script>
+    <script src="app/entities/g-po/gpo-detail.controller.js"></script>
+    <script src="app/entities/g-po/gpo-delete-dialog.controller.js"></script>
+    <script src="app/entities/g-po/gpo.state.js"></script>
+    <script src="app/entities/g-po/gpo.service.js"></script>
+    <script src="app/entities/g-po/gpo.search.service.js"></script>
+    <script src="app/entities/g-po/gpo.controller.js"></script>
+    <script src="app/entities/formation/formation-dialog.controller.js"></script>
+    <script src="app/entities/formation/formation-detail.controller.js"></script>
+    <script src="app/entities/formation/formation-delete-dialog.controller.js"></script>
+    <script src="app/entities/formation/formation.state.js"></script>
+    <script src="app/entities/formation/formation.service.js"></script>
+    <script src="app/entities/formation/formation.search.service.js"></script>
+    <script src="app/entities/formation/formation.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/employer/employer-dialog.controller.js"></script>
+    <script src="app/entities/employer/employer-detail.controller.js"></script>
+    <script src="app/entities/employer/employer-delete-dialog.controller.js"></script>
+    <script src="app/entities/employer/employer.state.js"></script>
+    <script src="app/entities/employer/employer.service.js"></script>
+    <script src="app/entities/employer/employer.search.service.js"></script>
+    <script src="app/entities/employer/employer.controller.js"></script>
+    <script src="app/entities/employee/employee-dialog.controller.js"></script>
+    <script src="app/entities/employee/employee-detail.controller.js"></script>
+    <script src="app/entities/employee/employee-delete-dialog.controller.js"></script>
+    <script src="app/entities/employee/employee.state.js"></script>
+    <script src="app/entities/employee/employee.service.js"></script>
+    <script src="app/entities/employee/employee.search.service.js"></script>
+    <script src="app/entities/employee/employee.controller.js"></script>
+    <script src="app/entities/emp-cv/emp-cv-dialog.controller.js"></script>
+    <script src="app/entities/emp-cv/emp-cv-detail.controller.js"></script>
+    <script src="app/entities/emp-cv/emp-cv-delete-dialog.controller.js"></script>
+    <script src="app/entities/emp-cv/emp-cv.state.js"></script>
+    <script src="app/entities/emp-cv/emp-cv.service.js"></script>
+    <script src="app/entities/emp-cv/emp-cv.search.service.js"></script>
+    <script src="app/entities/emp-cv/emp-cv.controller.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce-dialog.controller.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce-detail.controller.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce-delete-dialog.controller.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce.state.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce.service.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce.search.service.js"></script>
+    <script src="app/entities/emp-annonce/emp-annonce.controller.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite-dialog.controller.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite-detail.controller.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite-delete-dialog.controller.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite.state.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite.service.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite.search.service.js"></script>
+    <script src="app/entities/emp-actualite/emp-actualite.controller.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique-dialog.controller.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique-detail.controller.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique-delete-dialog.controller.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique.state.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique.service.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique.search.service.js"></script>
+    <script src="app/entities/e-commande-historique/e-commande-historique.controller.js"></script>
+    <script src="app/entities/e-commande/e-commande-dialog.controller.js"></script>
+    <script src="app/entities/e-commande/e-commande-detail.controller.js"></script>
+    <script src="app/entities/e-commande/e-commande-delete-dialog.controller.js"></script>
+    <script src="app/entities/e-commande/e-commande.state.js"></script>
+    <script src="app/entities/e-commande/e-commande.service.js"></script>
+    <script src="app/entities/e-commande/e-commande.search.service.js"></script>
+    <script src="app/entities/e-commande/e-commande.controller.js"></script>
+    <script src="app/entities/desk/desk-dialog.controller.js"></script>
+    <script src="app/entities/desk/desk-detail.controller.js"></script>
+    <script src="app/entities/desk/desk-delete-dialog.controller.js"></script>
+    <script src="app/entities/desk/desk.state.js"></script>
+    <script src="app/entities/desk/desk.service.js"></script>
+    <script src="app/entities/desk/desk.search.service.js"></script>
+    <script src="app/entities/desk/desk.controller.js"></script>
+    <script src="app/entities/delegation/delegation-dialog.controller.js"></script>
+    <script src="app/entities/delegation/delegation-detail.controller.js"></script>
+    <script src="app/entities/delegation/delegation-delete-dialog.controller.js"></script>
+    <script src="app/entities/delegation/delegation.state.js"></script>
+    <script src="app/entities/delegation/delegation.service.js"></script>
+    <script src="app/entities/delegation/delegation.search.service.js"></script>
+    <script src="app/entities/delegation/delegation.controller.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities-dialog.controller.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities-detail.controller.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities-delete-dialog.controller.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities.state.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities.service.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities.search.service.js"></script>
+    <script src="app/entities/cv-specialities/cv-specialities.controller.js"></script>
+    <script src="app/entities/currency/currency-dialog.controller.js"></script>
+    <script src="app/entities/currency/currency-detail.controller.js"></script>
+    <script src="app/entities/currency/currency-delete-dialog.controller.js"></script>
+    <script src="app/entities/currency/currency.state.js"></script>
+    <script src="app/entities/currency/currency.service.js"></script>
+    <script src="app/entities/currency/currency.search.service.js"></script>
+    <script src="app/entities/currency/currency.controller.js"></script>
+    <script src="app/entities/commande-details/commande-details-dialog.controller.js"></script>
+    <script src="app/entities/commande-details/commande-details-detail.controller.js"></script>
+    <script src="app/entities/commande-details/commande-details-delete-dialog.controller.js"></script>
+    <script src="app/entities/commande-details/commande-details.state.js"></script>
+    <script src="app/entities/commande-details/commande-details.service.js"></script>
+    <script src="app/entities/commande-details/commande-details.search.service.js"></script>
+    <script src="app/entities/commande-details/commande-details.controller.js"></script>
+    <script src="app/entities/commande/commande-dialog.controller.js"></script>
+    <script src="app/entities/commande/commande-detail.controller.js"></script>
+    <script src="app/entities/commande/commande-delete-dialog.controller.js"></script>
+    <script src="app/entities/commande/commande.state.js"></script>
+    <script src="app/entities/commande/commande.service.js"></script>
+    <script src="app/entities/commande/commande.search.service.js"></script>
+    <script src="app/entities/commande/commande.controller.js"></script>
+    <script src="app/entities/categorie/categorie-dialog.controller.js"></script>
+    <script src="app/entities/categorie/categorie-detail.controller.js"></script>
+    <script src="app/entities/categorie/categorie-delete-dialog.controller.js"></script>
+    <script src="app/entities/categorie/categorie.state.js"></script>
+    <script src="app/entities/categorie/categorie.service.js"></script>
+    <script src="app/entities/categorie/categorie.search.service.js"></script>
+    <script src="app/entities/categorie/categorie.controller.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique-dialog.controller.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique-detail.controller.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique-delete-dialog.controller.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique.state.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique.service.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique.search.service.js"></script>
+    <script src="app/entities/annonce-historique/annonce-historique.controller.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement-dialog.controller.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement-detail.controller.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement-delete-dialog.controller.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement.state.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement.service.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement.search.service.js"></script>
+    <script src="app/entities/annonce-changement/annonce-changement.controller.js"></script>
     <script src="app/entities/annonce/annonce-dialog.controller.js"></script>
     <script src="app/entities/annonce/annonce-detail.controller.js"></script>
     <script src="app/entities/annonce/annonce-delete-dialog.controller.js"></script>
@@ -221,6 +441,20 @@ _________________________________________________________ -->
     <script src="app/entities/annonce/annonce.service.js"></script>
     <script src="app/entities/annonce/annonce.search.service.js"></script>
     <script src="app/entities/annonce/annonce.controller.js"></script>
+    <script src="app/entities/agriculteur/agriculteur-dialog.controller.js"></script>
+    <script src="app/entities/agriculteur/agriculteur-detail.controller.js"></script>
+    <script src="app/entities/agriculteur/agriculteur-delete-dialog.controller.js"></script>
+    <script src="app/entities/agriculteur/agriculteur.state.js"></script>
+    <script src="app/entities/agriculteur/agriculteur.service.js"></script>
+    <script src="app/entities/agriculteur/agriculteur.search.service.js"></script>
+    <script src="app/entities/agriculteur/agriculteur.controller.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole-dialog.controller.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole-detail.controller.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole-delete-dialog.controller.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole.state.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole.service.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole.search.service.js"></script>
+    <script src="app/entities/activite-agricole/activite-agricole.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>
@@ -265,6 +499,9 @@ _________________________________________________________ -->
     <script src="app/admin/user-management/user-management-delete-dialog.controller.js"></script>
     <script src="app/admin/user-management/user-management.state.js"></script>
     <script src="app/admin/user-management/user-management.controller.js"></script>
+    <script src="app/admin/tracker/tracker.state.js"></script>
+    <script src="app/admin/tracker/tracker.service.js"></script>
+    <script src="app/admin/tracker/tracker.controller.js"></script>
     <script src="app/admin/metrics/metrics.state.js"></script>
     <script src="app/admin/metrics/metrics.service.js"></script>
     <script src="app/admin/metrics/metrics.modal.controller.js"></script>
@@ -306,19 +543,7 @@ _________________________________________________________ -->
     <script src="app/account/account.state.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
-    <!-- #### JAVASCRIPT FILES ### -->
-    <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
-    </script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="js/front.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-	<script src="js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
-	
-
 
 </body>
+
 </html>

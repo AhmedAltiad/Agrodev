@@ -1,0 +1,27 @@
+{
+    "agroBourse360SiApp": {
+        "traderCA" : {
+            "home": {
+                "title": "Trader CAS",
+                "createLabel": "Create a new Trader CA",
+                "createOrEditLabel": "Create or edit a Trader CA",
+                "search": "Search for Trader CA"
+            },
+            "created": "A new Trader CA is created with identifier {{ param }}",
+            "updated": "A Trader CA is updated with identifier {{ param }}",
+            "deleted": "A Trader CA is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trader CA {{ id }}?"
+            },
+            "detail": {
+                "title": "Trader CA"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "adresse": "Adresse",
+            "profil": "Profil",
+            "desk": "Desk",
+            "trade": "Trade"
+        }
+    }
+}

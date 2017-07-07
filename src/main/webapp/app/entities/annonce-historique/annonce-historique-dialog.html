@@ -1,0 +1,108 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAnnonceHistoriqueLabel" data-translate="agroBourse360SiApp.annonceHistorique.home.createOrEditLabel">Create or edit a Annonce Historique</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.annonceHistorique.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.annonceHistorique.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.numAnnonce" for="field_numAnnonce">Num Annonce</label>
+            <input type="number" class="form-control" name="numAnnonce" id="field_numAnnonce"
+                    ng-model="vm.annonceHistorique.numAnnonce"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.etat" for="field_etat">Etat</label>
+            <input type="number" class="form-control" name="etat" id="field_etat"
+                    ng-model="vm.annonceHistorique.etat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.createddate" for="field_createddate">Createddate</label>
+                <div class="input-group">
+                    <input id="field_createddate" type="text" class="form-control" name="createddate" datetime-picker="{{dateformat}}" ng-model="vm.annonceHistorique.createddate" is-open="vm.datePickerOpenStatus.createddate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createddate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.lastmodifieddate" for="field_lastmodifieddate">Lastmodifieddate</label>
+                <div class="input-group">
+                    <input id="field_lastmodifieddate" type="text" class="form-control" name="lastmodifieddate" datetime-picker="{{dateformat}}" ng-model="vm.annonceHistorique.lastmodifieddate" is-open="vm.datePickerOpenStatus.lastmodifieddate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastmodifieddate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.dateactivation" for="field_dateactivation">Dateactivation</label>
+                <div class="input-group">
+                    <input id="field_dateactivation" type="text" class="form-control" name="dateactivation" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonceHistorique.dateactivation" is-open="vm.datePickerOpenStatus.dateactivation"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateactivation')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.dateexpiration" for="field_dateexpiration">Dateexpiration</label>
+                <div class="input-group">
+                    <input id="field_dateexpiration" type="text" class="form-control" name="dateexpiration" uib-datepicker-popup="{{dateformat}}" ng-model="vm.annonceHistorique.dateexpiration" is-open="vm.datePickerOpenStatus.dateexpiration"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateexpiration')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.prix" for="field_prix">Prix</label>
+            <input type="number" class="form-control" name="prix" id="field_prix"
+                    ng-model="vm.annonceHistorique.prix"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.quantite" for="field_quantite">Quantite</label>
+            <input type="number" class="form-control" name="quantite" id="field_quantite"
+                    ng-model="vm.annonceHistorique.quantite"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="vm.annonceHistorique.image"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceHistorique.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.annonceHistorique.description"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonceHistorique.profil" for="field_profil">Profil</label>
+            <select class="form-control" id="field_profil" name="profil" ng-model="vm.annonceHistorique.profil" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

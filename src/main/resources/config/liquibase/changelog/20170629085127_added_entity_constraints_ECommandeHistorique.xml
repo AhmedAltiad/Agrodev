@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ECommandeHistorique.
+    -->
+    <changeSet id="20170629085127-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="annonce_historique_id"
+                                 baseTableName="e_commande_historique"
+                                 constraintName="fk_ecommande_historique_annonce_historique_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="annonce_historique"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_command_historique_id"
+                                 baseTableName="e_commande_historique"
+                                 constraintName="fk_ecommande_historique_user_command_historique_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="transaction_historique_id"
+                                 baseTableName="e_commande_historique"
+                                 constraintName="fk_ecommande_historique_transaction_historique_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transaction_historique"/>
+
+    </changeSet>
+</databaseChangeLog>

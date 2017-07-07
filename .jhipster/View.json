@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "annonceHistorique",
+            "otherEntityName": "annonceHistorique",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "consoleType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170629085131",
+    "entityTableName": "view",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

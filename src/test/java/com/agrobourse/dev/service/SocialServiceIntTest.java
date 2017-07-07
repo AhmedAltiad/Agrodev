@@ -1,6 +1,6 @@
 package com.agrobourse.dev.service;
 
-import com.agrobourse.dev.AgroBourseApp;
+import com.agrobourse.dev.AgroBourse360SiApp;
 import com.agrobourse.dev.domain.Authority;
 import com.agrobourse.dev.domain.User;
 import com.agrobourse.dev.repository.AuthorityRepository;
@@ -28,7 +28,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AgroBourseApp.class)
+@SpringBootTest(classes = AgroBourse360SiApp.class)
 @Transactional
 public class SocialServiceIntTest {
 

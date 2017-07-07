@@ -1,0 +1,61 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "employee",
+            "otherEntityName": "empCV",
+            "otherEntityRelationshipName": "employee"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "empAnnonce",
+            "otherEntityName": "empAnnonce",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "postuls"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "civilite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "secteuractivite",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085104",
+    "entityTableName": "employee",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

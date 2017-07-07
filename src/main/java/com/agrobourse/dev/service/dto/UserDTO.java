@@ -65,11 +65,10 @@ public class UserDTO {
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()),user.getProfil());
     }
-
     public UserDTO(Long id, String login, String firstName, String lastName,
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate,
-        Set<String> authorities,Profil profil) {
+        Set<String> authorities, Profil profil) {
 
         this.id = id;
         this.login = login;
@@ -84,7 +83,7 @@ public class UserDTO {
         this.lastModifiedBy = lastModifiedBy;
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
-        this.profil=profil;
+        this.profil = profil;
     }
 
     public Long getId() {

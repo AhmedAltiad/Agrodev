@@ -1,0 +1,28 @@
+{
+    "agroBourse360SiApp": {
+        "localite" : {
+            "home": {
+                "title": "Localites",
+                "createLabel": "Créer un nouveau Localite",
+                "createOrEditLabel": "Créer ou éditer un Localite",
+                "search": "Recherche pour Localite"
+            },
+            "created": "Un nouveau Localite a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Localite avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Localite avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Localite {{ id }} ?"
+            },
+            "detail": {
+                "title": "Localite"
+            },
+            "name": "Name",
+            "codepostal": "Codepostal",
+            "delegation": "Delegation",
+            "employer": "Employer",
+            "annonce": "Annonce",
+            "produit": "Produit",
+            "empActualite": "Emp Actualite"
+        }
+    }
+}

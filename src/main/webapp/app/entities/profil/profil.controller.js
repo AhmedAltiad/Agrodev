@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .controller('ProfilController', ProfilController);
 
     ProfilController.$inject = ['Profil', 'ProfilSearch'];

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity View.
+    -->
+    <changeSet id="20170629085131-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="profil_id"
+                                 baseTableName="view"
+                                 constraintName="fk_view_profil_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="annonce_historique_id"
+                                 baseTableName="view"
+                                 constraintName="fk_view_annonce_historique_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="annonce_historique"/>
+
+    </changeSet>
+</databaseChangeLog>

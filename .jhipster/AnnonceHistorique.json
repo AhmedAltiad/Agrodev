@@ -1,0 +1,76 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "annonceChangement",
+            "otherEntityName": "annonceChangement",
+            "otherEntityRelationshipName": "annonceHistorique"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "view",
+            "otherEntityName": "view",
+            "otherEntityRelationshipName": "annonceHistorique"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "eCommandeHistorique",
+            "otherEntityName": "eCommandeHistorique",
+            "otherEntityRelationshipName": "annonceHistorique"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numAnnonce",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createddate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastmodifieddate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateactivation",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateexpiration",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085117",
+    "entityTableName": "annonce_historique",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.annonceHistorique.detail.title">Annonce Historique</span> {{vm.annonceHistorique.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.numAnnonce">Num Annonce</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.numAnnonce}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.etat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.createddate">Createddate</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.createddate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.lastmodifieddate">Lastmodifieddate</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.lastmodifieddate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.dateactivation">Dateactivation</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.dateactivation | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.dateexpiration">Dateexpiration</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.dateexpiration | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.prix">Prix</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.prix}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.quantite}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.image">Image</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.image}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.description">Description</span></dt>
+        <dd>
+            <span>{{vm.annonceHistorique.description}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.annonceHistorique.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.annonceHistorique.profil.id})">{{vm.annonceHistorique.profil.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="annonce-historique-detail.edit({id:vm.annonceHistorique.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

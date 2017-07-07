@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "empCV",
+            "otherEntityName": "empCV",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cvSpecialities"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085132",
+    "entityTableName": "cv_specialities",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

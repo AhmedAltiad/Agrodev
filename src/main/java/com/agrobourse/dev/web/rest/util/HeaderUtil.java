@@ -10,15 +10,15 @@ public final class HeaderUtil {
 
     private static final Logger log = LoggerFactory.getLogger(HeaderUtil.class);
 
-    private static final String APPLICATION_NAME = "agroBourseApp";
+    private static final String APPLICATION_NAME = "agroBourse360SiApp";
 
     private HeaderUtil() {
     }
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-agroBourseApp-alert", message);
-        headers.add("X-agroBourseApp-params", param);
+        headers.add("X-agroBourse360SiApp-alert", message);
+        headers.add("X-agroBourse360SiApp-params", param);
         return headers;
     }
 
@@ -37,8 +37,8 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity creation failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-agroBourseApp-error", "error." + errorKey);
-        headers.add("X-agroBourseApp-params", entityName);
+        headers.add("X-agroBourse360SiApp-error", "error." + errorKey);
+        headers.add("X-agroBourse360SiApp-params", entityName);
         return headers;
     }
 }

@@ -1,5 +1,5 @@
 {
-    "agroBourseApp": {
+    "agroBourse360SiApp": {
         "profil" : {
             "home": {
                 "title": "Profils",
@@ -16,10 +16,29 @@
             "detail": {
                 "title": "Profil"
             },
-            "nom": "Nom",
-            "prenom": "Prenom",
-            "dob": "Dob",
-            "annonce": "Annonce"
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "login": "Login",
+            "image": "Image",
+            "employee": "Employee",
+            "employer": "Employer",
+            "agriculteur": "Agriculteur",
+            "traderAGB": "Trader AGB",
+            "traderCA": "Trader CA",
+            "annonceModif": "Annonce Modif",
+            "annonce": "Annonce",
+            "annonceHistorique": "Annonce Historique",
+            "view": "View",
+            "annonceChangement": "Annonce Changement",
+            "eCommande": "E Commande",
+            "eCommandeHistorique": "E Commande Historique",
+            "transaction": "Transaction",
+            "transactionValide": "Transaction Valide",
+            "transactionValidePaiment": "Transaction Valide Paiment",
+            "transactionRefused": "Transaction Refused",
+            "transactionRefusedPaiment": "Transaction Refused Paiment",
+            "annoncesFavoris": "Annonces Favoris"
         }
     }
 }

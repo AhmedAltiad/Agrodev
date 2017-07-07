@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Transaction.
+    -->
+    <changeSet id="20170629085128-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_transaction_id"
+                                 baseTableName="transaction"
+                                 constraintName="fk_transaction_user_transaction_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="valide_par_id"
+                                 baseTableName="transaction"
+                                 constraintName="fk_transaction_valide_par_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="valide_paiment_id"
+                                 baseTableName="transaction"
+                                 constraintName="fk_transaction_valide_paiment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="refuser_par_id"
+                                 baseTableName="transaction"
+                                 constraintName="fk_transaction_refuser_par_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="refuse_paiment_id"
+                                 baseTableName="transaction"
+                                 constraintName="fk_transaction_refuse_paiment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+    </changeSet>
+</databaseChangeLog>

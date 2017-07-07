@@ -1,0 +1,23 @@
+{
+    "agroBourse360SiApp": {
+        "activiteAgricole" : {
+            "home": {
+                "title": "Activite Agricoles",
+                "createLabel": "Create a new Activite Agricole",
+                "createOrEditLabel": "Create or edit a Activite Agricole",
+                "search": "Search for Activite Agricole"
+            },
+            "created": "A new Activite Agricole is created with identifier {{ param }}",
+            "updated": "A Activite Agricole is updated with identifier {{ param }}",
+            "deleted": "A Activite Agricole is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Activite Agricole {{ id }}?"
+            },
+            "detail": {
+                "title": "Activite Agricole"
+            },
+            "name": "Name",
+            "agriculteur": "Agriculteur"
+        }
+    }
+}

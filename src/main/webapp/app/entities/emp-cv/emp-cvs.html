@@ -1,0 +1,91 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.empCV.home.title">Emp CVS</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="emp-cv.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.empCV.home.createLabel">
+                        Create new Emp CV
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.empCV.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.title">Title</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.anneexperience">Anneexperience</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.permis">Permis</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.niveauScolaire">Niveau Scolaire</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.diplome">Diplome</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.employee">Employee</span></th>
+                    <th><span data-translate="agroBourse360SiApp.empCV.cvSpecialities">Cv Specialities</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="empCV in vm.empCVS track by empCV.id">
+                    <td><a ui-sref="emp-cv-detail({id:empCV.id})">{{empCV.id}}</a></td>
+                    <td>{{empCV.title}}</td>
+                    <td>{{empCV.anneexperience}}</td>
+                    <td>{{empCV.permis}}</td>
+                    <td>{{empCV.niveauScolaire}}</td>
+                    <td>{{empCV.diplome}}</td>
+                    <td>
+                        <a ui-sref="employee-detail({id:empCV.employee.id})">{{empCV.employee.id}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="cvSpecialities in empCV.cvSpecialities">
+                            <a class="form-control-static" ui-sref="cv-specialities-detail({id: cvSpecialities.id})">{{cvSpecialities.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="emp-cv-detail({id:empCV.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="emp-cv.edit({id:empCV.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="emp-cv.delete({id:empCV.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

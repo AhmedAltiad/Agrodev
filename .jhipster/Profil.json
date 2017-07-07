@@ -2,38 +2,145 @@
     "fluentMethods": true,
     "relationships": [
         {
+            "relationshipType": "one-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "employer",
+            "otherEntityName": "employer",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "agriculteur",
+            "otherEntityName": "agriculteur",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "traderAGB",
+            "otherEntityName": "traderAGB",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "traderCA",
+            "otherEntityName": "traderCA",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "annonceModif",
+            "otherEntityName": "annonce",
+            "otherEntityRelationshipName": "lastModifiedBy"
+        },
+        {
+            "relationshipType": "one-to-many",
             "relationshipName": "annonce",
             "otherEntityName": "annonce",
+            "otherEntityRelationshipName": "annonceur"
+        },
+        {
             "relationshipType": "one-to-many",
+            "relationshipName": "annonceHistorique",
+            "otherEntityName": "annonceHistorique",
             "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "view",
+            "otherEntityName": "view",
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "annonceChangement",
+            "otherEntityName": "annonceChangement",
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "eCommande",
+            "otherEntityName": "eCommande",
+            "otherEntityRelationshipName": "commandBy"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "eCommandeHistorique",
+            "otherEntityName": "eCommandeHistorique",
+            "otherEntityRelationshipName": "userCommandHistorique"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transaction",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "userTransaction"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionValide",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "validePar"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionValidePaiment",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "validePaiment"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionRefused",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "refuserPar"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionRefusedPaiment",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "refusePaiment"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "annoncesFavoris",
+            "otherEntityName": "annonce",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "likedBy"
         }
     ],
     "fields": [
         {
-            "fieldName": "nom",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required",
-                "minlength"
-            ],
-            "fieldValidateRulesMinlength": "2"
+            "fieldName": "firstName",
+            "fieldType": "String"
         },
         {
-            "fieldName": "prenom",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "minlength"
-            ],
-            "fieldValidateRulesMinlength": "2"
+            "fieldName": "lastName",
+            "fieldType": "String"
         },
         {
-            "fieldName": "dob",
-            "fieldType": "LocalDate"
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "login",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
         }
     ],
-    "changelogDate": "20170412100320",
-    "dto": "no",
-    "service": "no",
+    "changelogDate": "20170629085100",
     "entityTableName": "profil",
-    "pagination": "no"
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
 }

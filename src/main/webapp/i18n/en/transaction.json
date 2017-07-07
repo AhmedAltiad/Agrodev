@@ -1,0 +1,37 @@
+{
+    "agroBourse360SiApp": {
+        "transaction" : {
+            "home": {
+                "title": "Transactions",
+                "createLabel": "Create a new Transaction",
+                "createOrEditLabel": "Create or edit a Transaction",
+                "search": "Search for Transaction"
+            },
+            "created": "A new Transaction is created with identifier {{ param }}",
+            "updated": "A Transaction is updated with identifier {{ param }}",
+            "deleted": "A Transaction is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Transaction {{ id }}?"
+            },
+            "detail": {
+                "title": "Transaction"
+            },
+            "etat": "Etat",
+            "prix": "Prix",
+            "date": "Date",
+            "numtransaction": "Numtransaction",
+            "cmdspayees": "Cmdspayees",
+            "image": "Image",
+            "dateValidation": "Date Validation",
+            "dateValidationPaiment": "Date Validation Paiment",
+            "dateRefuse": "Date Refuse",
+            "dateRefuspaiment": "Date Refuspaiment",
+            "userTransaction": "User Transaction",
+            "validePar": "Valide Par",
+            "validePaiment": "Valide Paiment",
+            "refuserPar": "Refuser Par",
+            "refusePaiment": "Refuse Paiment",
+            "eCommande": "E Commande"
+        }
+    }
+}

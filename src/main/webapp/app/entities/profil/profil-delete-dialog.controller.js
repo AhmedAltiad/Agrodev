@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .controller('ProfilDeleteController',ProfilDeleteController);
 
     ProfilDeleteController.$inject = ['$uibModalInstance', 'entity', 'Profil'];

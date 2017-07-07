@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.production.detail.title">Production</span> {{vm.production.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.production.dateofproduction">Dateofproduction</span></dt>
+        <dd>
+            <span>{{vm.production.dateofproduction | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.production.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{vm.production.quantity}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.production.agriculteur">Agriculteur</span></dt>
+        <dd>
+            <a ui-sref="agriculteur-detail({id:vm.production.agriculteur.id})">{{vm.production.agriculteur.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.production.variete">Variete</span></dt>
+        <dd>
+            <a ui-sref="variete-detail({id:vm.production.variete.id})">{{vm.production.variete.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="production-detail.edit({id:vm.production.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

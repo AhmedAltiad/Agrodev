@@ -1,0 +1,98 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmpAnnonceLabel" data-translate="agroBourse360SiApp.empAnnonce.home.createOrEditLabel">Create or edit a Emp Annonce</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.empAnnonce.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.empAnnonce.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.initDate" for="field_initDate">Init Date</label>
+                <div class="input-group">
+                    <input id="field_initDate" type="text" class="form-control" name="initDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.empAnnonce.initDate" is-open="vm.datePickerOpenStatus.initDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('initDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.finDate" for="field_finDate">Fin Date</label>
+                <div class="input-group">
+                    <input id="field_finDate" type="text" class="form-control" name="finDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.empAnnonce.finDate" is-open="vm.datePickerOpenStatus.finDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('finDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.empAnnonce.title"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.typeContrat" for="field_typeContrat">Type Contrat</label>
+            <input type="text" class="form-control" name="typeContrat" id="field_typeContrat"
+                    ng-model="vm.empAnnonce.typeContrat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.shortDescription" for="field_shortDescription">Short Description</label>
+            <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
+                    ng-model="vm.empAnnonce.shortDescription"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.longDescription" for="field_longDescription">Long Description</label>
+            <input type="text" class="form-control" name="longDescription" id="field_longDescription"
+                    ng-model="vm.empAnnonce.longDescription"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.validation" for="field_validation">Validation</label>
+            <input type="number" class="form-control" name="validation" id="field_validation"
+                    ng-model="vm.empAnnonce.validation"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.adresse" for="field_adresse">Adresse</label>
+            <input type="text" class="form-control" name="adresse" id="field_adresse"
+                    ng-model="vm.empAnnonce.adresse"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empAnnonce.nbredepostes" for="field_nbredepostes">Nbredepostes</label>
+            <input type="number" class="form-control" name="nbredepostes" id="field_nbredepostes"
+                    ng-model="vm.empAnnonce.nbredepostes"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.empAnnonce.employer" for="field_employer">Employer</label>
+            <select class="form-control" id="field_employer" name="employer" ng-model="vm.empAnnonce.employer" ng-options="employer as employer.id for employer in vm.employers track by employer.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.empAnnonce.postuls" for="field_postuls">Postuls</label>
+            <select class="form-control" id="field_postuls" multiple name="postuls" ng-model="vm.empAnnonce.postuls" ng-options="employee as employee.id for employee in vm.employees track by employee.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

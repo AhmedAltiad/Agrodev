@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "otherEntityRelationshipName": "palier"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "annonce",
+            "otherEntityName": "annonce",
+            "otherEntityRelationshipName": "palier"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datedebut",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "datefin",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "nombrecons",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "promotion",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170629085124",
+    "entityTableName": "palier",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

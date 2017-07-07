@@ -1,0 +1,31 @@
+{
+    "agroBourse360SiApp": {
+        "empActualite" : {
+            "home": {
+                "title": "Emp Actualites",
+                "createLabel": "Create a new Emp Actualite",
+                "createOrEditLabel": "Create or edit a Emp Actualite",
+                "search": "Search for Emp Actualite"
+            },
+            "created": "A new Emp Actualite is created with identifier {{ param }}",
+            "updated": "A Emp Actualite is updated with identifier {{ param }}",
+            "deleted": "A Emp Actualite is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Emp Actualite {{ id }}?"
+            },
+            "detail": {
+                "title": "Emp Actualite"
+            },
+            "initDate": "Init Date",
+            "periode": "Periode",
+            "secteur": "Secteur",
+            "title": "Title",
+            "shortDisc": "Short Disc",
+            "longDisc": "Long Disc",
+            "image": "Image",
+            "adresse": "Adresse",
+            "empacttype": "Empacttype",
+            "localite": "Localite"
+        }
+    }
+}

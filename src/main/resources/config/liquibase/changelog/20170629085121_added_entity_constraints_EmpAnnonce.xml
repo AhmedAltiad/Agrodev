@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity EmpAnnonce.
+    -->
+    <changeSet id="20170629085121-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="employer_id"
+                                 baseTableName="emp_annonce"
+                                 constraintName="fk_emp_annonce_employer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employer"/>
+
+        <addForeignKeyConstraint baseColumnNames="emp_annonces_id"
+                                 baseTableName="emp_annonce_postuls"
+                                 constraintName="fk_emp_annonce_postuls_emp_annonces_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="emp_annonce"/>
+        <addForeignKeyConstraint baseColumnNames="postuls_id"
+                                 baseTableName="emp_annonce_postuls"
+                                 constraintName="fk_emp_annonce_postuls_postuls_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+        
+    </changeSet>
+</databaseChangeLog>

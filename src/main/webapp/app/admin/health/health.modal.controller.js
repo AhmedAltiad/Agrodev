@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('agroBourseApp')
+    angular.module('agroBourse360SiApp')
         .controller('HealthModalController', HealthModalController);
 
     HealthModalController.$inject = ['$uibModalInstance', 'currentHealth', 'baseName', 'subSystemName'];

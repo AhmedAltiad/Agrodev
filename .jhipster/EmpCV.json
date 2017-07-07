@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "formation",
+            "otherEntityName": "formation",
+            "otherEntityRelationshipName": "empCV"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employee",
+            "otherEntityName": "employee",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "empCV",
+            "relationshipName": "cvSpecialities",
+            "otherEntityName": "cvSpecialities",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "anneexperience",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "permis",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "niveauScolaire",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "diplome",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085120",
+    "entityTableName": "emp_cv",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

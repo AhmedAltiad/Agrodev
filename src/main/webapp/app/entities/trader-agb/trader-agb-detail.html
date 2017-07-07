@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.traderAGB.detail.title">Trader AGB</span> {{vm.traderAGB.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.traderAGB.firstName">First Name</span></dt>
+        <dd>
+            <span>{{vm.traderAGB.firstName}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.traderAGB.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{vm.traderAGB.lastName}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.traderAGB.adresse">Adresse</span></dt>
+        <dd>
+            <span>{{vm.traderAGB.adresse}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.traderAGB.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.traderAGB.profil.id})">{{vm.traderAGB.profil.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.traderAGB.desk">Desk</span></dt>
+        <dd>
+            <a ui-sref="desk-detail({id:vm.traderAGB.desk.id})">{{vm.traderAGB.desk.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="trader-agb-detail.edit({id:vm.traderAGB.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

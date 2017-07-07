@@ -1,6 +1,6 @@
 package com.agrobourse.dev.web.rest;
 
-import com.agrobourse.dev.AgroBourseApp;
+import com.agrobourse.dev.AgroBourse360SiApp;
 
 import com.agrobourse.dev.domain.Profil;
 import com.agrobourse.dev.repository.ProfilRepository;
@@ -22,8 +22,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,17 +35,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ProfilResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AgroBourseApp.class)
+@SpringBootTest(classes = AgroBourse360SiApp.class)
 public class ProfilResourceIntTest {
 
-    private static final String DEFAULT_NOM = "AAAAAAAAAA";
-    private static final String UPDATED_NOM = "BBBBBBBBBB";
+    private static final String DEFAULT_FIRST_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_FIRST_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_PRENOM = "AAAAAAAAAA";
-    private static final String UPDATED_PRENOM = "BBBBBBBBBB";
+    private static final String DEFAULT_LAST_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_LAST_NAME = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_DOB = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DOB = LocalDate.now(ZoneId.systemDefault());
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LOGIN = "AAAAAAAAAA";
+    private static final String UPDATED_LOGIN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_IMAGE = "AAAAAAAAAA";
+    private static final String UPDATED_IMAGE = "BBBBBBBBBB";
 
     @Autowired
     private ProfilRepository profilRepository;
@@ -89,9 +93,11 @@ public class ProfilResourceIntTest {
      */
     public static Profil createEntity(EntityManager em) {
         Profil profil = new Profil()
-            .nom(DEFAULT_NOM)
-            .prenom(DEFAULT_PRENOM)
-            .dob(DEFAULT_DOB);
+            .firstName(DEFAULT_FIRST_NAME)
+            .lastName(DEFAULT_LAST_NAME)
+            .email(DEFAULT_EMAIL)
+            .login(DEFAULT_LOGIN)
+            .image(DEFAULT_IMAGE);
         return profil;
     }
 
@@ -116,9 +122,11 @@ public class ProfilResourceIntTest {
         List<Profil> profilList = profilRepository.findAll();
         assertThat(profilList).hasSize(databaseSizeBeforeCreate + 1);
         Profil testProfil = profilList.get(profilList.size() - 1);
-        assertThat(testProfil.getNom()).isEqualTo(DEFAULT_NOM);
-        assertThat(testProfil.getPrenom()).isEqualTo(DEFAULT_PRENOM);
-        assertThat(testProfil.getDob()).isEqualTo(DEFAULT_DOB);
+        assertThat(testProfil.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
+        assertThat(testProfil.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
+        assertThat(testProfil.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(testProfil.getLogin()).isEqualTo(DEFAULT_LOGIN);
+        assertThat(testProfil.getImage()).isEqualTo(DEFAULT_IMAGE);
 
         // Validate the Profil in Elasticsearch
         Profil profilEs = profilSearchRepository.findOne(testProfil.getId());
@@ -146,24 +154,6 @@ public class ProfilResourceIntTest {
 
     @Test
     @Transactional
-    public void checkNomIsRequired() throws Exception {
-        int databaseSizeBeforeTest = profilRepository.findAll().size();
-        // set the field null
-        profil.setNom(null);
-
-        // Create the Profil, which fails.
-
-        restProfilMockMvc.perform(post("/api/profils")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profil)))
-            .andExpect(status().isBadRequest());
-
-        List<Profil> profilList = profilRepository.findAll();
-        assertThat(profilList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllProfils() throws Exception {
         // Initialize the database
         profilRepository.saveAndFlush(profil);
@@ -173,9 +163,11 @@ public class ProfilResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(profil.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
-            .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM.toString())))
-            .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB.toString())));
+            .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME.toString())))
+            .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME.toString())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+            .andExpect(jsonPath("$.[*].login").value(hasItem(DEFAULT_LOGIN.toString())))
+            .andExpect(jsonPath("$.[*].image").value(hasItem(DEFAULT_IMAGE.toString())));
     }
 
     @Test
@@ -189,9 +181,11 @@ public class ProfilResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(profil.getId().intValue()))
-            .andExpect(jsonPath("$.nom").value(DEFAULT_NOM.toString()))
-            .andExpect(jsonPath("$.prenom").value(DEFAULT_PRENOM.toString()))
-            .andExpect(jsonPath("$.dob").value(DEFAULT_DOB.toString()));
+            .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRST_NAME.toString()))
+            .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME.toString()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
+            .andExpect(jsonPath("$.login").value(DEFAULT_LOGIN.toString()))
+            .andExpect(jsonPath("$.image").value(DEFAULT_IMAGE.toString()));
     }
 
     @Test
@@ -213,9 +207,11 @@ public class ProfilResourceIntTest {
         // Update the profil
         Profil updatedProfil = profilRepository.findOne(profil.getId());
         updatedProfil
-            .nom(UPDATED_NOM)
-            .prenom(UPDATED_PRENOM)
-            .dob(UPDATED_DOB);
+            .firstName(UPDATED_FIRST_NAME)
+            .lastName(UPDATED_LAST_NAME)
+            .email(UPDATED_EMAIL)
+            .login(UPDATED_LOGIN)
+            .image(UPDATED_IMAGE);
 
         restProfilMockMvc.perform(put("/api/profils")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -226,9 +222,11 @@ public class ProfilResourceIntTest {
         List<Profil> profilList = profilRepository.findAll();
         assertThat(profilList).hasSize(databaseSizeBeforeUpdate);
         Profil testProfil = profilList.get(profilList.size() - 1);
-        assertThat(testProfil.getNom()).isEqualTo(UPDATED_NOM);
-        assertThat(testProfil.getPrenom()).isEqualTo(UPDATED_PRENOM);
-        assertThat(testProfil.getDob()).isEqualTo(UPDATED_DOB);
+        assertThat(testProfil.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
+        assertThat(testProfil.getLastName()).isEqualTo(UPDATED_LAST_NAME);
+        assertThat(testProfil.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testProfil.getLogin()).isEqualTo(UPDATED_LOGIN);
+        assertThat(testProfil.getImage()).isEqualTo(UPDATED_IMAGE);
 
         // Validate the Profil in Elasticsearch
         Profil profilEs = profilSearchRepository.findOne(testProfil.getId());
@@ -287,9 +285,11 @@ public class ProfilResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(profil.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
-            .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM.toString())))
-            .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB.toString())));
+            .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME.toString())))
+            .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME.toString())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+            .andExpect(jsonPath("$.[*].login").value(hasItem(DEFAULT_LOGIN.toString())))
+            .andExpect(jsonPath("$.[*].image").value(hasItem(DEFAULT_IMAGE.toString())));
     }
 
     @Test

@@ -1,0 +1,30 @@
+{
+    "agroBourse360SiApp": {
+        "variete" : {
+            "home": {
+                "title": "Varietes",
+                "createLabel": "Créer un nouveau Variete",
+                "createOrEditLabel": "Créer ou éditer un Variete",
+                "search": "Recherche pour Variete"
+            },
+            "created": "Un nouveau Variete a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Variete avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Variete avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Variete {{ id }} ?"
+            },
+            "detail": {
+                "title": "Variete"
+            },
+            "name": "Name",
+            "description": "Description",
+            "image": "Image",
+            "produit": "Produit",
+            "annonce": "Annonce",
+            "commandeDetails": "Commande Details",
+            "variete": "Variete",
+            "production": "Production",
+            "portefolio": "Portefolio"
+        }
+    }
+}

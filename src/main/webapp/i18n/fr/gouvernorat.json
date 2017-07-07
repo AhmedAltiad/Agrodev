@@ -1,0 +1,25 @@
+{
+    "agroBourse360SiApp": {
+        "gouvernorat" : {
+            "home": {
+                "title": "Gouvernorats",
+                "createLabel": "Créer un nouveau Gouvernorat",
+                "createOrEditLabel": "Créer ou éditer un Gouvernorat",
+                "search": "Recherche pour Gouvernorat"
+            },
+            "created": "Un nouveau Gouvernorat a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Gouvernorat avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Gouvernorat avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Gouvernorat {{ id }} ?"
+            },
+            "detail": {
+                "title": "Gouvernorat"
+            },
+            "name": "Name",
+            "region": "Region",
+            "delegation": "Delegation",
+            "desk": "Desk"
+        }
+    }
+}

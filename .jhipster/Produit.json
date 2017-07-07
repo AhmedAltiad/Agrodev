@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "varietes",
+            "otherEntityName": "variete",
+            "otherEntityRelationshipName": "produit"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "localite",
+            "otherEntityName": "localite",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "palier",
+            "otherEntityName": "palier",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "souscategorie",
+            "otherEntityName": "souscategorie",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085113",
+    "entityTableName": "produit",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -2,7 +2,7 @@
 
 describe('Controller Tests', function () {
 
-    beforeEach(module('agroBourseApp'));
+    beforeEach(module('agroBourse360SiApp'));
 
     describe('LoginController', function () {
         var $scope, authService;

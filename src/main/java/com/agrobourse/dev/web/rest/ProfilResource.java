@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -51,7 +50,7 @@ public class ProfilResource {
      */
     @PostMapping("/profils")
     @Timed
-    public ResponseEntity<Profil> createProfil(@Valid @RequestBody Profil profil) throws URISyntaxException {
+    public ResponseEntity<Profil> createProfil(@RequestBody Profil profil) throws URISyntaxException {
         log.debug("REST request to save Profil : {}", profil);
         if (profil.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new profil cannot already have an ID")).body(null);
@@ -74,7 +73,7 @@ public class ProfilResource {
      */
     @PutMapping("/profils")
     @Timed
-    public ResponseEntity<Profil> updateProfil(@Valid @RequestBody Profil profil) throws URISyntaxException {
+    public ResponseEntity<Profil> updateProfil(@RequestBody Profil profil) throws URISyntaxException {
         log.debug("REST request to update Profil : {}", profil);
         if (profil.getId() == null) {
             return createProfil(profil);
@@ -89,11 +88,47 @@ public class ProfilResource {
     /**
      * GET  /profils : get all the profils.
      *
+     * @param filter the filter of the request
      * @return the ResponseEntity with status 200 (OK) and the list of profils in body
      */
     @GetMapping("/profils")
     @Timed
-    public List<Profil> getAllProfils() {
+    public List<Profil> getAllProfils(@RequestParam(required = false) String filter) {
+        if ("employee-is-null".equals(filter)) {
+            log.debug("REST request to get all Profils where employee is null");
+            return StreamSupport
+                .stream(profilRepository.findAll().spliterator(), false)
+                .filter(profil -> profil.getEmployee() == null)
+                .collect(Collectors.toList());
+        }
+        if ("employer-is-null".equals(filter)) {
+            log.debug("REST request to get all Profils where employer is null");
+            return StreamSupport
+                .stream(profilRepository.findAll().spliterator(), false)
+                .filter(profil -> profil.getEmployer() == null)
+                .collect(Collectors.toList());
+        }
+        if ("agriculteur-is-null".equals(filter)) {
+            log.debug("REST request to get all Profils where agriculteur is null");
+            return StreamSupport
+                .stream(profilRepository.findAll().spliterator(), false)
+                .filter(profil -> profil.getAgriculteur() == null)
+                .collect(Collectors.toList());
+        }
+        if ("traderagb-is-null".equals(filter)) {
+            log.debug("REST request to get all Profils where traderAGB is null");
+            return StreamSupport
+                .stream(profilRepository.findAll().spliterator(), false)
+                .filter(profil -> profil.getTraderAGB() == null)
+                .collect(Collectors.toList());
+        }
+        if ("traderca-is-null".equals(filter)) {
+            log.debug("REST request to get all Profils where traderCA is null");
+            return StreamSupport
+                .stream(profilRepository.findAll().spliterator(), false)
+                .filter(profil -> profil.getTraderCA() == null)
+                .collect(Collectors.toList());
+        }
         log.debug("REST request to get all Profils");
         List<Profil> profils = profilRepository.findAll();
         return profils;

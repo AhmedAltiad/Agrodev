@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.eCommande.detail.title">E Commande</span> {{vm.eCommande.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.eCommande.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.eCommande.etat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.prix">Prix</span></dt>
+        <dd>
+            <span>{{vm.eCommande.prix}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{vm.eCommande.quantite}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.date">Date</span></dt>
+        <dd>
+            <span>{{vm.eCommande.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.numcommande">Numcommande</span></dt>
+        <dd>
+            <span>{{vm.eCommande.numcommande}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.annonce">Annonce</span></dt>
+        <dd>
+            <a ui-sref="annonce-detail({id:vm.eCommande.annonce.id})">{{vm.eCommande.annonce.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.commandBy">Command By</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.eCommande.commandBy.id})">{{vm.eCommande.commandBy.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.eCommande.transaction">Transaction</span></dt>
+        <dd>
+            <a ui-sref="transaction-detail({id:vm.eCommande.transaction.id})">{{vm.eCommande.transaction.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="e-commande-detail.edit({id:vm.eCommande.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

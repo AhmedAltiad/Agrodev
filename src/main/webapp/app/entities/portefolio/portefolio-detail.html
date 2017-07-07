@@ -1,0 +1,41 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.portefolio.detail.title">Portefolio</span> {{vm.portefolio.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.portefolio.nbrerealisation">Nbrerealisation</span></dt>
+        <dd>
+            <span>{{vm.portefolio.nbrerealisation}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.portefolio.nbreencours">Nbreencours</span></dt>
+        <dd>
+            <span>{{vm.portefolio.nbreencours}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.portefolio.specialite">Specialite</span></dt>
+        <dd>
+            <span>{{vm.portefolio.specialite}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.portefolio.traderAGB">Trader AGB</span></dt>
+        <dd>
+            <a ui-sref="trader-agb-detail({id:vm.portefolio.traderAGB.id})">{{vm.portefolio.traderAGB.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.portefolio.variete">Variete</span></dt>
+        <dd>
+            <span ng-repeat="variete in vm.portefolio.varietes">
+                <a ui-sref="variete-detail({id: variete.id})">{{variete.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="portefolio-detail.edit({id:vm.portefolio.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

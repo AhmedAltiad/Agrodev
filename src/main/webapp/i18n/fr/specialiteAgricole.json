@@ -1,0 +1,23 @@
+{
+    "agroBourse360SiApp": {
+        "specialiteAgricole" : {
+            "home": {
+                "title": "SpecialiteAgricoles",
+                "createLabel": "Créer un nouveau Specialite Agricole",
+                "createOrEditLabel": "Créer ou éditer un Specialite Agricole",
+                "search": "Recherche pour Specialite Agricole"
+            },
+            "created": "Un nouveau Specialite Agricole a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Specialite Agricole avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Specialite Agricole avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Specialite Agricole {{ id }} ?"
+            },
+            "detail": {
+                "title": "Specialite Agricole"
+            },
+            "name": "Name",
+            "agriculteur": "Agriculteur"
+        }
+    }
+}

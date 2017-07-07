@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.trade.detail.title">Trade</span> {{vm.trade.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.trade.dateOfOrder">Date Of Order</span></dt>
+        <dd>
+            <span>{{vm.trade.dateOfOrder | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.dateOfDelivery">Date Of Delivery</span></dt>
+        <dd>
+            <span>{{vm.trade.dateOfDelivery | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.prixUnitaire">Prix Unitaire</span></dt>
+        <dd>
+            <span>{{vm.trade.prixUnitaire}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.position">Position</span></dt>
+        <dd>
+            <span>{{vm.trade.position}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{vm.trade.quantity}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.montant">Montant</span></dt>
+        <dd>
+            <span>{{vm.trade.montant}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.status">Status</span></dt>
+        <dd>
+            <span>{{vm.trade.status}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.currency">Currency</span></dt>
+        <dd>
+            <a ui-sref="currency-detail({id:vm.trade.currency.id})">{{vm.trade.currency.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.variete">Variete</span></dt>
+        <dd>
+            <a ui-sref="variete-detail({id:vm.trade.variete.id})">{{vm.trade.variete.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.traderAGB">Trader AGB</span></dt>
+        <dd>
+            <a ui-sref="trader-agb-detail({id:vm.trade.traderAGB.id})">{{vm.trade.traderAGB.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.trade.traderCA">Trader CA</span></dt>
+        <dd>
+            <a ui-sref="trader-ca-detail({id:vm.trade.traderCA.id})">{{vm.trade.traderCA.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="trade-detail.edit({id:vm.trade.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

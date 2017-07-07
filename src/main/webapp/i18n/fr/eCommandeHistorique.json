@@ -1,0 +1,29 @@
+{
+    "agroBourse360SiApp": {
+        "eCommandeHistorique" : {
+            "home": {
+                "title": "ECommandeHistoriques",
+                "createLabel": "Créer un nouveau E Commande Historique",
+                "createOrEditLabel": "Créer ou éditer un E Commande Historique",
+                "search": "Recherche pour E Commande Historique"
+            },
+            "created": "Un nouveau E Commande Historique a été créé avec l'identifiant {{ param }}",
+            "updated": "Le E Commande Historique avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le E Commande Historique avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le E Commande Historique {{ id }} ?"
+            },
+            "detail": {
+                "title": "E Commande Historique"
+            },
+            "etat": "Etat",
+            "prix": "Prix",
+            "quantite": "Quantite",
+            "date": "Date",
+            "numcommande": "Numcommande",
+            "annonceHistorique": "Annonce Historique",
+            "userCommandHistorique": "User Command Historique",
+            "transactionHistorique": "Transaction Historique"
+        }
+    }
+}

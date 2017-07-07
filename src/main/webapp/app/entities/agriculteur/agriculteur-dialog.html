@@ -1,0 +1,110 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAgriculteurLabel" data-translate="agroBourse360SiApp.agriculteur.home.createOrEditLabel">Create or edit a Agriculteur</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.agriculteur.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.agriculteur.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.typeSociete" for="field_typeSociete">Type Societe</label>
+            <input type="text" class="form-control" name="typeSociete" id="field_typeSociete"
+                    ng-model="vm.agriculteur.typeSociete"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.raisonSociale" for="field_raisonSociale">Raison Sociale</label>
+            <input type="text" class="form-control" name="raisonSociale" id="field_raisonSociale"
+                    ng-model="vm.agriculteur.raisonSociale"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.agriculteur.firstName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.agriculteur.lastName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.adresse" for="field_adresse">Adresse</label>
+            <input type="text" class="form-control" name="adresse" id="field_adresse"
+                    ng-model="vm.agriculteur.adresse"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.adresseLivraison" for="field_adresseLivraison">Adresse Livraison</label>
+            <input type="text" class="form-control" name="adresseLivraison" id="field_adresseLivraison"
+                    ng-model="vm.agriculteur.adresseLivraison"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.telephone" for="field_telephone">Telephone</label>
+            <input type="text" class="form-control" name="telephone" id="field_telephone"
+                    ng-model="vm.agriculteur.telephone"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.typeAgricole" for="field_typeAgricole">Type Agricole</label>
+            <input type="text" class="form-control" name="typeAgricole" id="field_typeAgricole"
+                    ng-model="vm.agriculteur.typeAgricole"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.superficie" for="field_superficie">Superficie</label>
+            <input type="number" class="form-control" name="superficie" id="field_superficie"
+                    ng-model="vm.agriculteur.superficie"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.superficieIrriguee" for="field_superficieIrriguee">Superficie Irriguee</label>
+            <input type="number" class="form-control" name="superficieIrriguee" id="field_superficieIrriguee"
+                    ng-model="vm.agriculteur.superficieIrriguee"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.bio" for="field_bio">Bio</label>
+            <input type="number" class="form-control" name="bio" id="field_bio"
+                    ng-model="vm.agriculteur.bio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.nbreEmployeePermanant" for="field_nbreEmployeePermanant">Nbre Employee Permanant</label>
+            <input type="number" class="form-control" name="nbreEmployeePermanant" id="field_nbreEmployeePermanant"
+                    ng-model="vm.agriculteur.nbreEmployeePermanant"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.agriculteur.specialiteProduction" for="field_specialiteProduction">Specialite Production</label>
+            <input type="text" class="form-control" name="specialiteProduction" id="field_specialiteProduction"
+                    ng-model="vm.agriculteur.specialiteProduction"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.agriculteur.profil" for="field_profil">Profil</label>
+            <select class="form-control" id="field_profil" name="profil" ng-model="vm.agriculteur.profil" ng-options="profil as profil.id for profil in vm.profils | orderBy:'id' track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

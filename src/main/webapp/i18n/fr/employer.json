@@ -1,0 +1,30 @@
+{
+    "agroBourse360SiApp": {
+        "employer" : {
+            "home": {
+                "title": "Employers",
+                "createLabel": "Créer un nouveau Employer",
+                "createOrEditLabel": "Créer ou éditer un Employer",
+                "search": "Recherche pour Employer"
+            },
+            "created": "Un nouveau Employer a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Employer avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Employer avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Employer {{ id }} ?"
+            },
+            "detail": {
+                "title": "Employer"
+            },
+            "companyName": "Company Name",
+            "type": "Type",
+            "companyDescription": "Company Description",
+            "adresseSiege": "Adresse Siege",
+            "telephone": "Telephone",
+            "nbreEmployeePermanant": "Nbre Employee Permanant",
+            "profil": "Profil",
+            "localite": "Localite",
+            "empAnnonce": "Emp Annonce"
+        }
+    }
+}

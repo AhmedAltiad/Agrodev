@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "traderAGB"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "desk",
+            "otherEntityName": "desk",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "tradedBy",
+            "otherEntityName": "commande",
+            "otherEntityRelationshipName": "traderAGB"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "trade",
+            "otherEntityName": "trade",
+            "otherEntityRelationshipName": "traderAGB"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "portefolio",
+            "otherEntityName": "portefolio",
+            "otherEntityRelationshipName": "traderAGB"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085134",
+    "entityTableName": "trader_agb",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,35 @@
+{
+    "agroBourse360SiApp": {
+        "annonceHistorique" : {
+            "home": {
+                "title": "AnnonceHistoriques",
+                "createLabel": "Créer un nouveau Annonce Historique",
+                "createOrEditLabel": "Créer ou éditer un Annonce Historique",
+                "search": "Recherche pour Annonce Historique"
+            },
+            "created": "Un nouveau Annonce Historique a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Annonce Historique avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Annonce Historique avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Annonce Historique {{ id }} ?"
+            },
+            "detail": {
+                "title": "Annonce Historique"
+            },
+            "numAnnonce": "Num Annonce",
+            "etat": "Etat",
+            "createddate": "Createddate",
+            "lastmodifieddate": "Lastmodifieddate",
+            "dateactivation": "Dateactivation",
+            "dateexpiration": "Dateexpiration",
+            "prix": "Prix",
+            "quantite": "Quantite",
+            "image": "Image",
+            "description": "Description",
+            "annonceChangement": "Annonce Changement",
+            "view": "View",
+            "profil": "Profil",
+            "eCommandeHistorique": "E Commande Historique"
+        }
+    }
+}

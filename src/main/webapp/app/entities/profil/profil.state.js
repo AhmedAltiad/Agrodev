@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .config(stateConfig);
 
     stateConfig.$inject = ['$stateProvider'];
@@ -14,7 +14,7 @@
             url: '/profil',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'agroBourseApp.profil.home.title'
+                pageTitle: 'agroBourse360SiApp.profil.home.title'
             },
             views: {
                 'content@': {
@@ -36,7 +36,7 @@
             url: '/profil/{id}',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'agroBourseApp.profil.detail.title'
+                pageTitle: 'agroBourse360SiApp.profil.detail.title'
             },
             views: {
                 'content@': {
@@ -104,9 +104,11 @@
                     resolve: {
                         entity: function () {
                             return {
-                                nom: null,
-                                prenom: null,
-                                dob: null,
+                                firstName: null,
+                                lastName: null,
+                                email: null,
+                                login: null,
+                                image: null,
                                 id: null
                             };
                         }

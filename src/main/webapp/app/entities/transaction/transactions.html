@@ -1,0 +1,111 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.transaction.home.title">Transactions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="transaction.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.transaction.home.createLabel">
+                        Create new Transaction
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.transaction.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.etat">Etat</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.prix">Prix</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.date">Date</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.numtransaction">Numtransaction</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.cmdspayees">Cmdspayees</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.image">Image</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.dateValidation">Date Validation</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.dateValidationPaiment">Date Validation Paiment</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.dateRefuse">Date Refuse</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.dateRefuspaiment">Date Refuspaiment</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.userTransaction">User Transaction</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.validePar">Valide Par</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.validePaiment">Valide Paiment</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.refuserPar">Refuser Par</span></th>
+                    <th><span data-translate="agroBourse360SiApp.transaction.refusePaiment">Refuse Paiment</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="transaction in vm.transactions track by transaction.id">
+                    <td><a ui-sref="transaction-detail({id:transaction.id})">{{transaction.id}}</a></td>
+                    <td>{{transaction.etat}}</td>
+                    <td>{{transaction.prix}}</td>
+                    <td>{{transaction.date | date:'medium'}}</td>
+                    <td>{{transaction.numtransaction}}</td>
+                    <td>{{transaction.cmdspayees}}</td>
+                    <td>{{transaction.image}}</td>
+                    <td>{{transaction.dateValidation | date:'medium'}}</td>
+                    <td>{{transaction.dateValidationPaiment | date:'medium'}}</td>
+                    <td>{{transaction.dateRefuse | date:'medium'}}</td>
+                    <td>{{transaction.dateRefuspaiment | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="profil-detail({id:transaction.userTransaction.id})">{{transaction.userTransaction.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="profil-detail({id:transaction.validePar.id})">{{transaction.validePar.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="profil-detail({id:transaction.validePaiment.id})">{{transaction.validePaiment.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="profil-detail({id:transaction.refuserPar.id})">{{transaction.refuserPar.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="profil-detail({id:transaction.refusePaiment.id})">{{transaction.refusePaiment.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="transaction-detail({id:transaction.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transaction.edit({id:transaction.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="transaction.delete({id:transaction.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAnnonceChangementLabel" data-translate="agroBourse360SiApp.annonceChangement.home.createOrEditLabel">Create or edit a Annonce Changement</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.annonceChangement.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.annonceChangement.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceChangement.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.annonceChangement.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceChangement.changement" for="field_changement">Changement</label>
+            <input type="number" class="form-control" name="changement" id="field_changement"
+                    ng-model="vm.annonceChangement.changement"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.annonceChangement.createddate" for="field_createddate">Createddate</label>
+                <div class="input-group">
+                    <input id="field_createddate" type="text" class="form-control" name="createddate" datetime-picker="{{dateformat}}" ng-model="vm.annonceChangement.createddate" is-open="vm.datePickerOpenStatus.createddate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createddate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonceChangement.profil" for="field_profil">Profil</label>
+            <select class="form-control" id="field_profil" name="profil" ng-model="vm.annonceChangement.profil" ng-options="profil as profil.id for profil in vm.profils track by profil.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.annonceChangement.annonceHistorique" for="field_annonceHistorique">Annonce Historique</label>
+            <select class="form-control" id="field_annonceHistorique" name="annonceHistorique" ng-model="vm.annonceChangement.annonceHistorique" ng-options="annonceHistorique as annonceHistorique.id for annonceHistorique in vm.annoncehistoriques track by annonceHistorique.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

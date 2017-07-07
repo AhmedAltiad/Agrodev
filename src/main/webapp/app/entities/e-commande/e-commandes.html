@@ -1,0 +1,93 @@
+<div>
+    <h2 data-translate="agroBourse360SiApp.eCommande.home.title">E Commandes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="e-commande.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="agroBourse360SiApp.eCommande.home.createLabel">
+                        Create new E Commande
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'agroBourse360SiApp.eCommande.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.etat">Etat</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.prix">Prix</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.quantite">Quantite</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.date">Date</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.numcommande">Numcommande</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.annonce">Annonce</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.commandBy">Command By</span></th>
+                    <th><span data-translate="agroBourse360SiApp.eCommande.transaction">Transaction</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="eCommande in vm.eCommandes track by eCommande.id">
+                    <td><a ui-sref="e-commande-detail({id:eCommande.id})">{{eCommande.id}}</a></td>
+                    <td>{{eCommande.etat}}</td>
+                    <td>{{eCommande.prix}}</td>
+                    <td>{{eCommande.quantite}}</td>
+                    <td>{{eCommande.date | date:'medium'}}</td>
+                    <td>{{eCommande.numcommande}}</td>
+                    <td>
+                        <a ui-sref="annonce-detail({id:eCommande.annonce.id})">{{eCommande.annonce.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="profil-detail({id:eCommande.commandBy.id})">{{eCommande.commandBy.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="transaction-detail({id:eCommande.transaction.id})">{{eCommande.transaction.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="e-commande-detail({id:eCommande.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="e-commande.edit({id:eCommande.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="e-commande.delete({id:eCommande.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

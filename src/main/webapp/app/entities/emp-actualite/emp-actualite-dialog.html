@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmpActualiteLabel" data-translate="agroBourse360SiApp.empActualite.home.createOrEditLabel">Create or edit a Emp Actualite</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.empActualite.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.empActualite.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.initDate" for="field_initDate">Init Date</label>
+                <div class="input-group">
+                    <input id="field_initDate" type="text" class="form-control" name="initDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.empActualite.initDate" is-open="vm.datePickerOpenStatus.initDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('initDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.periode" for="field_periode">Periode</label>
+            <input type="text" class="form-control" name="periode" id="field_periode"
+                    ng-model="vm.empActualite.periode"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.secteur" for="field_secteur">Secteur</label>
+            <input type="text" class="form-control" name="secteur" id="field_secteur"
+                    ng-model="vm.empActualite.secteur"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.empActualite.title"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.shortDisc" for="field_shortDisc">Short Disc</label>
+            <input type="text" class="form-control" name="shortDisc" id="field_shortDisc"
+                    ng-model="vm.empActualite.shortDisc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.longDisc" for="field_longDisc">Long Disc</label>
+            <input type="text" class="form-control" name="longDisc" id="field_longDisc"
+                    ng-model="vm.empActualite.longDisc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                    ng-model="vm.empActualite.image"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.adresse" for="field_adresse">Adresse</label>
+            <input type="text" class="form-control" name="adresse" id="field_adresse"
+                    ng-model="vm.empActualite.adresse"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="agroBourse360SiApp.empActualite.empacttype" for="field_empacttype">Empacttype</label>
+            <select class="form-control" name="empacttype" ng-model="vm.empActualite.empacttype" id="field_empacttype">
+                <option value="FETES" data-translate="agroBourse360SiApp.Empactualitetype.FETES">FETES</option>
+                <option value="FOIRE" data-translate="agroBourse360SiApp.Empactualitetype.FOIRE">FOIRE</option>
+                <option value="NEWS" data-translate="agroBourse360SiApp.Empactualitetype.NEWS">NEWS</option>
+                <option value="ARTICLE" data-translate="agroBourse360SiApp.Empactualitetype.ARTICLE">ARTICLE</option>
+                <option value="MARCHE" data-translate="agroBourse360SiApp.Empactualitetype.MARCHE">MARCHE</option>
+                <option value="FORMATION" data-translate="agroBourse360SiApp.Empactualitetype.FORMATION">FORMATION</option>
+                <option value="PORTE_OUVERTE" data-translate="agroBourse360SiApp.Empactualitetype.PORTE_OUVERTE">PORTE_OUVERTE</option>
+                <option value="SALON" data-translate="agroBourse360SiApp.Empactualitetype.SALON">SALON</option>
+                <option value="AUTRE" data-translate="agroBourse360SiApp.Empactualitetype.AUTRE">AUTRE</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="agroBourse360SiApp.empActualite.localite" for="field_localite">Localite</label>
+            <select class="form-control" id="field_localite" multiple name="localite" ng-model="vm.empActualite.localites" ng-options="localite as localite.id for localite in vm.localites track by localite.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,49 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.empCV.detail.title">Emp CV</span> {{vm.empCV.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.empCV.title">Title</span></dt>
+        <dd>
+            <span>{{vm.empCV.title}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empCV.anneexperience">Anneexperience</span></dt>
+        <dd>
+            <span>{{vm.empCV.anneexperience}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empCV.permis">Permis</span></dt>
+        <dd>
+            <span>{{vm.empCV.permis}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empCV.niveauScolaire">Niveau Scolaire</span></dt>
+        <dd>
+            <span>{{vm.empCV.niveauScolaire}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empCV.diplome">Diplome</span></dt>
+        <dd>
+            <span>{{vm.empCV.diplome}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empCV.employee">Employee</span></dt>
+        <dd>
+            <a ui-sref="employee-detail({id:vm.empCV.employee.id})">{{vm.empCV.employee.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.empCV.cvSpecialities">Cv Specialities</span></dt>
+        <dd>
+            <span ng-repeat="cvSpecialities in vm.empCV.cvSpecialities">
+                <a ui-sref="cv-specialities-detail({id: cvSpecialities.id})">{{cvSpecialities.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="emp-cv-detail.edit({id:vm.empCV.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

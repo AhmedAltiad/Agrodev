@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .factory('SocialService', SocialService);
 
     SocialService.$inject = ['$http', '$cookies'];

@@ -1,0 +1,38 @@
+{
+    "agroBourse360SiApp": {
+        "annonce" : {
+            "home": {
+                "title": "Annonces",
+                "createLabel": "Créer un nouveau Annonce",
+                "createOrEditLabel": "Créer ou éditer un Annonce",
+                "search": "Recherche pour Annonce"
+            },
+            "created": "Un nouveau Annonce a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Annonce avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Annonce avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Annonce {{ id }} ?"
+            },
+            "detail": {
+                "title": "Annonce"
+            },
+            "numann": "Numann",
+            "etat": "Etat",
+            "createddate": "Createddate",
+            "lastmodifieddate": "Lastmodifieddate",
+            "dateActivation": "Date Activation",
+            "dateExpiration": "Date Expiration",
+            "prix": "Prix",
+            "quantite": "Quantite",
+            "image": "Image",
+            "description": "Description",
+            "variete": "Variete",
+            "lastModifiedBy": "Last Modified By",
+            "localite": "Localite",
+            "annonceur": "Annonceur",
+            "palier": "Palier",
+            "likedBy": "Liked By",
+            "eCommande": "E Commande"
+        }
+    }
+}

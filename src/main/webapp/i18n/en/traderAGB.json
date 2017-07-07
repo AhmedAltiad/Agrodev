@@ -1,0 +1,29 @@
+{
+    "agroBourse360SiApp": {
+        "traderAGB" : {
+            "home": {
+                "title": "Trader AGBS",
+                "createLabel": "Create a new Trader AGB",
+                "createOrEditLabel": "Create or edit a Trader AGB",
+                "search": "Search for Trader AGB"
+            },
+            "created": "A new Trader AGB is created with identifier {{ param }}",
+            "updated": "A Trader AGB is updated with identifier {{ param }}",
+            "deleted": "A Trader AGB is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trader AGB {{ id }}?"
+            },
+            "detail": {
+                "title": "Trader AGB"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "adresse": "Adresse",
+            "profil": "Profil",
+            "desk": "Desk",
+            "tradedBy": "Traded By",
+            "trade": "Trade",
+            "portefolio": "Portefolio"
+        }
+    }
+}

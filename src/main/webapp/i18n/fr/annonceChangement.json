@@ -1,0 +1,26 @@
+{
+    "agroBourse360SiApp": {
+        "annonceChangement" : {
+            "home": {
+                "title": "AnnonceChangements",
+                "createLabel": "Créer un nouveau Annonce Changement",
+                "createOrEditLabel": "Créer ou éditer un Annonce Changement",
+                "search": "Recherche pour Annonce Changement"
+            },
+            "created": "Un nouveau Annonce Changement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Annonce Changement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Annonce Changement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Annonce Changement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Annonce Changement"
+            },
+            "name": "Name",
+            "changement": "Changement",
+            "createddate": "Createddate",
+            "profil": "Profil",
+            "annonceHistorique": "Annonce Historique"
+        }
+    }
+}

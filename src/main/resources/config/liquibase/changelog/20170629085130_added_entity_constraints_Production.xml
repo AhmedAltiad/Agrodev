@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Production.
+    -->
+    <changeSet id="20170629085130-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agriculteur_id"
+                                 baseTableName="production"
+                                 constraintName="fk_production_agriculteur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agriculteur"/>
+
+        <addForeignKeyConstraint baseColumnNames="variete_id"
+                                 baseTableName="production"
+                                 constraintName="fk_production_variete_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variete"/>
+
+    </changeSet>
+</databaseChangeLog>

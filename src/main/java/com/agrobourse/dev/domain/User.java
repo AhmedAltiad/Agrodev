@@ -98,7 +98,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PersistentToken> persistentTokens = new HashSet<>();
-    
+
     @OneToOne 
     private Profil profil ;
 
@@ -214,13 +214,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
     public void setPersistentTokens(Set<PersistentToken> persistentTokens) {
         this.persistentTokens = persistentTokens;
     }
-
-     public Profil getProfil() {
+    public Profil getProfil() {
         return profil;
     }
     public void setProfil(Profil profil){
         this.profil= profil;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -235,8 +236,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
         return login.equals(user.login);
     }
-
-
 
     @Override
     public int hashCode() {

@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commandeDetails",
+            "otherEntityName": "commandeDetails",
+            "otherEntityRelationshipName": "commande"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "currency",
+            "otherEntityName": "currency",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "traderAGB",
+            "otherEntityName": "traderAGB",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "agriculteur",
+            "otherEntityName": "agriculteur",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateOfOrder",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateOfDelivery",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170629085118",
+    "entityTableName": "commande",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

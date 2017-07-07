@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .directive('jhSocial', jhSocial);
 
     jhSocial.$inject = ['$translatePartialLoader', '$translate', '$filter', 'SocialService'];

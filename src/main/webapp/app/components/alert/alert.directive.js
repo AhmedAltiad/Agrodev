@@ -11,7 +11,7 @@
     };
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .component('jhiAlert', jhiAlert);
 
     jhiAlertController.$inject = ['$scope', 'AlertService'];

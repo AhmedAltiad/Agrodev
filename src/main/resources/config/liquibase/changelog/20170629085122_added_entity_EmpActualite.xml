@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity EmpActualite.
+    -->
+    <changeSet id="20170629085122-1" author="jhipster">
+        <createTable tableName="emp_actualite">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="init_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="periode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="secteur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="short_disc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="long_disc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adresse" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="empacttype" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="emp_actualite_localite">
+            <column name="localites_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="emp_actualites_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="emp_actualites_id, localites_id" tableName="emp_actualite_localite"/>
+        
+    </changeSet>
+</databaseChangeLog>

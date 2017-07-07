@@ -21,7 +21,7 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/agb
+        url: jdbc:postgresql://localhost:5432/AgroBourse360
         username: postgres
         password: Admin
     jpa:
@@ -33,25 +33,31 @@ spring:
             hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
-            hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.NoDefaultJCacheRegionFactory
+            hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
+            hibernate.cache.hazelcast.instance_name: AgroBourse360SI
+            hibernate.cache.use_minimal_puts: true
+            hibernate.cache.hazelcast.use_lite_member: true
     data:
         elasticsearch:
             cluster-name:
             cluster-nodes: localhost:9300
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
-    thymeleaf:
-        cache: true
-
+        host: smtp.gmail.com
+        port: 587
+        username: agrobourse360@gmail.com 
+        password: Altiad2017
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
 liquibase:
     contexts: prod
 
 # ===================================================================
 # To enable SSL, generate a certificate using:
-# keytool -genkey -alias AgroBourse -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias AgroBourse360SI -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
@@ -64,7 +70,7 @@ liquibase:
 #        key-store: keystore.p12
 #        key-store-password: <your-password>
 #        keyStoreType: PKCS12
-#        keyAlias: AgroBourse
+#        keyAlias: AgroBourse360SI
 # ===================================================================
 server:
     port: 8080
@@ -85,15 +91,15 @@ jhipster:
         cache: # Used by the CachingHttpHeadersFilter
             timeToLiveInDays: 1461
     cache: # Cache configuration
-        ehcache: # Ehcache configuration
-            time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
-            max-entries: 1000 # Number of objects in each cache entry
+        hazelcast: # Hazelcast distributed cache
+            time-to-live-seconds: 3600
+            backup-count: 1
     security:
         remember-me:
             # security key (this key should be unique for your application, and kept secret)
-            key: 4b9e353f4d6d049f6cf542a6bbf4c5532afbee42
+            key: 7db9e7482c2dfd61640a7d23ad3d8d74e981b99b
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: AgroBourse@localhost
+        from: AgroBourse360SI@localhost
         base-url: http://my-server-url-to-change # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
@@ -101,7 +107,7 @@ jhipster:
             enabled: false
             host: localhost
             port: 2003
-            prefix: AgroBourse
+            prefix: AgroBourse360SI
         prometheus:
             enabled: false
             endpoint: /prometheusMetrics

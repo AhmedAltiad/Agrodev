@@ -1,0 +1,29 @@
+{
+    "agroBourse360SiApp": {
+        "empCV" : {
+            "home": {
+                "title": "EmpCVS",
+                "createLabel": "Créer un nouveau Emp CV",
+                "createOrEditLabel": "Créer ou éditer un Emp CV",
+                "search": "Recherche pour Emp CV"
+            },
+            "created": "Un nouveau Emp CV a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Emp CV avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Emp CV avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Emp CV {{ id }} ?"
+            },
+            "detail": {
+                "title": "Emp CV"
+            },
+            "title": "Title",
+            "anneexperience": "Anneexperience",
+            "permis": "Permis",
+            "niveauScolaire": "Niveau Scolaire",
+            "diplome": "Diplome",
+            "formation": "Formation",
+            "employee": "Employee",
+            "cvSpecialities": "Cv Specialities"
+        }
+    }
+}

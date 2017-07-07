@@ -1,4 +1,4 @@
-# AgroBourse
+# AgroBourse360SI
 This application was generated using JHipster 4.2.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.2.0](https://jhipster.github.io/documentation-archive/v4.2.0).
 
 ## Development
@@ -32,7 +32,7 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 ## Building for production
 
-To optimize the AgroBourse application for production, run:
+To optimize the AgroBourse360SI application for production, run:
 
     ./mvnw -Pprod clean package
 
@@ -57,7 +57,8 @@ Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in
 
     gulp test
 
-
+UI end-to-end tests are powered by [Protractor][], which is built on top of WebDriverJS. They're located in [src/test/javascript/e2e](src/test/javascript/e2e)
+and can be run by starting Spring Boot in one terminal (`./mvnw spring-boot:run`) and running the tests (`gulp itest`) in a second one.
 
 For more information, refer to the [Running tests page][].
 

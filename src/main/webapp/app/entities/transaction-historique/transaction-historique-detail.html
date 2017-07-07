@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.transactionHistorique.detail.title">Transaction Historique</span> {{vm.transactionHistorique.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.etat}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.prix">Prix</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.prix}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.date">Date</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.numtransaction">Numtransaction</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.numtransaction}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.cmdspayees">Cmdspayees</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.cmdspayees}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.image">Image</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.image}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.dateValidation">Date Validation</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.dateValidation | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.dateValidationPaiment">Date Validation Paiment</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.dateValidationPaiment | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.dateRefuse">Date Refuse</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.dateRefuse | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.transactionHistorique.dateRefuspaiment">Date Refuspaiment</span></dt>
+        <dd>
+            <span>{{vm.transactionHistorique.dateRefuspaiment | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="transaction-historique-detail.edit({id:vm.transactionHistorique.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

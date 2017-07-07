@@ -1,367 +1,41 @@
 <div ng-cloak>
-           
-  <section>
-            <!-- *** HOMEPAGE CAROUSEL ***
- _________________________________________________________ -->
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipster img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <h1 data-translate="home.title">Welcome, Java Hipster!</h1>
+            <p class="lead" data-translate="home.subtitle">This is your homepage</p>
 
-            <div class="home-carousel">
+            <div ng-switch="vm.isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true" data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
+                    You are logged in as user "{{vm.account.login}}".
+                </div>
 
-                <div class="dark-mask"></div>
+                <div class="alert alert-warning" ng-switch-when="false" data-translate="global.messages.info.authenticated" translate-compile>
+                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
 
-                <div class="container">
-                    <div class="homepage owl-carousel">
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <p>
-                                    </p>
-                                    <h1>Salle des marchés</h1>
-                                    <p>Centrales d'achats <br/>Traders<br/>Agriculteurs</p>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-homepage.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-
-                                <div class="col-sm-7 text-center">
-                                    <img class="img-responsive" src="img/template-mac.png" alt="">
-                                </div>
-
-                                <div class="col-sm-5">
-                                    <h2>Des centrales d'achats à travers le monde</h2>
-                                    <ul class="list-style-none">
-                                        <li>Tunis &nbsp;&nbsp;New York</li>
-										<li>Abuja &nbsp; Londre</li>
-										<li>Alger &nbsp; Pekin</li>
-										<li>Rabat &nbsp; Sydney </li>
-										
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-5 right">
-                                    <h1>Des millions d'agriculteurs</h1>
-                                    <ul class="list-style-none">
-                                        <li>40% de la population active mondiale</li>
-                                        <li>Plus de 9 millions en Europe</li>
-                                        <li>Près de 60% de la population active en Afrique</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-customize.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-sm-7">
-                                    <img class="img-responsive" src="img/template-easy-code.png" alt="">
-                                </div>
-                                <div class="col-sm-5">
-                                    <h1>Les meilleurs prix</h1>
-                                    <ul class="list-style-none">
-                                        <li>Négociation</li>
-                                        <li>Suivi des transactions</li>
-										<li>Logistiques</li>
-										<li>Banques & Assurances</li>
-										<li>Livraison</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.project owl-slider -->
+                <div class="alert alert-warning" ng-switch-when="false" data-translate="global.messages.info.register" translate-compile>
+                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
                 </div>
             </div>
 
-            <!-- *** HOMEPAGE CAROUSEL END *** -->
-        </section>
-            
-                    <!-- /.project owl-slider -->
-               
+            <p data-translate="home.question">
+                If you have any question on JHipster:
+            </p>
 
-            <!-- *** HOMEPAGE CAROUSEL END *** -->
-        </section>
+            <ul>
+                <li><a href="http://jhipster.github.io/" target="_blank" data-translate="home.link.homepage">JHipster homepage</a></li>
+                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" data-translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
+                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" data-translate="home.link.bugtracker">JHipster bug tracker</a></li>
+                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" data-translate="home.link.chat">JHipster public chat room</a></li>
+                <li><a href="https://twitter.com/java_hipster" target="_blank"  data-translate="home.link.follow">follow @java_hipster on Twitter</a></li>
+            </ul>
 
-        <section class="bar background-white">
-            <div class="container">
-                <div class="col-md-12">
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-desktop"></i>
-                                </div>
-                                <h3>Consultation</h3>
-                                <p>A travers AgroBourse, vous pouvez consulter les quantités disponibles et les récoltes futures.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-cloud-download"></i>
-                                </div>
-                                <h3>Importation</h3>
-                                <p>AgroBourse vous permet d'importer tous les rapports de vos transactions</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-database"></i>
-                                </div>
-                                <h3>Base de données</h3>
-                                <p>AgroBourse dispose d'une base de données regroupant des millions d'agriculteurs, des milliers de centrales d'achats et des milliers de transitaires à travers le monde.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-lightbulb-o"></i>
-                                </div>
-                                <h3>Conseils</h3>
-                                <p>Les spécialistes d'AgroBourse sont à votre disposition 24/7 pour toutes recommendations.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-envelope-o"></i>
-                                </div>
-                                <h3>Email</h3>
-                                <p>Le service support d'AgroBourse vous envoie régulièrement toutes les news relatives à votre secteur d'activités.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box-simple">
-                                <div class="icon">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <h3>Abonnements</h3>
-                                <p>Avec AgroBourse, vous pouvez choisir la formule d'abonnement qui correspond à vos besoins.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bar background-pentagon no-mb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading text-center">
-                            <h2>Témoignages</h2>
-                        </div>
-
-                        <p class="lead">Nous avons travaillé avec beaucoup de clients et nous aimons toujours entendre leurs avis à propos de cette coopération. 
-						Jetez un oeil sur les témoignages de nos clients.</p>            
-                 </div>
-             </div>
-         </div>
-        </section>
-    <div class="container" style="background: url(../img/texture-bw.png) center center repeat;">
-         <ul class="row" >
-                     <div class="inline" ng-repeat="annonce in vm.annonces "  >
-                             <div class="testimonial same-height-always">
-                                        <p>{{annonce.id}}</p>
-                                        <div class="name-picture">
-                                            <img ng-if="annonce.image != null" class="thumbnail" alt="" ng-src="{{annonce.image}}">
-                                             <img class="thumbnail" ng-if="annonce.image == null" src="img/person-1.jpg">
-                                            <h5>{{annonce.sujet}}</h5>
-                                            <p>{{annonce.annoncebody}}</p>
-                                             <p>{{annonce.datedebut}}</p>
-                                        </div>
-                        </div>
-</div>       
-         </ul>
+            <p>
+             <span data-translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" data-translate="home.github">Github</a>!
+            </p>
+        </div>
     </div>
-    </section>
- <!-- Annoces!End -->
-                        <!-- /.owl-carousel -->
-                        <!-- *** TESTIMONIALS CAROUSEL END ***              
-      <!-/.bar -->
-        <section class="bar background-white no-mb">
-            <div class="container">
-
-                <div class="col-md-12">
-                    <div class="heading text-center">
-                        <h2>Actualités</h2>
-                    </div>
-
-                    <p class="lead">Les actualités<br/><span class="accent">rejoignez notre blog!</span>
-                    </p>
-
-                    <!-- *** BLOG HOMEPAGE ***
-_________________________________________________________ -->
-
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-4.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i>Lire la suite</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">Actualité 1</a></h4>
-                                    <p class="intro">Article 1</p>
-                                    <p class="read-more"><a href="" class="btn btn-template-main">Continuer la lecture</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-3.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i>Lire la suite</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">Actualité 2</a></h4>
-                                    <p class="intro">Article 2</p>
-                                    <p class="read-more"><a href="" class="btn btn-template-main">Continuer la lecture</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-5.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i>Lire la suite</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">Actualité 3</a></h4>
-                                    <p class="intro">Article 3</p>
-                                    <p class="read-more"><a href="" class="btn btn-template-main">Continuer la lecture</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img src="img/portfolio-6.jpg" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a href="" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i>Lire la suite</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4><a href="blog-post.html">Actualité 4</a></h4>
-                                    <p class="intro">Article 4</p>
-                                    <p class="read-more"><a href="" class="btn btn-template-main">Continuer la lecture</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-                    </div>
-                    <!-- /.row -->
-
-                    <!-- *** BLOG HOMEPAGE END *** -->
-
-                </div>
-
-            </div>
-            <!-- /.container -->
-        </section>
-        <!-- /.bar -->
-
-        <section class="bar background-gray no-mb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading text-center">
-                            <h2>Nos clients</h2>
-                        </div>
-
-                        <ul class="owl-carousel customers">
-                            <li class="item">
-                                <img src="img/customer-1.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-2.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-3.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-4.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-5.png" alt="" class="img-responsive">
-                            </li>
-                            <li class="item">
-                                <img src="img/customer-6.png" alt="" class="img-responsive">
-                            </li>
-                        </ul>
-                        <!-- /.owl-carousel -->
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
-    </script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/front.js"></script>
-    <script src="js/jquery.carouFredSel-6.1.0-packed.js" type="text/javascript"></script>
-    
-
-    <!-- owl carousel -->
-    <script src="js/owl.carousel.min.js"></script>
-
+</div>

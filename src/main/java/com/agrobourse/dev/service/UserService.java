@@ -131,7 +131,7 @@ public class UserService {
         user.setEmail(userDTO.getEmail());
         user.setImageUrl(userDTO.getImageUrl());
         if (userDTO.getLangKey() == null) {
-            user.setLangKey("en"); // default language
+            user.setLangKey("fr"); // default language
         } else {
             user.setLangKey(userDTO.getLangKey());
         }

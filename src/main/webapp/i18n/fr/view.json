@@ -1,0 +1,25 @@
+{
+    "agroBourse360SiApp": {
+        "view" : {
+            "home": {
+                "title": "Views",
+                "createLabel": "Créer un nouveau View",
+                "createOrEditLabel": "Créer ou éditer un View",
+                "search": "Recherche pour View"
+            },
+            "created": "Un nouveau View a été créé avec l'identifiant {{ param }}",
+            "updated": "Le View avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le View avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le View {{ id }} ?"
+            },
+            "detail": {
+                "title": "View"
+            },
+            "consoleType": "Console Type",
+            "duration": "Duration",
+            "profil": "Profil",
+            "annonceHistorique": "Annonce Historique"
+        }
+    }
+}

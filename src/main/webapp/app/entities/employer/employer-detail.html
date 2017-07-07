@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.employer.detail.title">Employer</span> {{vm.employer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.employer.companyName">Company Name</span></dt>
+        <dd>
+            <span>{{vm.employer.companyName}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.type">Type</span></dt>
+        <dd>
+            <span>{{vm.employer.type}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.companyDescription">Company Description</span></dt>
+        <dd>
+            <span>{{vm.employer.companyDescription}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.adresseSiege">Adresse Siege</span></dt>
+        <dd>
+            <span>{{vm.employer.adresseSiege}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.telephone">Telephone</span></dt>
+        <dd>
+            <span>{{vm.employer.telephone}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.nbreEmployeePermanant">Nbre Employee Permanant</span></dt>
+        <dd>
+            <span>{{vm.employer.nbreEmployeePermanant}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.employer.profil.id})">{{vm.employer.profil.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.employer.localite">Localite</span></dt>
+        <dd>
+            <a ui-sref="localite-detail({id:vm.employer.localite.id})">{{vm.employer.localite.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="employer-detail.edit({id:vm.employer.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

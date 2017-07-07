@@ -1,0 +1,16 @@
+{
+    "agroBourse360SiApp": {
+        "Empactualitetype" : {
+            "null": "",
+            "FETES": "FETES",
+            "FOIRE": "FOIRE",
+            "NEWS": "NEWS",
+            "ARTICLE": "ARTICLE",
+            "MARCHE": "MARCHE",
+            "FORMATION": "FORMATION",
+            "PORTE_OUVERTE": "PORTE_OUVERTE",
+            "SALON": "SALON",
+            "AUTRE": "AUTRE"
+        }
+    }
+}

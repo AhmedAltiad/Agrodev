@@ -2,43 +2,95 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipName": "profil",
-            "otherEntityName": "profil",
             "relationshipType": "many-to-one",
+            "relationshipName": "variete",
+            "otherEntityName": "variete",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "lastModifiedBy",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "localite",
+            "otherEntityName": "localite",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "annonceur",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "palier",
+            "otherEntityName": "palier",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "annoncesFavoris",
+            "relationshipName": "likedBy",
+            "otherEntityName": "profil",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "eCommande",
+            "otherEntityName": "eCommande",
+            "otherEntityRelationshipName": "annonce"
         }
     ],
     "fields": [
         {
-            "fieldName": "sujet",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required",
-                "minlength"
-            ],
-            "fieldValidateRulesMinlength": "2"
+            "fieldName": "numann",
+            "fieldType": "Long"
         },
         {
-            "fieldName": "annoncebody",
-            "fieldType": "String"
+            "fieldName": "etat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createddate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastmodifieddate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateActivation",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateExpiration",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "quantite",
+            "fieldType": "Integer"
         },
         {
             "fieldName": "image",
             "fieldType": "String"
         },
         {
-            "fieldName": "datedebut",
-            "fieldType": "LocalDate"
-        },
-        {
-            "fieldName": "datefin",
-            "fieldType": "LocalDate",
-            "fieldValidateRules": []
+            "fieldName": "description",
+            "fieldType": "String"
         }
     ],
-    "changelogDate": "20170412100645",
-    "dto": "no",
-    "service": "no",
+    "changelogDate": "20170629085111",
     "entityTableName": "annonce",
-    "pagination": "no"
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
 }

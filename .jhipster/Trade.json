@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "currency",
+            "otherEntityName": "currency",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "variete",
+            "otherEntityName": "variete",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "traderAGB",
+            "otherEntityName": "traderAGB",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "traderCA",
+            "otherEntityName": "traderCA",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateOfOrder",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateOfDelivery",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "prixUnitaire",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "position",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "montant",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170703130647",
+    "entityTableName": "trade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('agroBourseApp')
+        .module('agroBourse360SiApp')
         .controller('AnnonceController', AnnonceController);
 
     AnnonceController.$inject = ['Annonce', 'AnnonceSearch'];

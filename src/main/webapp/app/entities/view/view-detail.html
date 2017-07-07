@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="agroBourse360SiApp.view.detail.title">View</span> {{vm.view.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="agroBourse360SiApp.view.consoleType">Console Type</span></dt>
+        <dd>
+            <span>{{vm.view.consoleType}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.view.duration">Duration</span></dt>
+        <dd>
+            <span>{{vm.view.duration | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.view.profil">Profil</span></dt>
+        <dd>
+            <a ui-sref="profil-detail({id:vm.view.profil.id})">{{vm.view.profil.id}}</a>
+        </dd>
+        <dt><span data-translate="agroBourse360SiApp.view.annonceHistorique">Annonce Historique</span></dt>
+        <dd>
+            <a ui-sref="annonce-historique-detail({id:vm.view.annonceHistorique.id})">{{vm.view.annonceHistorique.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="view-detail.edit({id:vm.view.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

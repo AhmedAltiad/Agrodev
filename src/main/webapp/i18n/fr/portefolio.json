@@ -1,0 +1,26 @@
+{
+    "agroBourse360SiApp": {
+        "portefolio" : {
+            "home": {
+                "title": "Portefolios",
+                "createLabel": "Créer un nouveau Portefolio",
+                "createOrEditLabel": "Créer ou éditer un Portefolio",
+                "search": "Recherche pour Portefolio"
+            },
+            "created": "Un nouveau Portefolio a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Portefolio avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Portefolio avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Portefolio {{ id }} ?"
+            },
+            "detail": {
+                "title": "Portefolio"
+            },
+            "nbrerealisation": "Nbrerealisation",
+            "nbreencours": "Nbreencours",
+            "specialite": "Specialite",
+            "traderAGB": "Trader AGB",
+            "variete": "Variete"
+        }
+    }
+}

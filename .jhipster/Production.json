@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "agriculteur",
+            "otherEntityName": "agriculteur",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "variete",
+            "otherEntityName": "variete",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateofproduction",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170629085130",
+    "entityTableName": "production",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

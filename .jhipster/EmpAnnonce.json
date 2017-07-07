@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "employer",
+            "otherEntityName": "employer",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "empAnnonce",
+            "relationshipName": "postuls",
+            "otherEntityName": "employee",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "initDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "finDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeContrat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shortDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validation",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nbredepostes",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170629085121",
+    "entityTableName": "emp_annonce",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

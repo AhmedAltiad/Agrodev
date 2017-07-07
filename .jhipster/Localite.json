@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "delegation",
+            "otherEntityName": "delegation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "employer",
+            "otherEntityName": "employer",
+            "otherEntityRelationshipName": "localite"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "annonce",
+            "otherEntityName": "annonce",
+            "otherEntityRelationshipName": "localite"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "otherEntityRelationshipName": "localite"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "empActualite",
+            "otherEntityName": "empActualite",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "localite"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codepostal",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170629085106",
+    "entityTableName": "localite",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

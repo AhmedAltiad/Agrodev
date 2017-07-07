@@ -1,0 +1,23 @@
+{
+    "agroBourse360SiApp": {
+        "cvSpecialities" : {
+            "home": {
+                "title": "CvSpecialities",
+                "createLabel": "Créer un nouveau Cv Specialities",
+                "createOrEditLabel": "Créer ou éditer un Cv Specialities",
+                "search": "Recherche pour Cv Specialities"
+            },
+            "created": "Un nouveau Cv Specialities a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cv Specialities avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cv Specialities avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cv Specialities {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cv Specialities"
+            },
+            "name": "Name",
+            "empCV": "Emp CV"
+        }
+    }
+}

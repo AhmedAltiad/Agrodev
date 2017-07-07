@@ -1,0 +1,40 @@
+{
+    "agroBourse360SiApp": {
+        "agriculteur" : {
+            "home": {
+                "title": "Agriculteurs",
+                "createLabel": "Create a new Agriculteur",
+                "createOrEditLabel": "Create or edit a Agriculteur",
+                "search": "Search for Agriculteur"
+            },
+            "created": "A new Agriculteur is created with identifier {{ param }}",
+            "updated": "A Agriculteur is updated with identifier {{ param }}",
+            "deleted": "A Agriculteur is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Agriculteur {{ id }}?"
+            },
+            "detail": {
+                "title": "Agriculteur"
+            },
+            "typeSociete": "Type Societe",
+            "raisonSociale": "Raison Sociale",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "adresse": "Adresse",
+            "adresseLivraison": "Adresse Livraison",
+            "telephone": "Telephone",
+            "typeAgricole": "Type Agricole",
+            "superficie": "Superficie",
+            "superficieIrriguee": "Superficie Irriguee",
+            "bio": "Bio",
+            "nbreEmployeePermanant": "Nbre Employee Permanant",
+            "specialiteProduction": "Specialite Production",
+            "profil": "Profil",
+            "activiteAgricoles": "Activite Agricoles",
+            "specialitesAgricole": "Specialites Agricole",
+            "commandeDetails": "Commande Details",
+            "commandes": "Commandes",
+            "production": "Production"
+        }
+    }
+}

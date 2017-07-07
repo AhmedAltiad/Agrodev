@@ -1,0 +1,32 @@
+{
+    "agroBourse360SiApp": {
+        "trade" : {
+            "home": {
+                "title": "Trades",
+                "createLabel": "Create a new Trade",
+                "createOrEditLabel": "Create or edit a Trade",
+                "search": "Search for Trade"
+            },
+            "created": "A new Trade is created with identifier {{ param }}",
+            "updated": "A Trade is updated with identifier {{ param }}",
+            "deleted": "A Trade is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trade {{ id }}?"
+            },
+            "detail": {
+                "title": "Trade"
+            },
+            "dateOfOrder": "Date Of Order",
+            "dateOfDelivery": "Date Of Delivery",
+            "prixUnitaire": "Prix Unitaire",
+            "position": "Position",
+            "quantity": "Quantity",
+            "montant": "Montant",
+            "status": "Status",
+            "currency": "Currency",
+            "variete": "Variete",
+            "traderAGB": "Trader AGB",
+            "traderCA": "Trader CA"
+        }
+    }
+}
